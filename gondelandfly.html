@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gondel & Fly – Komfortabel in die Lüfte</title> 
+    
+    <!-- Google Fonts für stilvolle Schrift -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles.css"> <!-- Verlinkung der CSS-Datei -->
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            fetch("nav.html")
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById("nav-placeholder").innerHTML = html;
+                })
+                .catch(error => console.error("Fehler beim Laden der Navigation:", error));
+        });
+    </script>
+</head>
+<body>
+
+    <!-- ============================================================
+                         HEADER: Logo und Navigation
+    ============================================================ -->
+    <header>
+        <div class="logo">
+            <h1>Reiselust vergeht nicht</h1>
+        </div>
+        
+        <div id="nav-placeholder"></div> <!-- Hier wird die Navigation eingefügt -->
+    </header>
+
+    <!-- ============================================================
+                         Gondel & Fly-Bereich: Details
+    ============================================================ -->
+    <section class="hero">
+        <h2>Gondel & Fly – Bequem mit der Seilbahn zum Startplatz</h2>
+        <p>Erlebe das Gefühl des Fliegens, ohne mühsame Aufstiege. Fahre mit der Gondel hoch und genieße den Start ins Abenteuer!</p>
+    </section>
+
+    <main>
+
+        <!-- Kacheln mit Bildern und Blogbeiträgen -->
+        <section id="blogbeiträge">
+            <h2>Unsere Blogbeiträge</h2>
+            <div class="kachel-container">
+                <div class="kachel">
+                    <a href="gondelandfly_bischling.html">
+                        <img src="images/Bischling/bischling4.png" alt="Bild Bischling" class="kachel-bild">
+                        <p>Bischling</p>
+                    </a>
+                </div>
+
+                <div class="kachel">
+                    <a href="gondelandfly_grubigstein.html">
+                        <img src="images/Grubigstein/grubigstein1.png" alt="Bild Grubigstein" class="kachel-bild">
+                        <p>Grubigstein</p>
+                    </a>
+                </div>
+
+                <div class="kachel">
+                    <a href="gondelandfly_hohesalve.html">
+                        <img src="images/Hohe Salve/hohesalve21.jpg" alt="Bild Hohe Salve" class="kachel-bild">
+                        <p>Hohe Salve</p>
+                    </a>
+                </div>
+                
+                <div class="kachel">
+                    <a href="gondelandfly_brauneck.html">
+                        <img src="images/Brauneck/brauneck3.png" alt="Bild Rofan" class="kachel-bild">
+                        <p>Brauneck</p>
+                    </a>
+                </div>
+                
+                <div class="kachel">
+                    <a href="gondelandfly_rofan.html">
+                        <img src="images/Rofan/rofan1.jpg" alt="Bild Rofan" class="kachel-bild">
+                        <p>Rofan</p>
+                    </a>
+                </div>
+
+                <div class="kachel">
+                    <a href="gondelandfly_brauneck.html">
+                        <img src="images/Brauneck/brauneck3.png" alt="Bild Brauneck" class="kachel-bild">
+                        <p>Brauneck</p>
+                    </a>
+                </div>
+
+
+        </section>
+
+        <section id="gondelfly-details">
+            <h2>Was ist Gondel & Fly?</h2>
+            <p>Gondel & Fly ermöglicht es dir, mit der Seilbahn zum Startplatz zu gelangen, um dann entspannt mit dem Paraglider ins Tal zu schweben. Ideal für Genießer und alle, die Höhenflüge lieben.</p>
+        </section>
+
+        <section id="gondelfly-tipps">
+            <h2>Tipps für dein Gondel & Fly-Erlebnis</h2>
+            <ul>
+                <li>Wähle eine geeignete Seilbahn mit Startplätzen für Paragliding.</li>
+                <li>Überprüfe Wetterbedingungen und Luftraumregeln.</li>
+                <li>Packe deine Ausrüstung kompakt und sicher ein.</li>
+                <li>Genieße den Aufstieg ohne Anstrengung und konzentriere dich auf den Flug.</li>
+            </ul>
+        </section>
+
+    </main>
+
+</body>
+</html>
