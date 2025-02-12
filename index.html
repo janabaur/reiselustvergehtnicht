@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reiselust vergeht nicht</title>
+
+    <!-- Google Fonts: Dancing Script für verschnörkelten Titel -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+
+    <!-- Verlinkung zum externen Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            fetch("nav.html")
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById("nav-placeholder").innerHTML = html;
+                })
+                .catch(error => console.error("Fehler beim Laden der Navigation:", error));
+        });
+    </script>
+</head>
+<body>
+
+    <!-- ============================================================
+                         HEADER: Logo und Navigation
+    ============================================================ -->
+    <header>
+        <div class="logo">
+            <h1>Reiselust vergeht nicht</h1> <!-- Titel mit verschnörkelter Schrift -->
+        </div>
+        
+        <div id="nav-placeholder"></div> <!-- Hier wird die Navigation eingefügt -->
+    </header>
+
+    <!-- ============================================================
+                         HERO-BEREICH: Begrüßung und Einführung
+    ============================================================ -->
+    <section class="hero">
+        <h2>Thermiktouristen on tour 🪂</h2>
+        <p>Erlebe die Freiheit des Himmels. Tipps, Reiseberichte und die besten Spots!</p>
+
+         <!-- Eingebundenes Bild -->
+    <img src="images/IMG_8992.JPG" alt="Paragliding in den Bergen" class="hero-image">
+    
+    </section>
+
+    <!-- ============================================================
+                         MAIN INHALT: Blog und Galerie
+    ============================================================ -->
+    <main>
+        
+        <!-- --------------------------------------------------------
+                             BLOG-BEREICH
+        -------------------------------------------------------- -->
+        <section id="home">
+            <h2>Home</h2>
+            <p>Willkommen auf meinem Blog! Hier findest du alle Reiseberichte und Abenteuer, die ich erlebe.</p>
+        </section>
+
+        <section id="fernreisen">
+            <h2>Fernreisen</h2>
+            <p>Fernreisen bieten die Möglichkeit, fremde Kulturen zu entdecken und neue Abenteuer zu erleben.</p>
+        </section>
+
+        <section id="paragliding">
+            <h2>Paragliding</h2>
+            <p>Erlebe das Gefühl der Freiheit bei einem Paragliding-Abenteuer! Hier teile ich meine besten Erlebnisse und Tipps.</p>
+        </section>
+
+        <section id="hikefly">
+            <h2>Hike&Fly</h2>
+            <p>Hike&Fly kombiniert das Wandern und Paragliding. Hier erzähle ich von meinen Erfahrungen und besten Hike&Fly-Spots.</p>
+        </section>
+
+        <section id="gondelfly">
+            <h2>Gondel&Fly</h2>
+            <p>Gondel&Fly bietet die Möglichkeit, mit der Gondel in die Höhe zu fahren und dann mit dem Paraglider ins Tal zu fliegen.</p>
+        </section>
+
+        <section id="bergsteigen">
+            <h2>Bergsteigen</h2>
+            <p>Für alle, die es lieben, die höchsten Gipfel zu erklimmen. Entdecke spannende Bergsteiger-Touren!</p>
+        </section>
+
+    </main>
+
+    <!-- ============================================================
+                         ÜBER MICH-BEREICH: Informationen über den Blog
+    ============================================================ -->
+    <section id="ueber">
+        <h2>Über mich</h2>
+        <p>Hi! Ich bin ein leidenschaftlicher Paraglider und Bergsteiger, der gerne die Welt bereist und neue Abenteuer erlebt.</p>
+    </section>
+
+    <!-- ============================================================
+                         FOOTER: Urheberrecht und Fußzeile
+    ============================================================ -->
+    <footer>
+        <p>&copy; 2024 Reiselust vergeht nicht - Alle Rechte vorbehalten</p>
+    </footer>
+
+</body>
+</html>
