@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reiselust vergeht nicht</title>
+
+    <!-- Google Fonts: Dancing Script für verschnörkelten Titel -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+
+    <!-- Verlinkung zum externen Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            fetch("nav.html")
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById("nav-placeholder").innerHTML = html;
+                })
+                .catch(error => console.error("Fehler beim Laden der Navigation:", error));
+        });
+    </script>
+</head>
+<body>
+
+
+    <!-- ============================================================
+                         HEADER: Logo und Navigation
+    ============================================================ -->
+    <header>
+        <div class="logo">
+            <h1>Reiselust vergeht nicht</h1> <!-- Titel mit verschnörkelter Schrift -->
+        </div>
+        
+        <div id="nav-placeholder"></div> <!-- Hier wird die Navigation eingefügt -->
+    </header>
+
+    <!-- ============================================================
+                         HERO-BEREICH: Einführung in Flugreisen
+    ============================================================ -->
+    <section class="hero">
+        <h2>Flugreisen – Freiheit über den Wolken</h2>
+        <p>Erkunde die Welt aus der Luft! Hier teile ich meine besten Flugreisen und Erlebnisse über den Wolken.</p>
+    </section>
+
+    <!-- ============================================================
+                         MAIN INHALT: Details und Erfahrungen
+    ============================================================ -->
+    <main>
+        <section id="flugreisen-details">
+            <h2>Was sind Flugreisen?</h2>
+            <p>Flugreisen ermöglichen es uns, in kürzester Zeit riesige Entfernungen zu überwinden und neue Orte aus einer völlig neuen Perspektive zu erleben. Ob längere Fernreisen oder kurze Flugabenteuer, der Himmel ist der ideale Ort, um die Welt zu entdecken.</p>
+        </section>
+
+        <section id="flugreisen-tipps">
+            <h2>Tipps für unvergessliche Flugreisen</h2>
+            <ul>
+                <li>Plane deine Reise im Voraus, um die besten Flugpreise zu finden.</li>
+                <li>Packe leicht und effizient, um den Flugkomfort zu maximieren.</li>
+                <li>Vergiss nicht, die Wetterbedingungen am Zielort zu überprüfen.</li>
+                <li>Nutze Zwischenstopps für kurze Erkundungstouren, wenn möglich.</li>
+            </ul>
+        </section>
+
+        <section id="flugreisen-destinationen">
+            <h2>Empfohlene Flugreisen-Destinationen</h2>
+            <p>Einige der besten Flugziele, die du auf deiner Liste haben solltest, umfassen exotische Inseln, beeindruckende Städte und abgelegene Gebirgsketten, die aus der Luft atemberaubend wirken.</p>
+            <ul>
+                <li>Island – Erkunde die Vulkanlandschaften aus der Luft.</li>
+                <li>Die Karibik – Fliege über die türkisfarbenen Strände.</li>
+                <li>Die Alpen – Entdecke die majestätischen Berge aus der Vogelperspektive.</li>
+            </ul>
+        </section>
+    </main>
+
+    <!-- ============================================================
+                         FOOTER: Urheberrecht und Fußzeile
+    ============================================================ -->
+    <footer>
+        <p>&copy; 2024 Reiselust vergeht nicht - Alle Rechte vorbehalten</p>
+    </footer>
+
+</body>
+</html>

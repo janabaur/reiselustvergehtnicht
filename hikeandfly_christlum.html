@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reiselust vergeht nicht</title>
+
+    <!-- Google Fonts: Dancing Script für verschnörkelten Titel -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+
+    <!-- Verlinkung zum externen Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            fetch("nav.html")
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById("nav-placeholder").innerHTML = html;
+                })
+                .catch(error => console.error("Fehler beim Laden der Navigation:", error));
+        });
+    </script>
+</head>
+<body>
+
+    <!-- ============================================================
+                         HEADER: Logo und Navigation
+    ============================================================ -->
+    <header>
+        <div class="logo">
+            <h1>Reiselust vergeht nicht</h1> <!-- Titel mit verschnörkelter Schrift -->
+        </div>
+        
+        <div id="nav-placeholder"></div> <!-- Hier wird die Navigation eingefügt -->
+    </header>
+
+    <!-- ============================================================
+                         HERO-BEREICH: Hike&Fly Abenteuer
+    ============================================================ -->
+    <section class="hero">
+        <h2>Wallberg – Unser Hike&Fly Abenteuer</h2>
+        <p>Erlebe die unvergessliche Wanderung und den Paragliding-Flug auf den Wallberg!</p>
+    </section>
+
+    <main>
+
+            <!-- ============================================================
+                         INHALTSVERZEICHNIS
+    ============================================================ -->
+
+
+        <nav id="table-of-contents">
+            <h3>Inhaltsverzeichnis</h3>
+            <ul id="toc-list"></ul>
+        </nav>
+
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const tocList = document.getElementById("toc-list");
+                const headings = document.querySelectorAll("main h2");
+        
+                headings.forEach((heading) => {
+                    const id = heading.id || heading.textContent.trim().toLowerCase().replace(/\s+/g, "-");
+                    heading.id = id;  // Falls die Überschrift keine ID hat, wird eine generiert.
+        
+                    const listItem = document.createElement("li");
+                    const link = document.createElement("a");
+                    link.href = `#${id}`;
+                    link.textContent = heading.textContent;
+                    link.addEventListener("click", function (e) {
+                        e.preventDefault();
+                        document.getElementById(id).scrollIntoView({ behavior: "smooth", block: "start" });
+                    });
+        
+                    listItem.appendChild(link);
+                    tocList.appendChild(listItem);
+                });
+            });
+        </script>
+    
+        <!-- ============================================================
+                         SEKTION: Bild vor Blogbeitragsbeginn
+        ============================================================ -->
+
+
+        https://www.paraglidingclub-achenkirch.at/fluggebiet
+
+        
+        <section id="blogbeitrag-wallberg">
+            <img src="images/Wallberg/wallberg1.jpg" alt="wallberg" 
+                 style="width: 90%; max-width: 800px; display: block; margin: 0 auto 20px; border-radius: 8px; box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.15);">
+
+    <p> Der Wallberg (1.722 m) ist eines der bekanntesten und beliebtesten Paragliding-Spots in Bayern. Mit seiner traumhaften Kulisse über dem Tegernsee, den zuverlässigen Thermiken und der guten Infrastruktur bietet er ideale Bedingungen für Gleitschirmflieger – sowohl für Anfänger als auch für erfahrene Piloten.</p>
+       
+        <!-- ============================================================
+                         SEKTION: Anfahrt zum Wallberg
+        ============================================================ -->
+        <section id="anfahrt">
+            <h2 style="text-align: center;">Anfahrt zum Wallberg</h2>
+        
+            <h3 style="text-align: left; padding-left: 20px;">🚗 Anreise mit dem Auto</h3>
+            <ul style="text-align: left; padding-left: 40px;">
+                <li><strong>Adresse für das Navi:</strong> 📍 <a href="https://maps.app.goo.gl/AhYxWGadP6JaMrPx6" target="_blank" rel="noopener noreferrer">Wallbergbahn</a>, Wallbergstraße 26, 83700 Rottach-Egern</li>
+                <li><strong>Anfahrt aus München:</strong>
+                    <ul>
+                        <li>Über die <strong>A8 Richtung Salzburg</strong> bis zur <strong>Ausfahrt Holzkirchen</strong></li>
+                        <li>Weiter über die <strong>B318 und B307</strong> bis nach <strong>Rottach-Egern</strong></li>
+                        <li>Ab Rottach-Egern der <strong>Wallbergstraße</strong> folgen bis zur <strong>Talstation der Wallbergbahn</strong></li>
+                        <li><strong>Fahrzeit:</strong> ca. <strong>1 Stunde 15 Minuten</strong> (je nach Verkehr)</li>
+                    </ul>
+
+                    <iframe width="600" height="450" style="Border:0" Loading="lazy"allowfullscreen src="https://www.google.com/maps/embed/v1/directions?origin=hauptbahnhof%20m%C3%BCnchen&destination=wallbergbahn&key=AIzaSyBtsWx19WgSpwTjQHnLQaoWo3U4pq-SHTo"></iframe>
+
+                </li>
+                <li><strong>Parkmöglichkeiten:</strong>
+                    <ul>
+                        <li>Großer <strong>Parkplatz direkt an der Talstation</strong> der Wallbergbahn</li>
+                        <li><strong>Tagesgebühr:</strong> ca. <strong>5–7 €</strong></li>
+                        <li>Es besteht die Möglichkeit, die Parkgebühr erstattet zu bekommen, sofern an der Kasse ein Gondelticket erworben wird.</li>
+                        <li>Dies funktioniert auch beim Erwerb eines 10er oder 20er Tickets, wobei hierbei das Autonummernschild so lange an der Kasse hinterlegt wird, bis das Ticketguthaben aufgebraucht ist. </li>
+                        <li>Alternativ gibt es ein paar vereinzelte Parkplätze am Landeplatz an der Straße, die zur Gondel führt.</li>
+                    </ul>
+                </li>
+
+                <iframe width="600" height="450" style="Border:0" Loading="lazy"allowfullscreen src="https://www.google.com/maps/embed/v1/place?q=wallbergbahn&key=AIzaSyBtsWx19WgSpwTjQHnLQaoWo3U4pq-SHTo"></iframe>
+
+            </ul>
+        
+            <h3 style="text-align: left; padding-left: 20px;">🚆 Anreise mit öffentlichen Verkehrsmitteln</h3>
+            <ul style="text-align: left; padding-left: 40px;">
+                <li><strong>Von München mit der Bahn:</strong>
+                    <ul>
+                        <li>1️⃣ <strong>Bayerische Regiobahn (BRB)</strong> von <strong>München Hbf nach Tegernsee</strong> (ca. <strong>1 Stunde</strong>)</li>
+                        <li>2️⃣ <strong>Bus Linie 9560</strong> von <strong>Tegernsee Bahnhof nach Rottach-Egern, Wallbergbahn</strong> (ca. <strong>15 Minuten</strong>)</li>
+                        
+                    </ul>
+                </li>
+                <li><strong>Von anderen Städten:</strong>
+                    <ul>
+                        <li>Züge aus <strong>Richtung Salzburg oder Innsbruck</strong> fahren über <strong>München Hbf</strong>, von dort weiter mit der BRB zum Tegernsee.</li>
+                    </ul>
+                </li>
+            </ul>
+        
+        </section>
+
+<!-- ============================================================
+                         SEKTION: Wanderung auf den Wallberg
+============================================================ -->
+<section id="wanderung">
+    <h2>Die Wanderung auf den Wallberg</h2>
+    <p style="text-align: justify;">Die Wanderung auf den Wallberg (1.722 m) führt von der Talstation der Wallbergbahn über die Wallbergmoosalm in ca. 2–3 Stunden auf den Gipfel und bietet einen atemberaubenden Blick auf den Tegernsee und die Bayerischen Alpen. Der einfache Anstieg verläuft über breite Forstwege und Almwiesen, bevor er in einen steileren Pfad übergeht, und kann mit einer Einkehr am Gipfel kombiniert werden.</p>
+    
+    <p style="text-align: justify;"></p>
+
+    <ul style="text-align: left; padding-left: 20px;">
+        <li><strong>Ausgangspunkt:</strong> <a href="https://maps.app.goo.gl/WWnjEDPsjgtdG2mt5" target="_blank" rel="noopener noreferrer">Talstation</a> der Wallbergbahn (Rottach-Egern, 792 m)</li>
+        <li><strong>Anzahl Höhenmeter:</strong> 850 hm</li>
+        <li><strong>Länge:</strong> 6km</li>
+
+        <li><strong>Wegbeschreibung:</strong></li>
+    
+        <li><strong>1️⃣ Start an der Wallbergbahn (Talstation, 792 m):</strong>
+            <ul>
+                <li>Weg beginnt rechts neben der Talstation auf einer breiten Schotterstraße.</li>
+                <li>Anfangs führt der Weg durch schattigen <strong>Mischwald</strong>.</li>
+            </ul>
+        </li>
+        <li><strong>2️⃣ Aufstieg zur Wallbergmoosalm (1.117 m) – ca. 45 Min:</strong>
+            <ul>
+                <li>Nach ca. 2 km erreichst du die <strong>Wallbergmoosalm</strong>.</li>
+                <li>Perfekt für eine kurze Pause, bevor es steiler wird.</li>
+            </ul>
+        </li>
+        <li><strong>3️⃣ Weiter auf den Wallberg (1.722 m) – ca. 1h15min Std:</strong>
+            <ul>
+                <li>Der Weg wird schmaler und führt in Serpentinen über Almwiesen.</li>
+                <li>Am <strong>Wallbergsattel</strong> geht es in wenigen Minuten zum Gipfelkreuz.</li>
+            </ul>
+        </li>
+        <li><strong>Wegbeschreibung im Detail:</strong> siehe <a href="https://www.bergtour-online.de/bergtouren/bergwanderungen/leicht/wallberg/" target="_blank" rel="noopener noreferrer">hier</a></li>
+        <li><strong>Tipp:</strong>Sollte man mal spät dran sein aber möchte dennoch zu Fuß gehen (z.B. nach Feierabend), hat man die Möglichkeit, das Auto an der Wallbergmoosalm zu parken, von dort aus zum Startplatz zu wandern, und das Auto dann nach erfolgreichem Flug wieder zu holen.</li>  
+    </ul>
+
+    <!-- Karussell für Bilder -->
+    <div class="carousel-container">
+        <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+        <div class="carousel">
+            <img src="images/Wallberg/wallberg7.jpg" alt="Wallberg" class="carousel-img">
+            <img src="images/Wallberg/wallberg8.jpg" alt="Wallberg" class="carousel-img">
+            <img src="images/Wallberg/wallberg6.jpg" alt="Wallberg" class="carousel-img">
+            <img src="images/Wallberg/wallberg13.jpg" alt="Wallberg" class="carousel-img">
+            <img src="images/Wallberg/wallberg3.jpg" alt="Wallberg" class="carousel-img">
+            <img src="images/Wallberg/wallberg9.jpg" alt="Wallberg" class="carousel-img">
+            <img src="images/Wallberg/wallberg12.jpg" alt="Wallberg" class="carousel-img">
+        </div>
+        <button class="next" onclick="moveSlide(1)">&#10095;</button>
+    </div>
+</section>
+
+<style>
+    /* ============================================================
+    STIL FÜR DAS KARUSSELL
+    ============================================================ */
+    /* Container für das Karussell */
+    .carousel-container {
+        position: relative;
+        width: 100%;
+        max-width: 800px;
+        margin: 0 auto;
+        overflow: hidden;
+    }
+
+    .carousel {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+    }
+
+    .carousel-img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+        box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.15);
+        object-fit: cover;
+    }
+
+    button {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+        font-size: 24px;
+        border-radius: 50%;
+        z-index: 10;
+    }
+
+    button:hover {
+        background-color: rgba(0, 0, 0, 0.7);
+    }
+
+    .prev {
+        left: 10px;
+    }
+
+    .next {
+        right: 10px;
+    }
+</style>
+
+<script>
+    // Indizes für die Bilder im Karussell
+    let currentIndex = 0;
+
+    function moveSlide(step) {
+        const slides = document.querySelectorAll('.carousel-img');
+        const totalSlides = slides.length;
+
+        // Berechnung des neuen Indexes
+        currentIndex += step;
+
+        if (currentIndex < 0) {
+            currentIndex = totalSlides - 1;
+        }
+        if (currentIndex >= totalSlides) {
+            currentIndex = 0;
+        }
+
+        // Das Karussell verschieben
+        const carousel = document.querySelector('.carousel');
+        carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
+</script>
+
+<!-- ============================================================
+                         SEKTION: Startplatz 1 für das Paragliding
+============================================================ -->
+
+<section id="startplatz">
+    <h2>Startplatz</h2>
+
+    <p style="text-align: justify;">Der Wallberg bietet geeignete Startplätze bei West- und Nordwind. </p>
+    <p style="text-align: justify;"></p>
+    
+    <h4 style="text-align: left; padding-left: 20px; font-size: 1.2em;">Startplatz 1: Kircherl</h4>
+    <ul style="text-align: left; padding-left: 20px;">
+        <li><strong>Windausrichtung:</strong> N-NW </li>
+        <li><strong>Schwierigkeit:</strong> leicht-mittel</li>
+        <li><strong>Höhe:</strong> 1600 Meter</li>
+        <li><strong>Höhenmeter:</strong> 850 Meter</li>
+        <li><strong>Koordinaten:</strong> <a href="https://maps.app.goo.gl/YqgwNQ1oY2ZkJH5Z8" target="_blank" rel="noopener noreferrer">Startplatz</a></li>
+        <li><strong>Einkehrmöglichkeit:</strong> <a href="https://maps.app.goo.gl/zLsZcsp6tm49782p8" target="_blank" rel="noopener noreferrer">Panoramarestaurant Wallberg </a></li>
+        <li><strong>Windstation:</strong> <a href="https://wetterstationen.meteomedia.de/?map=Bayern&station=109760" target="_blank" rel="noopener noreferrer">hier</a></li>
+        <li><strong>Webcam:</strong> <a href="https://www.bergfex.de/wallberg-tegernseertal/webcams/c1765/" target="_blank" rel="noopener noreferrer">hier</a> und <a href="https://www.foto-webcam.org/webcam/wallberg/" target="_blank" rel="noopener noreferrer">hier</a></li>
+        <li><strong>Lage:</strong> Vom Ausstieg der Bergstation erreicht man den Startplatz Kircherl in etwa zwei Minuten zu Fuß. Er befindet sich leicht unterhalb der kleinen Kapelle, direkt unterhalb des Wanderwegs. Der Startplatz selbst ist eine breite, gleichmäßig geneigte Waldschneise, die sowohl links und rechts als auch am Ende durch Bäume begrenzt ist. Achte beim Starten darauf, dass du nicht zu nah an den Bäumen startest, um sicher herausfliegen zu können.</li>
+        <li><strong>Besonderheiten:</strong>Bei Westwindbedingungen befindet sich der Startplatz „Kircherl“ teilweise im Lee, wodurch das Starten nur eingeschränkt und mit Vorsicht möglich ist.
+            Falls die Wetterbedingungen einen sicheren Start nicht mehr zulassen, haben Piloten die Möglichkeit, kostenlos mit der Bahn ins Tal zu fahren – vorausgesetzt, sie können eine gültige Tagesmitgliedschaft oder ihren Clubausweis vorzeigen.</li>
+    </ul>
+    </body>
+    </html>
+       
+<!-- ============================================================
+                         SEKTION: Startplatz 2 für das Paragliding
+============================================================ -->
+
+    <h4 style="text-align: left; padding-left: 20px; font-size: 1.2em;">Startplatz 2: Hintermaueralm</h4>
+    <ul style="text-align: left; padding-left: 20px;">
+        <li><strong>Windausrichtung:</strong> N-NW-W</li>
+        <li><strong>Schwierigkeit:</strong> leicht-mittel</li>
+        <li><strong>Höhe:</strong> 1660 Meter</li>
+        <li><strong>Höhenmeter:</strong> 910 Meter</li>
+        <li><strong>Koordinaten:</strong> <a href="https://maps.app.goo.gl/gBTkPuhwZcQUvzdu7" target="_blank" rel="noopener noreferrer">Startplatz</a></li>
+        <li><strong>Lage:</strong> Vom Ausstieg der Bergstation sind es etwa 5 Minuten zu Fuß zum Startplatz Hintermaueralm. Der Weg führt über eine flache Almwiese, die nach Nordwesten hin zunehmend steiler wird und schließlich in eine Waldschneise übergeht.</li>
+        <li><strong>Besonderheiten:</strong> Achte unbedingt auf Fußgänger im Startbereich! Ein Start darf nur erfolgen, wenn der Weg im Startbereich frei von Fußgängern ist. Der Startplatz „Alm“ ist in der Zeit vom 15. Mai bis 31. August ab 13:00 Uhr gesperrt. Wenn die Thermik einsetzt, entstehen durch den nördlichen Grat des Westgipfels starke Turbulenzen, die auch bei stärkerem Nord- bis Nordwestwind problematisch sind. Bei nordöstlichem bis östlichem Wind befindet sich der Startplatz im Lee des Gipfels, was ebenfalls schwierige Bedingungen schaffen kann.   </li>
+    </ul>
+
+
+    <section id="blogbeitrag-wallberg">
+        <img src="images/Wallberg/wallberg2.jpg" alt="Wallberg" 
+             style="width: 80%; max-width: 1000px; display: block; margin: 0 auto 20px; border-radius: 8px; box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.15);">
+    </section>
+
+    <!-- ============================================================
+                         SEKTION: Startplatz 3 für das Paragliding
+============================================================ -->
+
+
+    <h4 style="text-align: left; padding-left: 20px; font-size: 1.2em;">Startplatz 3 - Hauptgipfel</h4>
+    <ul style="text-align: left; padding-left: 20px;">
+        <li><strong>Windausrichtung:</strong> NW</li>
+        <li><strong>Schwierigkeit:</strong> schwierig</li>
+        <li><strong>Koordinaten:</strong> <a href="https://maps.app.goo.gl/GNXhCYdzSyg39Qfw6" target="_blank" rel="noopener noreferrer">Startplatz</a></li>
+        <li><strong>Höhe:</strong> 1722 Meter</li>
+        <li><strong>Höhenmeter:</strong> 972 Meter</li>
+        <li><strong>Lage:</strong>  Das Startgelände am Gipfel ist relativ steil und kurz und befindet sich direkt neben dem Gipfelkreuz. Aufgrund des begrenzten Anlaufwegs ist ein sicherer Start nur bei starkem Wind aus Nord bis Nordwest möglich. Bei Windstille ist die Strecke nicht lang genug, um den Schirm sicher und kontrolliert aufzuziehen.</li>
+    </ul>
+</section>
+
+
+
+    <!-- ============================================================
+                         SEKTION: Startplatz 3 für das Paragliding
+============================================================ -->
+
+
+<h4 style="text-align: left; padding-left: 20px; font-size: 1.2em;">Startplatz 3 - Westgipfel</h4>
+<ul style="text-align: left; padding-left: 20px;">
+    <li><strong>Windausrichtung:</strong> NW-W-S</li>
+    <li><strong>Koordinaten:</strong> <a href="https://maps.app.goo.gl/D8s5z6cDUnE8Bb1s5" target="_blank" rel="noopener noreferrer">Startplatz</a></li>
+    <li><strong>Höhe:</strong> 1722 Meter</li>
+    <li><strong>Höhenmeter:</strong> 972 Meter</li>
+    <li><strong>Lage:</strong> Drei Rampen für Drachen, Startrichtungen Süd, West und Nordwest</li>
+</ul>
+</section>
+
+<!-- ============================================================
+                SEKTION: Landeplatz für das Paragliding
+============================================================ -->
+<section id="landeplatz">
+    <h2>Landeplatz</h2>
+    <p style="text-align: justify;">Der Landeplatz am Wallberg befindet sich in Rottach-Egern am Tegernsee, in unmittelbarer Nähe zum Wallberghaus und der Talstation der Wallbergbahn. Der Landeplatz ist weitläufig und gut präpariert, mit einer großzügigen Fläche, die den Gleitschirmfliegern ausreichend Platz für eine sichere Landung bietet.</p>
+
+    <h4 style="text-align: left; padding-left: 20px; font-size: 1.2em;">Landeplatz</h4>
+    <ul style="text-align: left; padding-left: 20px;">
+        <li><strong>Schwierigkeit:</strong> leicht</li>
+        <li><strong>Höhe:</strong> 750 m </li>
+        <li><strong>Koordinaten:</strong> <a href="https://maps.app.goo.gl/hQVNXe9B31NTtdXN6" target="_blank" rel="noopener noreferrer">Landeplatz Wallberg</a></li>
+        <li><strong>Landegebühr:</strong> 4€ im Rahmen der Tagesmitgliedschaft</li>
+        <li><strong>Landevolte:</strong> Es wird eine Linksvolte geflogen. Die Landevolte kann der <a href="https://fliegerclubtegernsee.de/flugbetriebsordnung/" target="_blank" rel="noopener noreferrer">Flugbetriebsordnung</a> entnommen werden.</li>
+        <li><strong>Lage:</strong>Der Landeplatz befindet sich ca. 3-5min Gehminuten von der Talstation.</li>
+    </ul>
+
+
+    
+
+<!-- ============================================================
+                         SEKTION: Fluggebiet
+============================================================ -->
+<section id="fluggebiet">
+    <h2>Fluggebiet</h2>
+    <p style="text-align: justify;"></p>
+
+    <h3 style="text-align: left; padding-left: 20px;"> Gleitflug zum Tegernsee (Einsteiger-Route)</h3>
+    <p style="text-align: justify; padding-left: 20px;">
+        <ul style="text-align: left; padding-left: 20px;">
+            <li><strong>Flugrichtung:</strong> Direkt nach Norden über den Tegernsee</li>
+            <li><strong>Schwierigkeit:</strong> Einfach – ideal für Anfänger</li>
+            <li><strong>Flugdauer:</strong> Ca. 10–15 Minuten (je nach Wind & Gleitzahl)</li>
+        
+        </ul>
+    </p>    
+    <section id="streckenoptionen">
+      
+        <h3 style="text-align: left; padding-left: 20px;">Streckenoption 1 : Schloss Wallberg</h3>
+        <p style="text-align: justify; padding-left: 20px;">
+            <ul style="text-align: left; padding-left: 20px;">
+                <li><strong>Ziel:</strong> Das Schloss Wallberg ist ein markanter Punkt in der Nähe des Wallbergs und eignet sich hervorragend für einen flachen, entspannten Flug.</li>
+                <li><strong>Routenführung:</strong> Vom Wallberg-Gipfel fliegt man in nordwestlicher Richtung und nutzt die Thermik, um über die Hügel des Tegernseer Tales zu gelangen. Der Flug ist relativ flach und eignet sich besonders für Piloten, die nicht zu hohe Höhen suchen und lieber unterhalb des Wallbergs bleiben.</li>
+                <li><strong>Schwierigkeit:</strong> Einfach – ideal für Anfänger</li>
+            </ul>
+        </p>  
+
+        <h3 style="text-align: left; padding-left: 20px;">Streckenoption 2: Baumgartenschneid</h3>
+        <p style="text-align: justify; padding-left: 20px;">
+            <ul style="text-align: left; padding-left: 20px;">
+                <li><strong>Flugrichtung: </strong> Südost bis Ost</li>
+                <li><strong>Routenführung:</strong> Falls Thermik gut ist: Höhe aufbauen für eine Weiterführung nach Spitzingsee oder Schliersee.
+                    Falls keine Thermik: Direkter Gleitflug Richtung Tegernsee oder sichere Landewiese
+                     </li>
+                <li><strong>Schwierigkeit:</strong> Einfach – ideal für Anfänger</li>
+            </ul>
+        </p>  
+
+        <h3 style="text-align: left; padding-left: 20px;">Streckenflug Richtung Osten</h3> 
+    
+        <h3 style="text-align: left; padding-left: 20px;">Streckenoption 3: Wallberg – Bodenschneid – Brecherspitz – Jägerkamp</h3>
+
+        <p style="text-align: justify; padding-left: 20px;"><strong> Wallberg zum Bodenschneid (1.623 m)</strong></p>
+        <p style="text-align: justify; padding-left: 20px;">
+            <ul style="text-align: left; padding-left: 20px;">
+                <li><strong>Start:</strong> Der Flug beginnt am Wallberg, einem beliebten Startpunkt mit herrlicher Aussicht.</li>
+                <li><strong>Route:</strong> Direkt nach dem Start fliegen Piloten in westlicher Richtung entlang der Kette, die sich zum Bodenschneid hinzieht. Diese Strecke führt durch hügeliges Terrain und Gebirgslagen, die gute Thermikbedingungen bieten können, vor allem an warmen Nachmittagen.</li>
+                <li><strong>Schwierigkeit:</strong> Mittel – Die Strecke bietet abwechslungsreiche Thermik und teils steilere Hänge, aber ist gut machbar bei passenden Bedingungen.</li>
+            </ul>
+        </p>
+        <p style="text-align: justify; padding-left: 20px;"><strong> Bodenschneid zur Brecherspitz (1.620 m)</strong></p>
+
+        <p style="text-align: justify; padding-left: 20px;">
+            <ul style="text-align: left; padding-left: 20px;">
+                <li><strong>Route:</strong> Vom Bodenschneid aus fliegen Piloten weiter in südlicher Richtung zur Brecherspitz, einem weiteren markanten Gipfel. Die Passage durch das Tal und der Übergang von einem Gipfel zum nächsten können Turbulenzen mit sich bringen.</li>
+                <li><strong>Schwierigkeit:</strong> Mittel bis anspruchsvoll – Die Strecke führt über felsiges Terrain, und es können Turbulenzen auftreten, besonders bei stärkerem Wind.</li>
+            </ul>
+        </p>
+    
+        <p style="text-align: justify; padding-left: 20px;"><strong> Brecherspitz zum Jägerkamp (1.858 m)</strong></p>
+        <p style="text-align: justify; padding-left: 20px;">
+            <ul style="text-align: left; padding-left: 20px;">
+                <li><strong>Route:</strong> Vom Brecherspitz geht es weiter in westlicher Richtung zum Jägerkamp, einem der höheren Gipfel in dieser Region. Piloten müssen die Thermik optimal nutzen, um Höhe zu gewinnen, da der Übergang zwischen den Gipfeln schwieriger sein kann.</li>
+                <li><strong>Schwierigkeit:</strong> Anspruchsvoll – Der Jägerkamp erfordert präzise Flugtechnik und eine gute Einschätzung der Thermik und Windverhältnisse.</li>
+            </ul>
+        </p>
+
+        <p style="text-align: justify; padding-left: 20px;"><strong> Weiterflug nach Kössen</strong></p>
+        <p style="text-align: justify; padding-left: 20px;"> Die Strecke kann vom Jägerkamp weiter verlängert werden bis nach Kössen, eine genaue Streckeninformation hierzu findet sich <a href="https://fliegerclubtegernsee.de/wp-content/uploads/2013/12/DHV-Info-176-Vom-Wallberg-nach-K%C3%B6ssen.pdf" target="_blank" rel="noopener noreferrer">hier</a>.</p>
+
+
+        <h3 style="text-align: left; padding-left: 20px;">Streckenoption 4: Wallberg – Wendelstein oder Bayrischzell</h3>
+        <p style="text-align: justify; padding-left: 20px;">
+            <ul style="text-align: left; padding-left: 20px;">
+                <li><strong>Routenführung:</strong> Nach Süden Richtung Rotwandgebiet fliegen. Über den Spitzingsee hinweg Richtung Wendelstein. Eventuell Einstieg in die Thermik bei Brannenburg oder weiter nach Bayrischzell</li>
+                <li><strong>Landeplatz:</strong> Fischbachau oder Bayrischzell, je nach Wind- und Thermikverhältnissenn.</li>
+                <li><strong>Flugdauer:</strong> 1,5–3 Stunden</li>
+                <li><strong>Schwierigkeit:</strong> Anspruchsvoll, da Talquerungen nötig sind</li>
+            </ul>
+        </p>
+        <h3 style="text-align: left; padding-left: 20px;">Streckenflug Richtung Westen</h3> 
+
+        <h3 style="text-align: left; padding-left: 20px;">Streckenoption 5: Wallberg – Brauneck</h3>
+        <p style="text-align: justify; padding-left: 20px;">
+            <ul style="text-align: left; padding-left: 20px;">
+                <li><strong>Flugrichtung:</strong> Nach dem Start fliegen Piloten in südwestlicher Richtung, um den ersten Übergang in das Tal zu schaffen und Richtung Brauneck zu fliegen.</li>
+                <li><strong>Überquerung des Isartals:</strong> Die erste Herausforderung auf der Strecke ist die Überquerung des Isartals, das in der Mitte des Fluges liegt. Hier müssen Piloten darauf achten, ihre Thermik optimal zu nutzen, um die Höhen zu halten und den Übergang zum Brauneck zu schaffen.</li>
+                <li><strong>Routenführung:</strong> Nach der Überquerung des Isartals folgt der Flug in Richtung Brauneck, einem weiteren markanten Gipfel, der bei guten Bedingungen erreichbar ist.</li>
+            
+            </ul>
+        </p>
+
+        <p style="text-align: justify; padding-left: 20px;"> Eine genaue Streckeninformation wird seitens des Tegernsees Vereins <a href="https://fliegerclubtegernsee.de/streckenflug-richtung-westen/" target="_blank" rel="noopener noreferrer">hier</a> zur Verfügung gestellt.</p>
+
+
+        <h3 style="text-align: left; padding-left: 20px;">Streckenoption 6: Wallberg – Sylvensteinsee oder Karwendel</h3>
+        <p style="text-align: justify; padding-left: 20px;">
+            <ul style="text-align: left; padding-left: 20px;">
+                <li><strong>Routenführung:</strong> Nach dem Start in die Thermik am Setzberg einsteigen. Dann Richtung Isartal – Lenggries – Brauneck fliegen. Mit passender Thermik weiter zum Sylvensteinsee oder ins Karwendelgebirge </li>
+                <li><strong>Landeplatz:</strong> Brauneck (Lenggries), wenn du dort einen neuen Einstieg versuchst. </li>
+                <li><strong>Flugdauer:</strong> 1–3 Stunden, je nach Bedingungen</li>
+                <li><strong>Schwierigkeit:</strong> Fortgeschritten, da gute Thermikkenntnisse nötig sind</li>
+            </ul>
+        </p>   
+    
+    </section>
+    
+
+    <!-- Bilder mittig zentrieren -->
+    <div style="display: flex; justify-content: center; gap: 20px; text-align: center;">
+        <img src="images/Wallberg/wallberg11.jpg" alt="Flugbild 1" class="gallery-img" style="max-width: 60%; height: auto;">
+        <img src="images/Wallberg/wallberg14.jpg" alt="Flugbild 2" class="gallery-img" style="max-width: 60%; height: auto;">
+        <img src="images/Wallberg/wallberg10.jpg" alt="Flugbild 2" class="gallery-img" style="max-width: 60%; height: auto;">
+    </div>
+
+</section>
+
+
+<!-- ============================================================
+                         SEKTION: Gondel
+============================================================ -->
+<section id="gondel">
+    <h2>Gondel</h2>
+    <p style="text-align: justify;"></p>
+
+<h3 style="text-align: left; padding-left: 20px;">🚠 Mit der Wallbergbahn zur Bergstation (1.620 m):</h3>
+
+<ul style="text-align: left; padding-left: 40px;">
+    <li><strong>Fahrzeit:</strong> ca. <strong>10-15 Minuten</strong></li>
+    <li><strong>Betriebszeiten:</strong> Je nach Saison (meist <strong>9:00–16:30 Uhr</strong>)</li>
+    <li><strong>Preise:</strong> 
+        <ul>
+            <li>Einzelticket: 15€</li>
+            <li>10er Ticket: 125€</li>
+            <li>20er Ticket: 245€</li>
+        </ul>
+    </li>
+    <li><strong>Infos unter:</strong> <a href="https://www.wallbergbahn.de/de/berg-talfahrten.html" target="_blank" rel="noopener noreferrer">hier</a></li>
+    <li><strong>Tipp:</strong> Das Ticket der Wallbergbahn kann ebenfalls am Brauneck eingesetzt werden</li>
+</ul>
+
+</section>
+
+
+    </main>
+
+    <!-- ============================================================
+                         FOOTER: Urheberrecht und Fußzeile
+    ============================================================ -->
+    <footer>
+        <p>&copy; 2025 Reiselust vergeht nicht - Alle Rechte vorbehalten</p>
+    </footer>
+
+</body>
+</html>

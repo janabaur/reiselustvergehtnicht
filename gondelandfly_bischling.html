@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reiselust vergeht nicht</title>
+
+    <!-- Google Fonts: Dancing Script für verschnörkelten Titel -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+
+    <!-- Verlinkung zum externen Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            fetch("nav.html")
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById("nav-placeholder").innerHTML = html;
+                })
+                .catch(error => console.error("Fehler beim Laden der Navigation:", error));
+        });
+    </script>
+</head>
+<body>
+
+    <!-- ============================================================
+                         HEADER: Logo und Navigation
+    ============================================================ -->
+    <header>
+        <div class="logo">
+            <h1>Reiselust vergeht nicht</h1> <!-- Titel mit verschnörkelter Schrift -->
+        </div>
+        
+        <div id="nav-placeholder"></div> <!-- Hier wird die Navigation eingefügt -->
+    </header>
+
+    <!-- ============================================================
+                         HERO-BEREICH: Gondel&Fly Abenteuer
+    ============================================================ -->
+    <section class="hero">
+        <h2>Gondel & Fly - Bischling</h2>
+        <p>Erlebe das ultimative Paragliding-Erlebnis mit Gondelaufstieg
+
+        </p>
+    </section>
+
+    <main>
+
+            <!-- ============================================================
+                         INHALTSVERZEICHNIS
+    ============================================================ -->
+
+
+        <nav id="table-of-contents">
+            <h3>Inhaltsverzeichnis</h3>
+            <ul id="toc-list"></ul>
+        </nav>
+
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const tocList = document.getElementById("toc-list");
+                const headings = document.querySelectorAll("main h2");
+        
+                headings.forEach((heading) => {
+                    const id = heading.id || heading.textContent.trim().toLowerCase().replace(/\s+/g, "-");
+                    heading.id = id;  // Falls die Überschrift keine ID hat, wird eine generiert.
+        
+                    const listItem = document.createElement("li");
+                    const link = document.createElement("a");
+                    link.href = `#${id}`;
+                    link.textContent = heading.textContent;
+                    link.addEventListener("click", function (e) {
+                        e.preventDefault();
+                        document.getElementById(id).scrollIntoView({ behavior: "smooth", block: "start" });
+                    });
+        
+                    listItem.appendChild(link);
+                    tocList.appendChild(listItem);
+                });
+            });
+        </script>
+    
+        <!-- ============================================================
+                         SEKTION: Bild vor Blogbeitragsbeginn
+        ============================================================ -->
+
+        <section id="blogbeitrag-blomberg">
+            <img src="images/Bischling/bischling7.jpg" alt="Bischling" 
+                 style="width: 90%; max-width: 800px; display: block; margin: 0 auto 20px; border-radius: 8px; box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.15);">
+
+        <!-- ============================================================
+                         SEKTION: Anfahrt auf den Bischling
+        ============================================================ -->
+        <section id="anfahrt">
+            <h2>Anfahrt zum Bischling</h2>
+    
+            <ul style="text-align: left; padding-left: 20px;">
+                <li><strong> Per Auto:</strong> Von München: 180km, 2h-2:30h Fahrzeit</li>
+                <p>Von München aus fährst du über die A8 Richtung Salzburg und wechselst dann auf die A10 Richtung Villach. Nimm die Ausfahrt Pfarrwerfen/Werfen und folge der Beschilderung nach Werfenweng. Die Talstation der Gondelbahn Ikarus befindet sich am Ortsrand und ist gut ausgeschildert.</p>
+                
+                <li><strong>Parkmöglichkeit: </strong><a href="https://maps.app.goo.gl/Q1DQu17TX8yJuVaS7" target="_blank" rel="noopener noreferrer">Parkplatz Gondel</a>, kostenlos</li>
+                
+                 
+                <li><strong> Per Zug:</strong> Von München: 3h Fahrzeit</li>
+                <p>Nimm einen Zug vom Münchner Hauptbahnhof nach Salzburg. In Salzburg steigst du um in eine S-Bahn Richtung Pfarrwerfen. Ab dem Bahnhof Pfarrwerfen kannst du das W³-Shuttle nehmen, das dich direkt nach Werfenweng bringt.
+                    Die aktuellen Fahrzeiten und Infos zum Shuttle findest du <a href="https://www.werfenweng.eu/service/anreise/transfer-shuttle/" target="_blank" rel="noopener noreferrer">auf der offiziellen Werfenweng-Website</a>. Der Shuttleservice wird kostenlos angeboten, sofern du in einem Werfenweng Card Partnerbetrieb übernachtest. </p>
+
+
+                
+            </ul>
+        </section>
+
+<!-- ============================================================
+                         SEKTION: Startplatz 1 für das Paragliding
+============================================================ -->
+
+<section id="startplatz">
+    <h2>Startplätze</h2>
+    <p style="text-align: justify;">Der Hauptstartplatz befindet sich auf der Bischlinghöhe in 1.834 Metern Höhe, nur wenige Meter von der Bergstation der Gondelbahn entfernt. Die flache Wiese bietet ausreichend Platz und ermöglicht Starts bei Windrichtungen von West bis Nordwest.</p>
+    
+    <h4 style="text-align: left; padding-left: 20px; font-size: 1.2em;">Startplatz 1: Gipfelkreuz</h4>
+    <ul style="text-align: left; padding-left: 20px;">
+        <li><strong>Windausrichtung:</strong> W</li>
+        <li><strong>Schwierigkeit:</strong> leicht</li>
+        <li><strong>Höhe:</strong> 1835 Meter</li>
+        <li><strong>Höhenmeter:</strong> 890 Meter</li>
+        <li><strong>Koordinaten:</strong> <a href="https://maps.app.goo.gl/nPByEnSrCRjWvZF16" target="_blank" rel="noopener noreferrer">Startplatz</a></li>
+        <li><strong>Einkehrmöglichkeit:</strong> <a href="https://maps.app.goo.gl/bNkasq4jkUKKUTkb8" target="_blank" rel="noopener noreferrer">Bischlinghöhe</a> am Gipfel</li>
+        <li><strong>Wetterstation:</strong> <a href="https://holfuy.com/de/weather/1862" target="_blank" rel="noopener noreferrer">hier</a></li>
+        <li><strong>Besonderheiten:</strong> Der Startplatz ist eine einfache Wiese und liegt direkt neben der Bergstation. Am Weststartplatz befindet sich ein "Hausbart", der leicht rechts vom Startplatz, oberhalb der Seilbahn, auftritt. Je nach Windrichtung kann sich dieser etwas über den Gipfel verlagern.</li>
+    </ul>
+
+    <section id="blogbeitrag-bischling">
+        <img src="images/Bischling/bischling1.png" alt="Bischling" 
+             style="width: 90%; max-width: 800px; display: block; margin: 0 auto 20px; border-radius: 8px; box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.15);">
+    
+             <section id="blogbeitrag-bischling">
+                <img src="images/Bischling/bischling2.png" alt="Bischling" 
+                     style="width: 90%; max-width: 800px; display: block; margin: 0 auto 20px; border-radius: 8px; box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.15);">
+      
+                     <!-- ============================================================
+                         SEKTION: Startplatz 2 für das Paragliding
+============================================================ -->
+
+    <h4 style="text-align: left; padding-left: 20px; font-size: 1.2em;">Startplatz 2: Ost</h4>
+    <p style="text-align: justify;">Der Oststartplatz befindet sich etwa 90 Meter nördlich der Bergstation und ist geeignet bei Nordost- bis Südostwind.</p>
+    <ul style="text-align: left; padding-left: 20px;">
+        <li><strong>Windausrichtung:</strong> O</li>
+        <li><strong>Schwierigkeit:</strong> leicht</li>
+        <li><strong>Höhe:</strong> 1815 Meter</li>
+        <li><strong>Höhenmeter:</strong> 870 Meter</li>
+        <li><strong>Koordinaten:</strong> <a href="https://maps.app.goo.gl/BtwTMQn5tnghbXij8" target="_blank" rel="noopener noreferrer">Startplatz</a></li>
+        <li><strong>Besonderheiten:</strong> Der Oststartplatz wird vor allem gerne am Vormittag genutzt, um direkt früh aufzudrehen.
+                                            Die Ostkante wird dabei auch oft als Soaringkante benutzt, wobei man hierbei aufpassen sollte, dass man nicht zu tief sinkt, da man noch über den Grat drüber muss, um auf der anderen Seite zum Landeplatz zu gelangen.</li>
+    </ul>
+
+
+<!-- ============================================================
+                         SEKTION: Startplatz 3 für das Paragliding
+============================================================ -->
+
+    <h4 style="text-align: left; padding-left: 20px; font-size: 1.2em;">Startplatz 3: Südgrat</h4>
+    <p style="text-align: justify;">Der Südstartplatz ist im Sommer verfügbar und bietet Platz für drei Gleitschirme.</p>
+    <ul style="text-align: left; padding-left: 20px;">
+        <li><strong>Windausrichtung:</strong> S</li>
+        <li><strong>Schwierigkeit:</strong> leicht</li>
+        <li><strong>Höhe:</strong> 1815 Meter</li>
+        <li><strong>Höhenmeter:</strong> 870 Meter</li>
+        <li><strong>Koordinaten:</strong> <a href="https://maps.app.goo.gl/hT12v7K7yoFES9keA" target="_blank" rel="noopener noreferrer">Startplatz</a></li>
+        <li><strong>Besonderheiten:</strong> Der Startplatz eignet sich nicht nur bei deutlichem Südwind, sondern auch wenn man bei passendem Wind den vielen Piloten am Hauptstartplatz ausweichen möchte. Man gelangt vom Startplatz direkt zur Südflanke</li>
+    </ul>
+
+
+<!-- ============================================================
+                SEKTION: Landeplatz für das Paragliding
+============================================================ -->
+<section id="landeplatz">
+    <h2>Landeplatz</h2>
+    <p style="text-align: justify;">Der offizielle Landeplatz liegt auf etwa 940 Metern Höhe, direkt an der Straße zur Talstation, nur etwa 400 Meter von der Bahn entfernt. Mit einer Fläche von über zwei Hektar bietet er ausreichend Platz für Gleitschirm- und Drachenpiloten. Nach der Landung kannst du bequem zu Fuß zur Talstation zurückkehren. </p>
+
+    <h4 style="text-align: left; padding-left: 20px; font-size: 1.2em;">Landeplatz</h4>
+    <ul style="text-align: left; padding-left: 20px;">
+        <li><strong>Schwierigkeit:</strong> leicht</li>
+        <li><strong>Koordinaten:</strong> <a href="https://maps.app.goo.gl/aXN7LWsHB5gNu5jv9" target="_blank" rel="noopener noreferrer">Landeplatz Blomberg</a></li>
+        <li><strong>Landegebühr:</strong> keine</li>
+        <li><strong>Einkehrmöglichkeit:</strong> <a href="https://maps.app.goo.gl/hrKxgjxKoLoDFu8m8" target="_blank" rel="noopener noreferrer">Barbarahof Werfenweng</a></li>
+        <li><strong>Besonderheiten:</strong> Die großzügige Landewiese befindet sich an der Nordostseite des Stallauer Weihers, direkt an der Zufahrt zum Campingplatz. Bei starkem Ostwind sollte die Landeeinteilung so geplant werden, dass man sicher hinter dem Campingplatz ankommt, da das Tal wie eine Düse wirkt. Der Anflug auf den Landeplatz ist oft unruhig und von Turbulenzen geprägt. Ein gut sichtbarer Windsack steht direkt an der Straße. Es wird empfohlen, möglichst in dessen Nähe zu landen, da die Straße dort etwas breiter ist.</li>
+        <li><strong>Markierung:</strong> Der Landeplatz befindet sich rechts neben dem Campingplatz.</li>
+    </ul>
+
+    <section id="blogbeitrag-bischling">
+        <img src="images/Bischling/bischling3.png" alt="Bischling" 
+             style="width: 90%; max-width: 800px; display: block; margin: 0 auto 20px; border-radius: 8px; box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.15);">
+    
+             <section id="blogbeitrag-bischling">
+                <img src="images/Bischling/bischling4.png" alt="Bischling" 
+                     style="width: 90%; max-width: 800px; display: block; margin: 0 auto 20px; border-radius: 8px; box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.15);">
+      
+<!-- ============================================================
+                         SEKTION: Fluggebiet
+============================================================ -->
+<section id="fluggebiet">
+    <h2>Fluggebiet</h2>
+    <p style="text-align: justify;">Der Bischling gehört zu den beliebtesten Flugbergen im Salzburger Land. Die geschützte Lage sorgt oft für optimale Wetterbedingungen, auch wenn es in anderen Regionen zu windig ist. Das Panorama ist atemberaubend: Vom Gosaukamm und der Bischofsmütze im Osten über den Großglockner im Süden bis zum Hochkönigmassiv und dem Hagengebirge im Westen. Diese beeindruckende Kulisse macht jeden Flug zu einem unvergesslichen Erlebnis. 
+    </p>
+
+
+    <!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bildergalerie Bischling</title>
+    <style>
+        /* Stile für die Galerie */
+        .gallery-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .gallery-row {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .gallery-img {
+            width: 48%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .gallery-img:hover {
+            transform: scale(1.1);
+        }
+
+        /* Responsive Anpassungen */
+        @media (max-width: 1024px) {
+            .gallery-img {
+                width: 80%; /* Größere Bilder auf Tablets */
+            }
+        }
+
+        @media (max-width: 600px) {
+            .gallery-img {
+                width: 100%; /* Ein Bild pro Zeile auf Smartphones */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Bildergalerie -->
+    <div class="gallery-container">
+        <div class="gallery-row">
+            <img src="images/Bischling/bischling6.jpg" alt="Flugbild 1" class="gallery-img">
+            <img src="images/Bischling/bischling7.jpg" alt="Flugbild 2" class="gallery-img">
+        </div>
+        <div class="gallery-row">
+            <img src="images/Bischling/bischling8.jpg" alt="Flugbild 3" class="gallery-img">
+            <img src="images/Bischling/bischling9.jpg" alt="Flugbild 4" class="gallery-img">
+        </div>
+        <div class="gallery-row">
+            <img src="images/Bischling/bischling10.jpg" alt="Flugbild 5" class="gallery-img">
+            <img src="images/Bischling/bischling11.jpg" alt="Flugbild 6" class="gallery-img">
+        </div>
+        <div class="gallery-row">
+            <img src="images/Bischling/bischling12.jpg" alt="Flugbild 7" class="gallery-img">
+            <img src="images/Bischling/bischling13.jpg" alt="Flugbild 8" class="gallery-img">
+        </div>
+        <div class="gallery-row">
+            <img src="images/Bischling/bischling14.jpg" alt="Flugbild 9" class="gallery-img">
+            <img src="images/Bischling/bischling15.jpg" alt="Flugbild 10" class="gallery-img">
+        </div>
+    </div>
+
+</body>
+</html>
+
+    
+
+
+</section>
+
+
+<!-- ============================================================
+                         SEKTION: Gondel
+============================================================ -->
+<section id="gondel">
+    <h2>Gondel</h2>
+    <p style="text-align: justify;">Die Gondelbahn Ikarus bringt dich von Anfang Mai bis Ende Oktober und von Dezember bis Saisonende direkt zum Startplatz, ohne Umsteigen. Die moderne 8er-Kabinenbahn ermöglicht einen komfortablen Aufstieg und verkürzt die Wartezeiten erheblich. Die Bergstation liegt in unmittelbarer Nähe zum Startplatz, sodass du nach der Auffahrt nur wenige Schritte bis zum Abheben benötigst.</p>
+    
+    
+    <ul style="text-align: left; padding-left: 20px;">
+        <li><strong>Gondel:</strong> <a href="https://maps.app.goo.gl/xA96pkJJrVzpZJBM8" target="_blank" rel="noopener noreferrer">Bergbahn Werfenweng</a></li>
+        <li><strong>Preise:</strong> Einzel-Bergfahrt: € 20,50
+
+            ab 11:45 Uhr: € 30,00
+            
+            bis 13:15 Uhr: € 30,00
+            
+            1 Tag: € 41,50
+            
+            2 Tage: € 81,00
+            
+            5er Block: € 93,00
+            
+            10er Block: € 180,00</li>
+
+    </ul>
+</section>
+
+<!-- ============================================================
+                         SEKTION: Hike & Fly
+============================================================ -->
+
+<section id="gondel">
+    <h2>Hike & Fly</h2>
+    <p style="text-align: justify;">Für alle, die das Abenteuer suchen, bietet der Bischling auch ideale Bedingungen für Hike&Fly-Touren. Eine beliebte Route führt von Werfenweng über gut markierte Wanderwege zur Bischlinghöhe. Der Aufstieg dauert je nach Kondition etwa zwei Stunden und belohnt dich mit einem unvergesslichen Flug zurück ins Tal. Bitte beachte dabei stets die aktuellen Wetterbedingungen und plane genügend Zeit für den Aufstieg ein.</p>
+    
+<p style="text-align: justify;">Der Aufstieg zum Startplatz für Hike & Fly dauert etwa 1,5 Stunden. Das freundliche Bahnpersonal bietet an, den Schirm für ein kleines Trinkgeld mit der Bahn nach oben zu transportieren, sodass man ohne zusätzliches Gewicht wandern kann.</p>
+<!-- ============================================================
+                         SEKTION: Camping
+============================================================ -->
+
+<section id="gondel">
+    <h2>Camping</h2>
+    <p style="text-align: justify;">Die Gondel, die dich zur Hochries bringt, ist die Hochriesbahn. Sie ermöglicht eine komfortable Auffahrt bis zum Gipfel, ideal für diejenigen, die nicht wandern möchten oder einfach nur die Aussicht genießen wollen.</p>
+    
+
+<p style="text-align: justify;">Der Parkplatz an der Gondel stellt einen perfekten Standort für Gleitschirmflieger dar. Es darf hier sowohl kostenlos geparkt, als auch übernachtet werden. Eine camperfreundliche Atmosphäre machen den Parkplatz besonders einladend.
+
+
+    <p style="text-align: justify;">Standort: <a href="https://maps.app.goo.gl/mD1ZxNAoJtFDBiz97" target="_blank" rel="noopener noreferrer">Campingplatz</a>
+
+
+    </main>
+
+    <!-- ============================================================
+                         FOOTER: Urheberrecht und Fußzeile
+    ============================================================ -->
+    <footer>
+        <p>&copy; 2025 Reiselust vergeht nicht - Alle Rechte vorbehalten</p>
+    </footer>
+
+</body>
+</html>

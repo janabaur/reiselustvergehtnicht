@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reiselust vergeht nicht</title>
+
+    <style>
+        /* Spezifischer Stil für den Absatz "Parkmöglichkeit" */
+        p.parkmoeglichkeit {
+            margin-bottom: 20px; /* Abstand nach unten in Pixeln */
+        }
+    </style>
+
+    <!-- Google Fonts: Dancing Script für verschnörkelten Titel -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+
+    <!-- Verlinkung zum externen Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            fetch("nav.html")
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById("nav-placeholder").innerHTML = html;
+                })
+                .catch(error => console.error("Fehler beim Laden der Navigation:", error));
+        });
+    </script>
+</head>
+<body>
+
+    <!-- ============================================================
+                         HEADER: Logo und Navigation
+    ============================================================ -->
+    <header>
+        <div class="logo">
+            <h1>Reiselust vergeht nicht</h1> <!-- Titel mit verschnörkelter Schrift -->
+        </div>
+        
+        <div id="nav-placeholder"></div> <!-- Hier wird die Navigation eingefügt -->
+    </header>
+
+    <!-- ============================================================
+                         HERO-BEREICH: Gondel&Fly Abenteuer
+    ============================================================ -->
+    <section class="hero">
+        <h2>Gondel & Fly - Brauneck</h2>
+        <p>Erlebe das ultimative Paragliding-Erlebnis mit Gondelaufstieg
+
+        </p>
+    </section>
+
+    <main>
+
+            <!-- ============================================================
+                         INHALTSVERZEICHNIS
+    ============================================================ -->
+
+
+        <nav id="table-of-contents">
+            <h3>Inhaltsverzeichnis</h3>
+            <ul id="toc-list"></ul>
+        </nav>
+
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const tocList = document.getElementById("toc-list");
+                const headings = document.querySelectorAll("main h2");
+        
+                headings.forEach((heading) => {
+                    const id = heading.id || heading.textContent.trim().toLowerCase().replace(/\s+/g, "-");
+                    heading.id = id;  // Falls die Überschrift keine ID hat, wird eine generiert.
+        
+                    const listItem = document.createElement("li");
+                    const link = document.createElement("a");
+                    link.href = `#${id}`;
+                    link.textContent = heading.textContent;
+                    link.addEventListener("click", function (e) {
+                        e.preventDefault();
+                        document.getElementById(id).scrollIntoView({ behavior: "smooth", block: "start" });
+                    });
+        
+                    listItem.appendChild(link);
+                    tocList.appendChild(listItem);
+                });
+            });
+        </script>
+    
+        <!-- ============================================================
+                         SEKTION: Bild vor Blogbeitragsbeginn
+        ============================================================ -->
+
+        <section id="blogbeitrag-brauneck">
+            <img src="images/Brauneck/brauneck1.jpg" alt="Bischling" 
+                 style="width: 90%; max-width: 800px; display: block; margin: 0 auto 20px; border-radius: 8px; box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.15);">
+
+        <p> Das Brauneck in Lenggries ist ein beliebtes Ziel für Gleitschirmflieger und bietet vielfältige Möglichkeiten für unvergessliche Flugerlebnisse. In diesem Blogbeitrag stellen wir dir die wichtigsten Informationen zu Anfahrt, Start- und Landeplätzen, dem Fluggebiet, der Gondelbahn sowie zu Hike&Fly-Möglichkeiten vor.</p>
+       
+        <!-- ============================================================
+                         SEKTION: Anfahrt zum Brauneck
+        ============================================================ -->
+        <section id="anfahrt">
+            <h2>Anfahrt zum Brauneck</h2>
+    
+            <ul style="text-align: left; padding-left: 20px;">
+                <li><strong> 🚗 Mit dem Auto:</strong> 
+                    <p>Aus <strong> Deutschland</strong>: Von München aus fährst du über die A8 Richtung Salzburg bis zur Ausfahrt Holzkirchen. Dann folgst du der B13 über Bad Tölz nach Lenggries und weiter zur Talstation der Brauneck-Bergbahn. Alternativ kannst du die A95 Richtung Garmisch-Partenkirchen bis zur Ausfahrt Sindelsdorf nehmen und über Bad Tölz nach Lenggries fahren. Fahrtzeit ca. 1h, ca. 70km</p>
+                    <p> <a href="https://maps.app.goo.gl/uXvLDJjgfnNADChk7" target="_blank" rel="noopener noreferrer">Hier</a> findest du die Route.</p>
+                    <p class="parkmoeglichkeit">
+                        <strong>Parkmöglichkeit:</strong> An der <a href="https://maps.app.goo.gl/efQXMi4H2aawQn9q7" target="_blank" rel="noopener noreferrer">Talstation</a> stehen ausreichend Parkplätze kostenfrei zur Verfügung.
+                    </p>
+
+                <li><strong> 🚆 Mit der Bahn:</strong>: 
+                    <p>Ab München Hauptbahnhof bringt dich die Bayerische Oberlandbahn (BOB) stündlich nach Lenggries. Den FahrplanVom Bahnhof Lenggries gelangst du mit RVO-Bussen zur Talstation der Brauneck-Bergbahn. Im Winter gelangst du mit dem kostenlosen Skibus vom Bahnhof Lenggries zur Talstation. Den Fahrplan findest du <a href="https://www.lenggries.de/_Resources/Persistent/8/8/f/0/88f06901b6c2672a61e33a6d06e6d950ddfb1ae9/399_Skibusfahrplan%202024-2025.pdf" target="_blank" rel="noopener noreferrer">hier</a> Diese Kombination aus Bahn und Bus ist eine umweltfreundliche Alternative zum Auto. Fahrtzeit ca. 1,5h</p>   
+               
+                    <iframe width="600" height="450" style="Border:0" Loading="lazy"allowfullscreen src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJ1cC-PaWQnUcRXwckIgkdVAA&key=AIzaSyBtsWx19WgSpwTjQHnLQaoWo3U4pq-SHTo"></iframe>
+            </ul>
+        </section>
+
+<!-- ============================================================
+                         SEKTION: Startplatz 1 für das Paragliding
+============================================================ -->
+
+<section id="startplatz">
+    <h2>Startplätze</h2>
+    <p style="text-align: justify;">Am Brauneck findest du mehrere Startplätze, die je nach Windrichtung genutzt werden können. In unmittelbarer Nähe der Bergstation der Brauneck-Kabinenbahn gibt es verschiedene Startmöglichkeiten. Je nach Windrichtung stehen dir Startplätze nach Norden, Süden und Osten zur Verfügung.</p>
+
+    
+    <h4 style="text-align: left; padding-left: 20px; font-size: 1.2em;">Startplatz 1: Gipfel Süd</h4>
+    <ul style="text-align: left; padding-left: 20px;">
+        <li><strong>Windausrichtung:</strong> S</li>
+        <li><strong>Schwierigkeit:</strong> leicht</li>
+        <li><strong>Höhe:</strong> 1545 Meter</li>
+        <li><strong>Höhenmeter:</strong> 855 Meter</li>
+        <li><strong>Koordinaten:</strong> <a href="https://maps.app.goo.gl/CsMZbyRohCFUDxSx6" target="_blank" rel="noopener noreferrer">Startplatz</a></li>
+        <li><strong>Einkehrmöglichkeit:</strong> <a href="https://maps.app.goo.gl/dcTKyfApa1yVrLRc9" target="_blank" rel="noopener noreferrer">Brauneck Gipfelhaus</a></li>
+        <li><strong>Windstation:</strong> <a href="https://holfuy.com/en/weather/1811" target="_blank" rel="noopener noreferrer">hier</a></li>
+        <li><strong>Lage:</strong> In unmittelbarer Nähe der Bergstation der Brauneck-Kabinenbahn beim Brauneck-Gipfel. Startplatz ist nach Süd-Südost ausgerichtet.</li>
+        <li><strong>Besonderheiten:</strong> Üblicherweise herrscht am Morgen Südwind vor, bevor er zur Mittagszeit auf Nord dreht. Das Brauneck gilt aufgrund seiner Südausrichtung als ein außergewöhnlicher Thermikberg. Er eignet sich deshalb für weite Flugstrecken.</li>
+    </ul>
+
+    
+    <section id="blogbeitrag-brauneck">
+        <img src="images/Brauneck/brauneck2.png" alt="Brauneck" 
+             style="width: 80%; max-width: 600px; display: block; margin: 0 auto 15px; border-radius: 8px; box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.15);">
+    
+        <img src="images/Brauneck/brauneck3.png" alt="Brauneck" 
+             style="width: 80%; max-width: 600px; display: block; margin: 0 auto 15px; border-radius: 8px; box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.15);">
+    
+        <img src="images/Brauneck/brauneck4.png" alt="Brauneck" 
+             style="width: 80%; max-width: 600px; display: block; margin: 0 auto 15px; border-radius: 8px; box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.15);">
+    
+        <iframe width="600" height="450" style="Border:0" Loading="lazy"allowfullscreen src="https://www.google.com/maps/embed/v1/place?q=47%C2%B039'48.5%22N%2011%C2%B031'25.1%22E&key=AIzaSyBtsWx19WgSpwTjQHnLQaoWo3U4pq-SHTo"></iframe>
+           
+    </section>
+
+
+<!-- ============================================================
+                         SEKTION: Startplatz 2 für das Paragliding
+============================================================ -->
+
+    <h4 style="text-align: left; padding-left: 20px; font-size: 1.2em;">Startplatz 3: Gipfel Nord</h4>
+    <ul style="text-align: left; padding-left: 20px;">
+        <li><strong>Windausrichtung:</strong> N</li>
+        <li><strong>Schwierigkeit:</strong> leicht</li>
+        <li><strong>Höhe:</strong> 1555 Meter</li>
+        <li><strong>Höhenmeter:</strong> 845 Meter</li>
+        <li><strong>Koordinaten:</strong> <a href="https://maps.app.goo.gl/kvLK9HvMTCa3CTgn6" target="_blank" rel="noopener noreferrer">Startplatz</a></li>
+        <li><strong>Lage:</strong> Geeignet für nördliche Windrichtungen. Auch dieser Startplatz ist bequem von der Bergstation aus erreichbar und befindet sich direkt gegenüber des Südstartplatzes.</li>
+        <li><strong>Beschreibung:</strong> Der Nordstartplatz eignet sich insbesondere am Nachmittag, wenn der Talwind sich durchgesetzt hat. Nach Start fliegt man meist nach rechts und wird an der Nordkante meist auf der Suche nach Thermik fündig.</li>
+
+    </ul>
+
+
+                         <!-- ============================================================
+                         SEKTION: Startplatz 3 für das Paragliding
+============================================================ -->
+
+<h4 style="text-align: left; padding-left: 20px; font-size: 1.2em;">Startplatz 2: Garland</h4>
+<ul style="text-align: left; padding-left: 20px;">
+    <li><strong>Windausrichtung:</strong> O / NO</li>
+    <li><strong>Schwierigkeit:</strong> leicht</li>
+    <li><strong>Höhe:</strong> 1515 Meter</li>
+    <li><strong>Höhenmeter:</strong> 805 Meter</li>
+    <li><strong>Koordinaten:</strong> <a href="https://maps.app.goo.gl/NZwTipUjSvSwN5nN8" target="_blank" rel="noopener noreferrer">Startplatz</a></li>
+    <li><strong>Windstation:</strong> <a href="https://holfuy.com/en/weather/1516" target="_blank" rel="noopener noreferrer">hier</a></li>
+    <li><strong>Lage:</strong> </li>
+    <li><strong>Beschreibung:</strong> Der Startplatz Garland ist nach Osten bis Nordosten ausgerichtet und ideal für überregionalen Ostwind. Besonders in der Übergangszeit wird er häufig genutzt, wenn das thermische Windsystem von Süd auf Nord wechselt. Vorsicht ist jedoch geboten, wenn der Nordwind bereits stärker wird, da direktes Fliegen nach links zu Leeturbulenzen führen kann. Daher erfordert der Garland eine sorgfältige Einschätzung der Windsituation. Nach dem Aussteigen aus der Gondel sollte man den Windsack dort prüfen, ebenso wie den Windsack am Umsetzer. Bei starkem Nordwind gilt: Kein Start vom Garland.
+                                    <p>Bei intensiveren Ostwindlagen empfiehlt es sich, den etwa 30-minütigen Fußmarsch zum Startplatz Umsetzer in Kauf zu nehmen, da dieser bei kräftigem Ostwind besser geeignet ist. </p></li>
+</ul>
+
+
+<!-- ============================================================
+                         SEKTION: Startplatz Umsetzer
+============================================================ -->
+
+<h4 style="text-align: left; padding-left: 20px; font-size: 1.2em;">Startplatz 4: Umsetzer (auch "Koteck" genannt)</h4>
+<ul style="text-align: left; padding-left: 20px;">
+    <li><strong>Windausrichtung:</strong> NO</li>
+    <li><strong>Schwierigkeit:</strong> mittel</li>
+    <li><strong>Höhe:</strong>  1550 Meter</li>
+    <li><strong>Höhenmeter:</strong> 840 Meter</li>
+    <li><strong>Koordinaten:</strong> <a href="" target="_blank" rel="noopener noreferrer">Startplatz</a></li>
+    <li><strong>Beschreibung:</strong> Dies ist der älteste Gleitschirmstartplatz am Brauneck. Der Wiesenstartplatz ist zwar klein, aber bei passenden Windbedingungen gut nutzbar. Er ist nach NO ausgerichtet, also eignet sich gut für Wind aus Ost und aus Nord. Er wird nicht häufig benutzt, da er recht große Unebenheiten aufweist.  Bei der Wahl dieses Startplatzes sollte das Talwindsystem berücksichtigt werden, da bei bestimmten Bedingungen der Talwind das Isartal hinaufweht.</li>
+            <p> Der Startplatz ist fußläufig erreichbar entweder von Tal mit ca. 650hm Anstieg oder vom Gipfel und einem 30 minütigen Abstieg.</p>
+ 
+</ul>
+
+
+
+<!-- ============================================================
+                SEKTION: Landeplatz 1 für das Paragliding
+============================================================ -->
+
+<section id="landeplatz">
+    <h2>Hauptlandeplatz</h2>
+    <p style="text-align: justify;">Die Landeplätze befinden sich nahe der Talstation und sind auch für weniger erfahrene Piloten geeignet. Es wird immer eine Linkslandevolte geflogen. </p>
+
+    <h4 style="text-align: left; padding-left: 20px; font-size: 1.2em;">Landeplatz</h4>
+    <ul style="text-align: left; padding-left: 20px;">
+        <li><strong>Schwierigkeit:</strong> leicht</li>
+        <li><strong>Koordinaten:</strong> <a href="https://maps.app.goo.gl/ZNJUFV58hCu2SFik8" target="_blank" rel="noopener noreferrer">Landeplatz Brauneck</a></li>
+        <li><strong>Landegebühr:</strong> 7,5€ berechtigt zu 5 Landungen, erwerblich an der Talstation der Bahn</li>
+        <li><strong>Windstation:</strong> <a href="https://holfuy.com/de/weather/1202" target="_blank" rel="noopener noreferrer">hier</a></li>
+        <li><strong>Lage:</strong> Der Hauptlandeplatz befindet sich vom Berg kommend rechts der Gondeltalstation. </li>
+        <li><strong>Besonderheiten:</strong> Am Nachmittag stellt sich hier ein Talwind ein, der von Norden kommt und für Turbulenzen sorgen kann. Wenn man den Landeplatz anfliegt, dann sollte man im besten Falle nicht allzu viel bremsen, um sich ein wenig Reserve vorzubehalten und keinen Strömungsabriss zu riskieren. Achte auf die Baumreihen, da diese bei stärkerem Wind für Leewirbel sorgen können; halte daher ausreichend Abstand und vermeide es, knapp über die Bäume zu fliegen. In Bodennähe kann der Wind stark nachlassen, daher ist besondere Vorsicht geboten. Ein Tipp: Orientiere dich am Windsack auf der nördlichen Baumreihe, da der Windsack direkt am Landeplatz nicht immer die korrekte Windstärke anzeigt. 
+            <p>Ab dem 01.08 bis 31.12 eines Jahres lässt es sich wunderbar südlich des Landeplatzes an einer Kante soaren, die auch bekannt als "Klein-Lanzarote" ist. Vorher ist hier eine Uhu-Schutzzone eingerichtet. Mehr Infos dazu <a href="https://www.lenggrieser-gleitschirmflieger.de/flugverbotszone-uhu-vom-31-01-31-07" target="_blank" rel="noopener noreferrer">hier</a>. </p> </li>
+    </ul>
+
+
+    <!-- ============================================================
+                SEKTION: Landeplatz für das Paragliding
+============================================================ -->
+
+<section id="landeplatz">
+    <h2>Ausweichlandeplatz</h2>
+
+    <h4 style="text-align: left; padding-left: 20px; font-size: 1.2em;">Landeplatz</h4>
+    <ul style="text-align: left; padding-left: 20px;">
+        <li><strong>Schwierigkeit:</strong> leicht</li>
+        <li><strong>Koordinaten:</strong> <a href="https://maps.app.goo.gl/sDFA2f19x34kfBzi6" target="_blank" rel="noopener noreferrer">Landeplatz Brauneck</a></li>
+        <li><strong>Landevolten:</strong> <a href="https://www.lenggrieser-gleitschirmflieger.de/wp-content/uploads/2023/08/Landevolten-fuer-LP-2.pdf" target="_blank" rel="noopener noreferrer">hier</a></li>
+        <li><strong>Lage:</strong> Der Ausweichlandeplatz befindet sich vom Berg kommend links von der Gondelstation. </li>
+        <li><strong>Besonderheiten:</strong> Er bietet den Vorteil, dass er bei Talwind, der von Norden reinkommt, wesentlich freier angeströmt wird und dadurch weniger turbulent ist. Er sollte gemäß des hiesigen Vereins nur bei widrigen Lande- Flugbedingungen genutzt werden.
+    </ul>
+
+
+<!-- ============================================================
+                         SEKTION: Fluggebiet
+============================================================ -->
+
+
+<section id="fluggebiet">
+    <h2>Fluggebiet</h2>
+    <p style="text-align: justify;"> Das Brauneck bietet aufgrund der meist sehr guten Thermik und der optimalen Start- und Landebedingungen ein Eldorado für Gleitschirm- und Drachenflieger. Je nach Windrichtung gibt es verschiedene Startmöglichkeiten in unmittelbarer Nähe der Bergstation der Brauneck-Kabinenbahn.
+    </p>
+    <p style="text-align: justify;"><strong> Streckenoptionen:</strong> Für ambitionierte Flieger bietet sich das sogenannte Karwendeldreieck an: Hier fliegt man vom Brauneck in Richtung Inntal und südlich vom Karwendelgebirge das Inntal entlang und kommt dann hier wieder über den Achensee zurück ins Isartal. Die Gesamtstrecke beläuft sich auf ca. 120km.
+    </p>
+    <p style="text-align: justify;">Für eine kürzere Strecke bietet sich der Weg zum nahegelegenen Blomberg an. Hier kann man entweder am offiziellen Blomberg-LP landen oder die Strecke wieder zurückfliegen.
+    </p>
+    
+    <section id="blogbeitrag-brauneck">
+        <img src="images/Brauneck/brauneck5.png" alt="Brauneck" 
+             style="width: 80%; max-width: 600px; display: block; margin: 0 auto 15px; border-radius: 8px; box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.15);">
+
+</body>
+</html>
+
+
+</section>
+
+
+<!-- ============================================================
+                         SEKTION: Gondel
+============================================================ -->
+<section id="gondel">
+    <h2>Gondel</h2>
+    <p style="text-align: justify;"> Die Grubigsteinbahn bringt dich bequem zur Bergstation. Wichtig für Gleitschirmpiloten. Es wird ein Ticket angeboten, welches speziell auf u.a. Gleitschirmflieger und andere "Extremsportarten" ausgerichtet ist: das X-trem Ticket</p>
+    
+    
+    <ul style="text-align: left; padding-left: 20px;">
+        <li><strong>Gondel:</strong> <a href="https://www.brauneck-bergbahn.de/" target="_blank" rel="noopener noreferrer">Brauneck-Bergbahn</a></li>
+        <li><strong>Preise:</strong> Einzelticket: 10€</li>
+        <p> 10er Karte: </p>
+        <p> 20er Karte: </p>
+        <li><strong>Besonderheiten:</strong> Das Ticket kann ebenfalls für die Wallbergbahn eingesetzt werden. </li>
+
+    </ul>
+</section>
+
+<!-- ============================================================
+                         SEKTION: Hike & Fly
+============================================================ -->
+
+<section id="hikeandfly">
+    <h2>Hike & Fly</h2>
+    <p style="text-align: justify;">Das Brauneck in Oberbayern bietet hervorragende Möglichkeiten für Hike & Fly-Enthusiasten. Mit einer Gipfelhöhe von 1.555 Metern und einem Höhenunterschied von etwa 840 Metern zur Talstation ist es ein attraktives Ziel für kombinierte Wander- und Gleitschirmflugerlebnisse.</p>
+    
+    <p style="text-align: justify;">Der Aufstieg ist anspruchsvoll, aber die Belohnung ist ein einsamer, unvergesslicher Flug mit gigantischer Aussicht.</p>
+    
+    <ul style="text-align: left; padding-left: 20px;">
+    <div class="route">
+        <h3>Aufstieg über den Leitenbachweg:</h3>
+       
+            <li><strong>Startpunkt:</strong> Parkplatz an der Talstation der Brauneck-Bergbahn in Lenggries.</li>
+            <li><strong>Route:</strong> Der Weg führt zunächst durch dichten Hochwald und später über abwechslungsreiche Almwiesen, die von markanten Felsformationen eingerahmt sind. Diese Route ist weniger frequentiert und verläuft abseits des Pistengeländes.</li>
+            <li><strong>Distanz und Dauer:</strong> Etwa 7,1 Kilometer mit einer Aufstiegszeit von ca. 3,5 Stunden.</li>
+    
+    </div>
+
+    <div class="route">
+        <h3>Aufstieg über den klassischen Wanderweg:</h3>
+    
+            <li><strong>Startpunkt:</strong> Ebenfalls am Parkplatz der Brauneck-Bergbahn.</li>
+            <li><strong>Route:</strong> Dieser gut markierte Weg führt direkt zum Gipfel und bietet unterwegs mehrere Einkehrmöglichkeiten in Almhütten.</li>
+            <li><strong>Distanz und Dauer:</strong> Rund 4,4 Kilometer mit einer Aufstiegszeit von etwa 2,5 Stunden.</li>
+        </ul>
+    </div>
+<!-- ============================================================
+                         SEKTION: Fazit
+============================================================ -->
+<section id="fazit">
+    <h2>Fazit zum Brauneck </h2>
+
+    <ul style="text-align: left; padding-left: 20px;">
+        
+            <p>Das Paragliden am Brauneck bietet sowohl Anfängern als auch erfahrenen Piloten hervorragende Bedingungen. Die vielfältigen Startmöglichkeiten in den Richtungen Nord, Ost und Süd ermöglichen es, je nach Windverhältnissen den optimalen Startplatz zu wählen. Die Nähe zur Bergstation der Brauneck Kabinenbahn erleichtert den Zugang zu den Startpunkten erheblich. </p>
+            <p>Die Thermik am Brauneck ist in der Regel sehr gut, was längere Flüge und beeindruckende Ausblicke auf die bayerischen Alpen ermöglicht. Ambitionierte Piloten können von hier aus weite Strecken bis ins hochalpine Karwendelmassiv unternehmen. </p>
+            <p>Für weniger erfahrene Piloten stehen Landeplätze in der Nähe der Talstation zur Verfügung, die sanftes Landen ermöglichen.</p>
+    
+    </ul>
+</section>
+
+
+    </main>
+
+    <!-- ============================================================
+                         FOOTER: Urheberrecht und Fußzeile
+    ============================================================ -->
+    <footer>
+        <p>&copy; 2025 Reiselust vergeht nicht - Alle Rechte vorbehalten</p>
+    </footer>
+
+</body>
+</html>

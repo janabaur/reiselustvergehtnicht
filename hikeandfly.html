@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gondel & Fly – Komfortabel in die Lüfte</title>
+    
+    <!-- Google Fonts für stilvolle Schrift -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles.css"> <!-- Verlinkung der CSS-Datei -->
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            fetch("nav.html")
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById("nav-placeholder").innerHTML = html;
+                })
+                .catch(error => console.error("Fehler beim Laden der Navigation:", error));
+        });
+    </script>
+</head>
+<body>
+
+    <!-- ============================================================
+                         HEADER: Logo und Navigation
+    ============================================================ -->
+    <header>
+        <div class="logo">
+            <h1>Reiselust vergeht nicht</h1>
+        </div>
+        
+        <div id="nav-placeholder"></div> <!-- Hier wird die Navigation eingefügt -->
+    </header>
+
+    <!-- ============================================================
+                         Gondel & Fly-Bereich: Details
+    ============================================================ -->
+    <section class="hero">
+        <h2>Hike&Fly – Wanderung und Paragliding kombinieren</h2>
+        <p>Erlebe das Abenteuer, zuerst den Gipfel zu erklimmen und dann mit dem Paraglider wieder ins Tal zu gleiten.</p>
+    </section>
+
+    <main>
+
+        <!-- Kacheln mit Bildern und Blogbeiträgen -->
+        <!DOCTYPE html>
+        <html lang="de">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Unsere Blogbeiträge</title>
+            <style>
+                .kachel-container {
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: space-between;
+                }
+                .kachel {
+                    flex: 0 1 calc(50% - 10px); /* Zwei Kacheln nebeneinander mit Abstand */
+                    box-sizing: border-box;
+                    margin-bottom: 20px;
+                }
+                .kachel img {
+                    width: 100%;
+                    height: auto;
+                    border-radius: 8px;
+                    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.15);
+                }
+                .kachel p {
+                    text-align: center;
+                    font-size: 1.2em;
+                    margin-top: 10px;
+                }
+            </style>
+        </head>
+        <body>
+            <section id="blogbeiträge">
+                <h2>Unsere Blogbeiträge</h2>
+                <div class="kachel-container">
+                    <div class="kachel">
+                        <a href="hikeandfly_blomberg.html">
+                            <img src="images/Blomberg/blomberg6.jpg" alt="Bild Blomberg" class="kachel-bild">
+                            <p>Blomberg</p>
+                        </a>
+                    </div>
+                    <div class="kachel">
+                        <a href="hikeandfly_hochries.html">
+                            <img src="images/Hochries/hochries3.png" alt="Bild Hochries" class="kachel-bild">
+                            <p>Hochries</p>
+                        </a>
+                    </div>
+                    <div class="kachel">
+                        <a href="hikeandfly_wallberg.html">
+                            <img src="images/Wallberg/wallberg11.jpg" alt="Bild Wallberg" class="kachel-bild">
+                            <p>Wallberg</p>
+                        </a>
+                    </div>
+                    <div class="kachel">
+                        <a href="hikeandfly_unnuetz.html">
+                            <img src="images/Unnuetz/unnuetz1.jpg" alt="Bild Unnuetz" class="kachel-bild">
+                            <p>Vogelsang</p>
+                        </a>
+                    </div>
+                    <div class="kachel">
+                        <a href="hikeandfly_jaegerkamp.html">
+                            <img src="images/Jägerkamp/jägerkamp1.jpg" alt="Jägerkamp" class="kachel-bild">
+                            <p>Jägerkamp</p>
+                        </a>
+                    </div>
+                    <div class="kachel">
+                        <a href="hikeandfly_zwölferkopf.html">
+                            <img src="images/Zwölferkopf/zwölferkopf4.jpg" alt="Jägerkamp" class="kachel-bild">
+                            <p>Zwölferkopf</p>
+                        </a>
+                    </div>
+                    <div class="kachel">
+                        <a href="hikeandfly_jaegerkamp.html">
+                            <img src="images/Jägerkamp/jägerkamp1.jpg" alt="Jägerkamp" class="kachel-bild">
+                            <p>Christlum</p>
+                        </a>
+                    </div>
+                    <div class="kachel">
+                        <a href="hikeandfly_jaegerkamp.html">
+                            <img src="images/Jägerkamp/jägerkamp1.jpg" alt="Jägerkamp" class="kachel-bild">
+                            <p>Buchenberg</p>
+                        </a>
+                    </div>
+                    <div class="kachel">
+                        <a href="hikeandfly_jaegerkamp.html">
+                            <img src="images/Jägerkamp/jägerkamp1.jpg" alt="Jägerkamp" class="kachel-bild">
+                            <p>Härmelekopf</p>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </body>
+        </html>
+        
+
+    </main>
+
+</body>
+</html>

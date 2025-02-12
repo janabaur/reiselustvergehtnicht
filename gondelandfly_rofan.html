@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reiselust vergeht nicht</title>
+
+    <style>
+        /* Spezifischer Stil für den Absatz "Parkmöglichkeit" */
+        p.parkmoeglichkeit {
+            margin-bottom: 20px; /* Abstand nach unten in Pixeln */
+        }
+    </style>
+
+    <!-- Google Fonts: Dancing Script für verschnörkelten Titel -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+
+    <!-- Verlinkung zum externen Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            fetch("nav.html")
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById("nav-placeholder").innerHTML = html;
+                })
+                .catch(error => console.error("Fehler beim Laden der Navigation:", error));
+        });
+    </script>
+</head>
+<body>
+
+    <!-- ============================================================
+                         HEADER: Logo und Navigation
+    ============================================================ -->
+    <header>
+        <div class="logo">
+            <h1>Reiselust vergeht nicht</h1> <!-- Titel mit verschnörkelter Schrift -->
+        </div>
+        
+        <div id="nav-placeholder"></div> <!-- Hier wird die Navigation eingefügt -->
+    </header>
+
+    <!-- ============================================================
+                         HERO-BEREICH: Gondel&Fly Abenteuer
+    ============================================================ -->
+    <section class="hero">
+        <h2>Gondel & Fly - Rofan</h2>
+        <p>Erlebe das ultimative Paragliding-Erlebnis mit Gondelaufstieg
+
+        </p>
+    </section>
+
+    <main>
+
+            <!-- ============================================================
+                         INHALTSVERZEICHNIS
+    ============================================================ -->
+
+
+        <nav id="table-of-contents">
+            <h3>Inhaltsverzeichnis</h3>
+            <ul id="toc-list"></ul>
+        </nav>
+
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const tocList = document.getElementById("toc-list");
+                const headings = document.querySelectorAll("main h2");
+        
+                headings.forEach((heading) => {
+                    const id = heading.id || heading.textContent.trim().toLowerCase().replace(/\s+/g, "-");
+                    heading.id = id;  // Falls die Überschrift keine ID hat, wird eine generiert.
+        
+                    const listItem = document.createElement("li");
+                    const link = document.createElement("a");
+                    link.href = `#${id}`;
+                    link.textContent = heading.textContent;
+                    link.addEventListener("click", function (e) {
+                        e.preventDefault();
+                        document.getElementById(id).scrollIntoView({ behavior: "smooth", block: "start" });
+                    });
+        
+                    listItem.appendChild(link);
+                    tocList.appendChild(listItem);
+                });
+            });
+        </script>
+    
+        <!-- ============================================================
+                         SEKTION: Bild vor Blogbeitragsbeginn
+        ============================================================ -->
+
+        <section id="blogbeitrag-rofan">
+            <img src="images/Rofan/rofan0.jpg" alt="rofan" 
+                 style="width: 90%; max-width: 800px; display: block; margin: 0 auto 20px; border-radius: 8px; box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.15);">
+
+        <p> Das Paragliden am Rofan ist ein weiteres atemberaubendes Erlebnis für Flugbegeisterte in den österreichischen Alpen. Das Rofan-Gebirge, bekannt für seine markanten Felsen und beeindruckenden Ausblicke, bietet Paraglidern eine fantastische Kulisse, um die Weiten des Tiroler Landes aus der Vogelperspektive zu genießen.</p>
+       
+        <!-- ============================================================
+                         SEKTION: Anfahrt zum Rofan
+        ============================================================ -->
+        <section id="anfahrt">
+            <h2>Anfahrt zum Rofan</h2>
+    
+            <ul style="text-align: left; padding-left: 20px;">
+                <li><strong> 🚗 Mit dem Auto:</strong> 
+                    <p>Aus <strong> Richtung München (Deutschland):</strong>: Du fährst über die Autobahn A93 und dann weiter auf der A12 Richtung Innsbruck. Verlasse die Autobahn bei der Ausfahrt "Achensee" und folge den Schildern zum Rofan und der Talstation der Rofanseilbahn in der Nähe von Maurach am Achensee.</p>
+                    <p> <a href="https://maps.app.goo.gl/uEcjUjKQ9atbKviZ9" target="_blank" rel="noopener noreferrer">Hier</a> findest du die Route.</p>
+                    <p>Aus <strong> Aus Richtung Innsbruck (Österreich):</strong>: Wenn du aus Innsbruck anreist, folge der A12 bis zur Ausfahrt "Achensee" und fahre Richtung Maurach. Von dort ist die Rofanseilbahn gut ausgeschildert und leicht zu erreichen.                    </p>
+                    <p> <a href="https://maps.app.goo.gl/oZ3AWaHvr1JNXD9L9" target="_blank" rel="noopener noreferrer">Hier</a> findest du die Route.</p>
+                    <p class="parkmoeglichkeit">
+                        <strong>Parkmöglichkeit:</strong> In der Nähe der <a href="https://maps.app.goo.gl/oZ3AWaHvr1JNXD9L9" target="_blank" rel="noopener noreferrer">Talstation</a> der Rofanseilbahn gibt es ausreichend Parkplätze, sowohl in Form von Parkplätzen direkt an der Seilbahnstation als auch in den umliegenden Parkbereichen.
+                    </p>
+
+                    <iframe width="600" height="450" style="Border:0" Loading="lazy"allowfullscreen src="https://www.google.com/maps/embed/v1/directions?origin=place_id:ChIJuVGxxf51nkcRwhxFwvIr7EM&destination=Rofan%20Seilbahn%20AG%2C%20Achensee%20Stra%C3%9Fe%2C%20Maurach%2C%20%C3%96sterreich&key=AIzaSyBtsWx19WgSpwTjQHnLQaoWo3U4pq-SHTo"></iframe>
+
+                <li><strong> 🚆 Mit der Bahn:</strong>: 
+                    <p>Der nächstgelegene Bahnhof ist der Bahnhof Jenbach, der gut an das österreichische Schienennetz angebunden ist. Du kannst von Innsbruck, München oder anderen größeren Städten mit dem Zug nach Jenbach fahren. Der Bahnhof liegt nur etwa 10 Minuten von Maurach entfernt, wo die Talstation der Rofanseilbahn ist.</p>   
+                    <li><strong>Bus:</strong> Vom Bahnhof Jenbach aus gibt es regelmäßige Busverbindungen nach Maurach. Die Busfahrt dauert nur etwa 10 bis 15 Minuten. Die Linie 4076 fährt direkt zur Rofanseilbahn und in andere Teile des Achentals.</li>
+                    
+                <iframe width="600" height="450" style="Border:0" Loading="lazy"allowfullscreen src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJASe2YDh-nUcRgsCx7FzzdSA&key=AIzaSyBtsWx19WgSpwTjQHnLQaoWo3U4pq-SHTo"></iframe>
+            </ul>
+        </section>
+
+<!-- ============================================================
+                         SEKTION: Startplatz 1 für das Paragliding
+============================================================ -->
+
+<section id="startplatz">
+    <h2>Startplätze</h2>
+    <p style="text-align: justify;">Am Brauneck findest du mehrere Startplätze, die je nach Windrichtung genutzt werden können. In unmittelbarer Nähe der Bergstation der Brauneck-Kabinenbahn gibt es verschiedene Startmöglichkeiten. Je nach Windrichtung stehen dir Startplätze nach Norden, Süden und Osten zur Verfügung.</p>
+
+    
+    <h4 style="text-align: left; padding-left: 20px; font-size: 1.2em;">Startplatz 1: Gschöllkopf - Mauritzalm</h4>
+    <ul style="text-align: left; padding-left: 20px;">
+        <li><strong>Windausrichtung:</strong> S-SW</li>
+        <li><strong>Schwierigkeit:</strong> leicht</li>
+        <li><strong>Höhe:</strong> 1870 Meter</li>
+        <li><strong>Höhenmeter:</strong> 915 Meter</li>
+        <li><strong>Koordinaten:</strong> <a href="https://maps.app.goo.gl/sb9DTQKen6q4GstW8" target="_blank" rel="noopener noreferrer">Startplatz</a></li>
+        <li><strong>Einkehrmöglichkeit:</strong> <a href="https://maps.app.goo.gl/fuHioQrb4B5TRZLj9" target="_blank" rel="noopener noreferrer">Mauritzalm</a></li>
+        <li><strong>Windstation:</strong> <a href="https://holfuy.com/de/data/388" target="_blank" rel="noopener noreferrer">hier</a></li>
+        <li><strong>Webcam:</strong> <a href="https://www.bergfex.at/rofan/webcams/c541/" target="_blank" rel="noopener noreferrer">hier</a></li>
+        <li><strong>Lage:</strong> Der Startplatz befindet sich nur etwa fünf Gehminuten oberhalb der Bergstation der Rofanseilbahn. Die Fläche ist weitläufig und leicht geneigt, was einen komfortablen Start ermöglicht. Während der Wintermonate erfolgt der Start direkt auf der Skipiste, während das Gelände in den übrigen Jahreszeiten als Schulungsstartplatz genutzt wird. Nach dem Abheben ist eine sofortige 90-Grad-Rechtskurve erforderlich, um in Richtung Tal zu fliegen. Da die Wiese nur eine geringe Neigung aufweist, sind optimale Windverhältnisse entscheidend für einen erfolgreichen Start.</li>
+        <li><strong>Besonderheiten:</strong> Perfekter Startpunkt für Thermikflüge Richtung Achensee oder Karwendel.</li>
+    </ul>
+
+    <section id="blogbeitrag-rofan">
+        <img src="images/Rofan/rofan1.jpg" alt="Rofan" 
+             style="width: 80%; max-width: 600px; display: block; margin: 0 auto 15px; border-radius: 8px; box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.15);">
+ 
+         <img src="images/Rofan/rofan2.jpg" alt="Rofan" 
+         style="width: 80%; max-width: 600px; display: block; margin: 0 auto 15px; border-radius: 8px; box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.15);">
+    
+        <img src="images/Rofan/rofan3.jpg" alt="Rofan" 
+        style="width: 80%; max-width: 600px; display: block; margin: 0 auto 15px; border-radius: 8px; box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.15);">
+
+     
+    </section>
+
+
+<!-- ============================================================
+                         SEKTION: Startplatz 2 für das Paragliding
+============================================================ -->
+
+    <h4 style="text-align: left; padding-left: 20px; font-size: 1.2em;">Startplatz 2: Dalfaz-Alm</h4>
+    <ul style="text-align: left; padding-left: 20px;">
+        <li><strong>Windausrichtung:</strong> S-SW</li>
+        <li><strong>Schwierigkeit:</strong> schwer</li>
+        <li><strong>Höhe:</strong> 1730 Meter</li>
+        <li><strong>Höhenmeter:</strong> 784 Meter</li>
+        <li><strong>Koordinaten:</strong> <a href="" target="_blank" rel="noopener noreferrer">Startplatz</a></li>
+        <li><strong>Lage:</strong> Der Startplatz befindet sich etwa 30 Gehminuten von der Bergstation der Rofanseilbahn entfernt in Richtung Dalfazalm. Er liegt an einem steilen Hang, der ausschließlich für Gleitschirmflieger vorgesehen ist. Aufgrund der starken Neigung ist ein Abbruch des Starts kaum möglich, daher sind eine präzise Technik und sichere Bedingungen erforderlich. </li>
+
+    </ul>
+
+
+                         <!-- ============================================================
+                         SEKTION: Startplatz 3 für das Paragliding
+============================================================ -->
+
+<h4 style="text-align: left; padding-left: 20px; font-size: 1.2em;">Startplatz 3: Erfurter Hütte</h4>
+<ul style="text-align: left; padding-left: 20px;">
+    <li><strong>Windausrichtung:</strong> S / SW</li>
+    <li><strong>Höhe:</strong> 1829 Meter</li>
+    <li><strong>Höhenmeter:</strong> 874 Meter</li>
+    <li><strong>Koordinaten:</strong> <a href="https://maps.app.goo.gl/3UtyTdvad9BMQEWt9" target="_blank" rel="noopener noreferrer">Startplatz</a></li>
+    <li><strong>Lage:</strong> Direkt neben der Erfurter Hütte befindet sich eine speziell eingerichtete Startrampe für Drachenflieger. Dieser Bereich ist ausschließlich für Drachenflieger vorgesehen, da ein Start mit dem Gleitschirm dort nicht möglich ist.</li>
+</ul>
+
+
+
+<!-- ============================================================
+                SEKTION: Landeplatz 1 für das Paragliding
+============================================================ -->
+
+<section id="landeplatz">
+    <h2>Landeplatz Maurach</h2>
+    <p style="text-align: justify;">Der offizielle Landeplatz für Gleitschirmflieger in Maurach am Achensee befindet sich in der Nähe der Talstation der Rofanseilbahn. </p>
+
+    <h4 style="text-align: left; padding-left: 20px; font-size: 1.2em;">Landeplatz</h4>
+    <ul style="text-align: left; padding-left: 20px;">
+        <li><strong>Schwierigkeit:</strong> leicht</li>
+        <li><strong>Höhe:</strong> 946 Meter</li>
+        <li><strong>Koordinaten:</strong> <a href="https://maps.app.goo.gl/Cr7AQinx9eGGxmtN7" target="_blank" rel="noopener noreferrer">Landeplatz Brauneck</a></li>
+        <li><strong>Lage:</strong> Etwa 5–10 Gehminuten von der Talstation der Rofanseilbahn entfernt</li>
+        <li><strong>Besonderheiten:</strong> Am Nachmittag kann der Talwind aus Nord recht stark werden, was die Landung anspruchsvoller macht.</li>  
+    </ul>
+
+    <img src="images/Rofan/rofan7.jpg" alt="Rofan" 
+    style="width: 80%; max-width: 600px; display: block; margin: 0 auto 15px; border-radius: 8px; box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.15);">
+
+    <img src="images/Rofan/rofan8.jpg" alt="Rofan" 
+    style="width: 80%; max-width: 600px; display: block; margin: 0 auto 15px; border-radius: 8px; box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.15);">
+
+
+
+<!-- ============================================================
+                         SEKTION: Fluggebiet
+============================================================ -->
+
+
+<section id="fluggebiet">
+    <h2 style="text-align: center;">Fluggebiet</h2>
+
+    <h3 style="text-align: left; padding-left: 20px;">Flugoptionen & Streckenflüge vom Rofan</h3>
+
+    <h4 style="text-align: left; padding-left: 20px;">1️⃣ Gleitflug zum Achensee & Maurach</h4>
+    <ul style="text-align: left; padding-left: 20px;">
+        <li>Ideal für Anfänger oder entspannte Panorama-Flüge</li>
+        <li>Landung am offiziellen Landeplatz in <strong>Maurach (950 m)</strong></li>
+        <li>Flugdauer: ca. <strong>10–20 Minuten</strong> je nach Windbedingungen</li>
+    </ul>
+
+    <h4 style="text-align: left; padding-left: 20px;">2️⃣ Thermikflüge Richtung Karwendel</h4>
+    <ul style="text-align: left; padding-left: 20px;">
+        <li>Ab mittags bilden sich verlässliche Aufwinde</li>
+        <li>Möglichkeit, sich über dem <strong>Gschöllkopf (2.039 m)</strong> hochzudrehen</li>
+        <li>Weiterflug Richtung <strong>Mondscheinspitze (2.106 m)</strong> oder <strong>Lamsenspitze (2.508 m)</strong></li>
+    </ul>
+
+    <h4 style="text-align: left; padding-left: 20px;">3️⃣ Streckenflug Richtung Zillertal</h4>
+    <ul style="text-align: left; padding-left: 20px;">
+        <li>Für erfahrene Piloten mit guter Thermikeinschätzung</li>
+        <li>Einstieg über die Thermik am <strong>Spieljoch (2.236 m)</strong></li>
+        <li>Weiterflug über <strong>Kellerjoch</strong> ins <strong>Zillertal</strong> (Mayrhofen oder Fügen)</li>
+        <li>Alternativ: Strecke Richtung <strong>Hintertux oder Gerlos</strong></li>
+    </ul>
+
+    <h4 style="text-align: left; padding-left: 20px;">4️⃣ Streckenflug Richtung Inntal & Wilder Kaiser</h4>
+    <ul style="text-align: left; padding-left: 20px;">
+        <li>Nach dem Einstieg im Rofan kann man Richtung Osten aufdrehen</li>
+        <li>Überflug über den <strong>Thiersee</strong> in Richtung <strong>Kufstein</strong> oder <strong>Wilder Kaiser</strong></li>
+        <li>Beliebte Route für ambitionierte Piloten mit Streckenflugerfahrung</li>
+    </ul>
+</section>
+
+
+    <section id="blogbeitrag-rofan">
+        <img src="images/Rofan/rofan4.jpg" alt="Brauneck" 
+             style="width: 80%; max-width: 600px; display: block; margin: 0 auto 15px; border-radius: 8px; box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.15);">
+
+             <img src="images/Rofan/rofan5.jpg" alt="Brauneck" 
+             style="width: 80%; max-width: 600px; display: block; margin: 0 auto 15px; border-radius: 8px; box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.15);">
+
+             <img src="images/Rofan/rofan6.jpg" alt="Brauneck" 
+             style="width: 80%; max-width: 600px; display: block; margin: 0 auto 15px; border-radius: 8px; box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.15);">
+
+</body>
+</html>
+
+</section>
+
+
+<!-- ============================================================
+                         SEKTION: Gondel
+============================================================ -->
+<section id="gondel">
+    <h2>Gondel</h2>
+    <p style="text-align: justify;"> Wenn du bereits in Maurach angekommen bist, kannst du die Rofanseilbahn nutzen, die dich bequem in etwa 20 Minuten auf den Gipfel des Rofan-Gebirges bringt. </p>
+    
+    
+    <ul style="text-align: left; padding-left: 20px;">
+        <li><strong>Gondel:</strong> <a href="https://www.rofanseilbahn.at/tarife-und-betriebszeiten-winter/" target="_blank" rel="noopener noreferrer">Rofan-Seilbahn</a></li>
+        <li><strong>Preise:</strong> Einzelticket: 24€</li>
+        <p> Tageskarte: 42,50€ </p>
+    </ul>
+</section>
+
+<!-- ============================================================
+                         SEKTION: Hike & Fly
+============================================================ -->
+
+<section id="hikeandfly">
+    <h2>Hike & Fly</h2>
+    <p style="text-align: justify;"> <strong> Rofan-Seilbahn:</strong> Der einfache Weg führt von der Talstation der Seilbahn in Maurach hinauf zur Bergstation auf 1.840 Metern. Der Aufstieg dauert etwa 1-1,5 Stunden zu Fuß. Von der Bergstation aus hat man einen direkten Zugang zum Startplatz für den Gleitflug in Richtung Achensee oder Maurach.</p>
+
+    <p style="text-align: justify;"><strong> Dafazalm Steilhang:</strong> Wer mehr Herausforderung sucht, kann weiter bis zur Dafalzalm aufsteigen hinauf (ca. 30 Minuten).</p>
+    
+    <ul style="text-align: left; padding-left: 20px;">
+
+    </div>
+<!-- ============================================================
+                         SEKTION: Fazit
+============================================================ -->
+<section id="fazit">
+    <h2 style="text-align: center;">Fazit zum Rofan </h2>
+
+    <ul style="text-align: left; padding-left: 20px;">
+        
+            <p>Das Rofan-Gebirge ist ein Traumziel für Paraglider! Mit leichten Übungsplätzen wie der Mauritzalm bis hin zu anspruchsvollen Streckenstartplätzen wie dem Spieljoch bietet das Gebiet perfekte Bedingungen für jede Erfahrungsstufe. Die Rofanseilbahn sorgt für eine schnelle und unkomplizierte Auffahrt – und von dort oben wartet nur noch das ultimative Flugerlebnis! 🚀🪂 </p>
+
+    </ul>
+</section>
+
+
+    </main>
+
+    <!-- ============================================================
+                         FOOTER: Urheberrecht und Fußzeile
+    ============================================================ -->
+    <footer>
+        <p>&copy; 2025 Reiselust vergeht nicht - Alle Rechte vorbehalten</p>
+    </footer>
+
+</body>
+</html>

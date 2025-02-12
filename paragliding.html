@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paragliding – Reiselust vergeht nicht</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            fetch("nav.html") // Lädt die Navigation aus nav.html
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById("nav-placeholder").innerHTML = html;
+                })
+                .catch(error => console.error("Fehler beim Laden der Navigation:", error));
+        });
+    </script>
+    
+    <!-- Google Fonts: Dancing Script für verschnörkelten Titel -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- ============================================================
+                         HEADER: Logo und Navigation
+    ============================================================ -->
+    <header>
+        <div class="logo">
+            <h1>Reiselust vergeht nicht</h1>
+        </div>
+        <div id="nav-placeholder"></div> <!-- Hier wird die Navigation eingefügt -->
+
+        
+    </header>
+
+    <!-- ============================================================
+                         HERO-BEREICH: Paragliding Abenteuer
+    ============================================================ -->
+    <section class="hero">
+        <h2>Paragliding – Freiheit in der Luft</h2>
+        <p>Erlebe das Gefühl, in den Himmel aufzusteigen und die Welt aus einer neuen Perspektive zu sehen!</p>
+    </section>
+
+    <main>
+        <!-- Paragliding Details -->
+        <section id="paragliding-details">
+            <h2>Was ist Paragliding?</h2>
+            <p>Paragliding ist eine aufregende und beeindruckende Sportart, bei der du mit einem leichten Gleitschirm in die Lüfte abhebst. Du steuerst den Schirm mit deinen Armen und erlebst dabei die Freiheit des Fliegens.</p>
+        </section>
+
+        <!-- Tipps für Paragliding -->
+        <section id="paragliding-tipps">
+            <h2>Tipps für das Paragliding-Abenteuer</h2>
+            <ul>
+                <li>Trage bequeme, wetterfeste Kleidung.</li>
+                <li>Überprüfe dein Paraglider-Equipment gründlich vor dem Flug.</li>
+                <li>Wähle einen sicheren und geeigneten Startplatz aus.</li>
+                <li>Fliege nur bei gutem Wetter und mit ausreichender Erfahrung.</li>
+            </ul>
+        </section>
+
+        <!-- Beste Paragliding-Spots -->
+        <section id="paragliding-spots">
+            <h2>Beste Paragliding-Spots</h2>
+            <p>Einige der besten Paragliding-Spots weltweit befinden sich in den Alpen, den Pyrenäen und an vielen weiteren Orten, die perfekte Bedingungen für das Gleitschirmfliegen bieten.</p>
+        </section>
+
+        <!-- Galerie mit Paragliding-Bildern -->
+        <section id="paragliding-gallery">
+            <h2>Unsere Paragliding-Erfahrungen</h2>
+            <div class="gallery-container">
+                <img src="paragliding1.jpg" alt="Paragliding 1" class="gallery-img">
+                <img src="paragliding2.jpg" alt="Paragliding 2" class="gallery-img">
+                <img src="paragliding3.jpg" alt="Paragliding 3" class="gallery-img">
+            </div>
+        </section>
+    </main>
+
+    <!-- ============================================================
+                         FOOTER: Urheberrecht und Fußzeile
+    ============================================================ -->
+    <footer>
+        <p>&copy; 2024 Reiselust vergeht nicht - Alle Rechte vorbehalten</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reiselust vergeht nicht</title>
+
+    <!-- Google Fonts: Dancing Script für verschnörkelten Titel -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+
+    <!-- Verlinkung zum externen Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            fetch("nav.html")
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById("nav-placeholder").innerHTML = html;
+                })
+                .catch(error => console.error("Fehler beim Laden der Navigation:", error));
+        });
+    </script>
+</head>
+<body>
+
+    <!-- ============================================================
+                         HEADER: Logo und Navigation
+    ============================================================ -->
+    <header>
+        <div class="logo">
+            <h1>Reiselust vergeht nicht</h1> <!-- Titel mit verschnörkelter Schrift -->
+        </div>
+        
+        <div id="nav-placeholder"></div> <!-- Hier wird die Navigation eingefügt -->
+    </header>
+
+    <!-- ============================================================
+                         HERO-BEREICH: Hike&Fly Abenteuer
+    ============================================================ -->
+    <section class="hero">
+        <h2>Blomberg – Unser Hike&Fly Abenteuer</h2>
+        <p>Erlebe die unvergessliche Wanderung und den Paragliding-Flug auf den Blomberg!</p>
+    </section>
+
+    <main>
+
+            <!-- ============================================================
+                         INHALTSVERZEICHNIS
+    ============================================================ -->
+
+
+        <nav id="table-of-contents">
+            <h3>Inhaltsverzeichnis</h3>
+            <ul id="toc-list"></ul>
+        </nav>
+
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const tocList = document.getElementById("toc-list");
+                const headings = document.querySelectorAll("main h2");
+        
+                headings.forEach((heading) => {
+                    const id = heading.id || heading.textContent.trim().toLowerCase().replace(/\s+/g, "-");
+                    heading.id = id;  // Falls die Überschrift keine ID hat, wird eine generiert.
+        
+                    const listItem = document.createElement("li");
+                    const link = document.createElement("a");
+                    link.href = `#${id}`;
+                    link.textContent = heading.textContent;
+                    link.addEventListener("click", function (e) {
+                        e.preventDefault();
+                        document.getElementById(id).scrollIntoView({ behavior: "smooth", block: "start" });
+                    });
+        
+                    listItem.appendChild(link);
+                    tocList.appendChild(listItem);
+                });
+            });
+        </script>
+    
+        <!-- ============================================================
+                         SEKTION: Bild vor Blogbeitragsbeginn
+        ============================================================ -->
+
+        <section id="blogbeitrag-blomberg">
+            <img src="images/Blomberg/blomberg11.jpg" alt="Blomberg" 
+                 style="width: 90%; max-width: 800px; display: block; margin: 0 auto 20px; border-radius: 8px; box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.15);">
+
+        <!-- ============================================================
+                         SEKTION: Anfahrt auf die Hochries
+        ============================================================ -->
+        <section id="anfahrt">
+            <h2>Anfahrt zum Blomberg</h2>
+            <p>Die Anfahrt zum Blomberg ist einfach, und du kannst sie bequem mit dem Auto oder öffentlichen Verkehrsmitteln erreichen. Hier findest du eine detaillierte Wegbeschreibung:</p>
+            <ul style="text-align: left; padding-left: 20px;">
+                <li><strong> Per Auto:</strong> Von München: 60km, 45min-1h Fahrzeit</li>
+                <li><strong> Per Zug:</strong> Von München Hbf: , mit der BRB nach Bad Tölz (1h), von hier mit Bus 392 bis Blombergbahn, Wackersberg (15 min)</li>
+                <li><strong>Parkmöglichkeit: </strong><a href="https://maps.app.goo.gl/64Tidx1B7aNN3HuDA" target="_blank" rel="noopener noreferrer">Parkplatz Gondel</a>, nur Tagesticket möglich, 5€</li>
+            </ul>
+        </section>
+
+<!-- ============================================================
+                         SEKTION: Wanderung auf den Blomberg
+============================================================ -->
+<section id="wanderung">
+    <h2>Die Wanderung auf den Blomberg</h2>
+    <p style="text-align: justify;">Die Wanderung auf die Hochries ist ein tolles Abenteuer, das sowohl für Anfänger als auch für erfahrene Wanderer geeignet ist. Der Weg führt durch wunderschöne Wälder und bietet unterwegs immer wieder spektakuläre Ausblicke. Hier einige Tipps zur Wanderung:</p>
+    
+    <p style="text-align: justify;">Die Wanderung dauert etwa 2-3 Stunden und ist nicht zu anspruchsvoll, aber du solltest gutes Schuhwerk tragen. Die Wegmarkierungen sind gut sichtbar, aber achte darauf, den richtigen Weg nach oben zu finden, da es auch viele alternative Pfade gibt. Auf dem Gipfel wirst du mit einer grandiosen Aussicht auf das Umland und den Chiemsee belohnt.</p>
+
+    <ul style="text-align: left; padding-left: 20px;">
+        <li><strong>Ausgangspunkt:</strong> Parkplatz an der Gondel, siehe oben</li>
+        <li><strong>Anzahl Höhenmeter:</strong> 500 hm</li>
+        <li><strong>Benötigte Zeit:</strong> 1h</li>
+        <li><strong>Wegbeschreibung:</strong> siehe <a href="https://www.bergtour-online.de/bergtouren/bergwanderungen/leicht/blomberg-zwiesel/" target="_blank" rel="noopener noreferrer">hier</a></li>
+    </ul>
+
+    <!-- Karussell für Bilder -->
+    <div class="carousel-container">
+        <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+        <div class="carousel">
+            <img src="images/Blomberg/blomberg8.jpg" alt="Blomberg" class="carousel-img">
+            <img src="images/Blomberg/blomberg9.jpg" alt="Blomberg" class="carousel-img">
+            <img src="images/Blomberg/blomberg10.jpg" alt="Blomberg" class="carousel-img">
+            <img src="images/Blomberg/blomberg12.jpg" alt="Blomberg" class="carousel-img">
+            <img src="images/Blomberg/blomberg1.jpg" alt="Blomberg" class="carousel-img">
+        </div>
+        <button class="next" onclick="moveSlide(1)">&#10095;</button>
+    </div>
+</section>
+
+<style>
+    /* ============================================================
+    STIL FÜR DAS KARUSSELL
+    ============================================================ */
+    /* Container für das Karussell */
+    .carousel-container {
+        position: relative;
+        width: 100%;
+        max-width: 800px;
+        margin: 0 auto;
+        overflow: hidden;
+    }
+
+    .carousel {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+    }
+
+    .carousel-img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+        box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.15);
+        object-fit: cover;
+    }
+
+    button {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+        font-size: 24px;
+        border-radius: 50%;
+        z-index: 10;
+    }
+
+    button:hover {
+        background-color: rgba(0, 0, 0, 0.7);
+    }
+
+    .prev {
+        left: 10px;
+    }
+
+    .next {
+        right: 10px;
+    }
+</style>
+
+<script>
+    // Indizes für die Bilder im Karussell
+    let currentIndex = 0;
+
+    function moveSlide(step) {
+        const slides = document.querySelectorAll('.carousel-img');
+        const totalSlides = slides.length;
+
+        // Berechnung des neuen Indexes
+        currentIndex += step;
+
+        if (currentIndex < 0) {
+            currentIndex = totalSlides - 1;
+        }
+        if (currentIndex >= totalSlides) {
+            currentIndex = 0;
+        }
+
+        // Das Karussell verschieben
+        const carousel = document.querySelector('.carousel');
+        carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
+</script>
+
+<!-- ============================================================
+                         SEKTION: Startplatz 1 für das Paragliding
+============================================================ -->
+<section id="startplatz">
+    <h2>Startplatz</h2>
+    <p style="text-align: justify;">Der Startplatz auf der Hochries ist ideal für Paragliding. Er befindet sich direkt am Gipfel, wo du mit deinem Paraglider in die Lüfte aufsteigen kannst. Einige wichtige Informationen zum Startplatz:</p>
+    
+    <h4 style="text-align: left; padding-left: 20px; font-size: 1.2em;">Startplatz 1: Gipfelkreuz</h4>
+    <ul style="text-align: left; padding-left: 20px;">
+        <li><strong>Windausrichtung:</strong> O</li>
+        <li><strong>Schwierigkeit:</strong> leicht</li>
+        <li><strong>Höhe:</strong> 1180 Meter</li>
+        <li><strong>Koordinaten:</strong> <a href="https://maps.app.goo.gl/HFEJFh5GYt6XfrTc9" target="_blank" rel="noopener noreferrer">Startplatz</a></li>
+        <li><strong>Einkehrmöglichkeit:</strong> <a href="https://www.der-blomberg.de/blomberghaus" target="_blank" rel="noopener noreferrer">Blomberghaus</a> am Gipfel</li>
+        <li><strong>Wetterstation:</strong> <a href="https://holfuy.com/de/weather/1810" target="_blank" rel="noopener noreferrer">hier</a></li>
+        <li><strong>Besonderheiten:</strong> Der Startplatz befindet sich direkt neben dem Gipfelkreuz und ist eine breite Waldschneise. Seitenwind kann hier zu Turbulenzen führen, daher ist es wichtig, den Windsack genau zu beachten. Beim Start sollte ausreichend Abstand zum Kreuz gehalten werden. Im Sommer ist auf die weidenden Kühe zu achten, die die Startwiese immer wieder versperren.</li>
+        <li><strong>Letzter Start:</strong> Der letzte Start muss spätestens eine halbe Stunde nach Betriebsschluss der Bergbahn erfolgen, was in den Sommermonaten normalerweise gegen 18:00 Uhr der Fall ist.</li>
+    </ul>
+
+    <!DOCTYPE html>
+    <html lang="de">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Blomberg Bilder</title>
+        <style>
+            /* Galerie-Container */
+            .gallery-container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+                padding: 20px;
+            }
+    
+            /* Styling für jedes Bild in der Galerie */
+            .gallery-item {
+                position: relative;
+                overflow: hidden;
+                border-radius: 8px;
+                box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.15);
+                transition: transform 0.3s ease-in-out;
+            }
+    
+            .gallery-item img {
+                width: 100%;
+                height: auto;
+                display: block;
+                border-radius: 8px;
+                transition: transform 0.3s ease-in-out;
+            }
+    
+            .gallery-item.large {
+                max-width: 800px;
+            }
+    
+            .gallery-row {
+                display: flex;
+                gap: 15px;
+                justify-content: center;
+                width: 100%;
+                max-width: 800px;
+            }
+    
+            .gallery-row .gallery-item {
+                flex: 1;
+                max-width: 50%;
+            }
+    
+            .gallery-item:hover img {
+                transform: scale(1.05);
+            }
+    
+            @media (max-width: 768px) {
+                .gallery-row {
+                    flex-direction: column;
+                    align-items: center;
+                }
+    
+                .gallery-row .gallery-item {
+                    max-width: 100%;
+                }
+            }
+        </style>
+    </head>
+    <body>
+    
+        <!-- ============================================================
+                                 SEKTION: Bildergalerie
+        ============================================================ -->
+        <section id="gallery-section">
+    
+            <div class="gallery-container">
+                <div class="gallery-row">
+                    <!-- Bild 1: Querformat -->
+                    <div class="gallery-item">
+                        <img src="images/Blomberg/blomberg13.jpg" alt="Blomberg Bild 1">
+                    </div>
+                    <!-- Bild 2: Querformat -->
+                    <div class="gallery-item">
+                        <img src="images/Blomberg/blomberg11.jpg" alt="Blomberg Bild 2">
+                    </div>
+                </div>
+                
+                <!-- Bild 3: Hochformat (wird jetzt unten platziert) -->
+                <div class="gallery-item large">
+                    <img src="images/Blomberg/blomberg14.jpg" alt="Blomberg Bild 3">
+                </div>
+    
+                <div class="gallery-row">
+                    <!-- Bild 4: Querformat -->
+                    <div class="gallery-item">
+                        <img src="images/Blomberg/blomberg15.jpg" alt="Blomberg Bild 4">
+                    </div>
+                    <!-- Bild 5: Querformat -->
+                    <div class="gallery-item">
+                        <img src="images/Blomberg/blomberg16.jpg" alt="Blomberg Bild 5">
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+    </body>
+    </html>
+       
+<!-- ============================================================
+                         SEKTION: Startplatz 2 für das Paragliding
+============================================================ -->
+
+    <h4 style="text-align: left; padding-left: 20px; font-size: 1.2em;">Startplatz 2</h4>
+    <ul style="text-align: left; padding-left: 20px;">
+        <li><strong>Windausrichtung:</strong> NW</li>
+        <li><strong>Schwierigkeit:</strong> mittel</li>
+        <li><strong>Koordinaten:</strong> <a href="https://maps.app.goo.gl/HFEJFh5GYt6XfrTc9" target="_blank" rel="noopener noreferrer">Startplatz</a></li>
+        <li><strong>Besonderheiten:</strong> Frei</li>
+    </ul>
+
+    <h4 style="text-align: left; padding-left: 20px; font-size: 1.2em;">Startplatz 3</h4>
+    <ul style="text-align: left; padding-left: 20px;">
+        <li><strong>Windausrichtung:</strong> NO</li>
+        <li><strong>Schwierigkeit:</strong> mittel</li>
+        <li><strong>Koordinaten:</strong> <a href="https://maps.app.goo.gl/HFEJFh5GYt6XfrTc9" target="_blank" rel="noopener noreferrer">Startplatz</a></li>
+        <li><strong>Besonderheiten:</strong> Ein neu angelegter Startplatz befindet sich direkt unterhalb der Bergstation. Beim Start ist unbedingt auf ausreichend Abstand zur Gondel zu achten, und im Zweifel frühzeitig ein Startabbruch einzuleiten.</li>
+    </ul>
+</section>
+
+<section id="blogbeitrag-blomberg">
+    <img src="images/Blomberg/blomberg6.jpg" alt="Blomberg" 
+         style="width: 60%; max-width: 800px; display: block; margin: 0 auto 20px; border-radius: 8px; box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.15);">
+</section>
+
+<!-- ============================================================
+                SEKTION: Landeplatz für das Paragliding
+============================================================ -->
+<section id="landeplatz">
+    <h2>Landeplatz</h2>
+    <p style="text-align: justify;">Der Landeplatz am Blomberg bietet eine großzügige Wiese für eine sichere Landung nach dem Flug. Einige wichtige Informationen zum Landeplatz:</p>
+
+    <h4 style="text-align: left; padding-left: 20px; font-size: 1.2em;">Landeplatz</h4>
+    <ul style="text-align: left; padding-left: 20px;">
+        <li><strong>Schwierigkeit:</strong> leicht</li>
+        <li><strong>Koordinaten:</strong> <a href="https://maps.app.goo.gl/iECY4HRdXVGLMsye8" target="_blank" rel="noopener noreferrer">Landeplatz Blomberg</a></li>
+        <li><strong>Landegebühr:</strong> keine</li>
+        <li><strong>Einkehrmöglichkeit:</strong> <a href="https://maps.app.goo.gl/77Xgo6ciSUbRuBMWA" target="_blank" rel="noopener noreferrer">DingDong Gartenlokal</a></li>
+        <li><strong>Besonderheiten:</strong> Die großzügige Landewiese befindet sich an der Nordostseite des Stallauer Weihers, direkt an der Zufahrt zum Campingplatz. Bei starkem Ostwind sollte die Landeeinteilung so geplant werden, dass man sicher hinter dem Campingplatz ankommt, da das Tal wie eine Düse wirkt. Der Anflug auf den Landeplatz ist oft unruhig und von Turbulenzen geprägt. Ein gut sichtbarer Windsack steht direkt an der Straße. Es wird empfohlen, möglichst in dessen Nähe zu landen, da die Straße dort etwas breiter ist.</li>
+        <li><strong>Markierung:</strong> Der Landeplatz befindet sich rechts neben dem Campingplatz.</li>
+    </ul>
+
+    <section id="gallery">
+        <div class="gallery-container">
+            <div class="gallery-item large">
+                <img src="images/Blomberg/blomberg19.png" alt="Blomberg Bild 1">
+            </div>
+            <div class="gallery-row">
+                <div class="gallery-item">
+                    <img src="images/Blomberg/blomberg18.png" alt="Blomberg Bild 2">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/Blomberg/blomberg17.jpg" alt="Blomberg Bild 3">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <style>
+        .gallery-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            padding: 20px;
+            max-width: 1200px; /* Vergrößert den gesamten Container */
+            margin: 0 auto;
+        }
+    
+        .gallery-row {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            width: 100%;
+        }
+    
+        .gallery-item {
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease-in-out;
+            max-width: 100%; /* Verhindert, dass die Bilder kleiner als der Container werden */
+        }
+    
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 8px;
+            transition: transform 0.3s ease-in-out;
+        }
+    
+        /* Vergrößern des großen Bildes */
+        .gallery-item.large {
+            max-width: 1000px; /* Das Bild ist jetzt größer und nimmt mehr Platz ein */
+        }
+    
+        /* Vergrößern der Bilder in der Reihe */
+        .gallery-row .gallery-item {
+            flex: 1;
+            max-width: 48%; /* Hier wird die Größe der Bilder in der Reihe angepasst */
+        }
+    
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+    
+        @media (max-width: 768px) {
+            .gallery-row {
+                flex-direction: column;
+                align-items: center;
+            }
+    
+            .gallery-row .gallery-item {
+                max-width: 100%;
+            }
+        }
+    </style>
+    
+    
+
+<!-- ============================================================
+                         SEKTION: Fluggebiet
+============================================================ -->
+<section id="fluggebiet">
+    <h2>Fluggebiet</h2>
+    <p style="text-align: justify;">Soaringflüge sind westlich bis zum Stallauer Graben, einem markanten Geländeeinschnitt, begrenzt. Weiterfliegen ist nur erlaubt, wenn man mindestens 400 Meter über Grund bleibt.</p>
+    <p style="text-align: justify;">Gute Start- und Soaringbedingungen herrschen ausschließlich bei Windlagen aus Nord, Nordost, Ost oder West.</p>
+    <p style="text-align: justify;"><strong>Flug zum Weiher in Richtung Landeplatz</strong></p>
+
+    <!-- Bilder mittig zentrieren -->
+    <div style="display: flex; justify-content: center; gap: 20px; text-align: center;">
+        <img src="images/Blomberg/blomberg3.jpg" alt="Flugbild 1" class="gallery-img" style="max-width: 60%; height: auto;">
+        <img src="images/Blomberg/blomberg7.jpg" alt="Flugbild 2" class="gallery-img" style="max-width: 60%; height: auto;">
+    </div>
+
+</section>
+
+
+<!-- ============================================================
+                         SEKTION: Gondel
+============================================================ -->
+<section id="gondel">
+    <h2>Gondel</h2>
+    <p style="text-align: justify;">Die Gondel, die dich zur Hochries bringt, ist die Hochriesbahn. Sie ermöglicht eine komfortable Auffahrt bis zum Gipfel, ideal für diejenigen, die nicht wandern möchten oder einfach nur die Aussicht genießen wollen.</p>
+    <p style="text-align: justify;">Die Preise sind leider etwas hoch. Hier sind die aktuellen Preise (Stand 09.01.2025):</p>
+    
+    <ul style="text-align: left; padding-left: 20px;">
+        <li><strong>Gondel:</strong> <a href="https://maps.app.goo.gl/UpkwoLFouP28jUPw6" target="_blank" rel="noopener noreferrer">Blombergbahn</a></li>
+        <li><strong>Preise:</strong> Einzelticket 9€</li>
+
+    </ul>
+</section>
+
+
+
+    </main>
+
+    <!-- ============================================================
+                         FOOTER: Urheberrecht und Fußzeile
+    ============================================================ -->
+    <footer>
+        <p>&copy; 2025 Reiselust vergeht nicht - Alle Rechte vorbehalten</p>
+    </footer>
+
+</body>
+</html>

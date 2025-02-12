@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reiselust vergeht nicht</title>
+
+    <!-- Google Fonts: Dancing Script für verschnörkelten Titel -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+
+    <!-- Verlinkung zum externen Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            fetch("nav.html")
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById("nav-placeholder").innerHTML = html;
+                })
+                .catch(error => console.error("Fehler beim Laden der Navigation:", error));
+        });
+    </script>
+</head>
+<body>
+
+    <!-- ============================================================
+                         HEADER: Logo und Navigation
+    ============================================================ -->
+    <header>
+        <div class="logo">
+            <h1>Reiselust vergeht nicht</h1> <!-- Titel mit verschnörkelter Schrift -->
+        </div>
+        
+        <div id="nav-placeholder"></div> <!-- Hier wird die Navigation eingefügt -->
+    </header>
+
+    <!-- ============================================================
+                         HERO-BEREICH: Hike&Fly Abenteuer
+    ============================================================ -->
+    <section class="hero">
+        <h2>Jägerkamp – Unser Hike&Fly Abenteuer</h2>
+        <p>Erlebe die unvergessliche Wanderung und den Paragliding-Flug auf den Jägerkamp!</p>
+    </section>
+
+    <main>
+
+            <!-- ============================================================
+                         INHALTSVERZEICHNIS
+    ============================================================ -->
+
+
+        <nav id="table-of-contents">
+            <h3>Inhaltsverzeichnis</h3>
+            <ul id="toc-list"></ul>
+        </nav>
+
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const tocList = document.getElementById("toc-list");
+                const headings = document.querySelectorAll("main h2");
+        
+                headings.forEach((heading) => {
+                    const id = heading.id || heading.textContent.trim().toLowerCase().replace(/\s+/g, "-");
+                    heading.id = id;  // Falls die Überschrift keine ID hat, wird eine generiert.
+        
+                    const listItem = document.createElement("li");
+                    const link = document.createElement("a");
+                    link.href = `#${id}`;
+                    link.textContent = heading.textContent;
+                    link.addEventListener("click", function (e) {
+                        e.preventDefault();
+                        document.getElementById(id).scrollIntoView({ behavior: "smooth", block: "start" });
+                    });
+        
+                    listItem.appendChild(link);
+                    tocList.appendChild(listItem);
+                });
+            });
+        </script>
+    
+        <!-- ============================================================
+                         SEKTION: Bild vor Blogbeitragsbeginn
+        ============================================================ -->
+
+        <section id="blogbeitrag-jägerkamp">
+            <img src="images/Jägerkamp/jägerkamp2.jpg" alt="Jägerkamp" 
+                 style="width: 90%; max-width: 800px; display: block; margin: 0 auto 20px; border-radius: 8px; box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.15);">
+
+    <p>Der Jägerkamp (1.746 m) in den Bayerischen Voralpen ist ein beliebtes Ziel für Hike & Fly-Enthusiasten. Das Fluggebiet wird vom Drachenfliegerclub Bayrischzell e.V. betreut und bietet sowohl landschaftlich reizvolle Aufstiege als auch spannende Flugmöglichkeiten. </p>
+       
+        <!-- ============================================================
+                         SEKTION: Anfahrt zum Jägerkamp
+        ============================================================ -->
+        <section id="anfahrt">
+            <h2 style="text-align: center;">Anfahrt zum Jägerkamp</h2>
+        
+            <h3 style="text-align: left; padding-left: 20px;">🚗 Anreise mit dem Auto</h3>
+            <ul style="text-align: left; padding-left: 40px;">
+                <li><strong>Adresse für das Navi:</strong> 📍 <a href="https://maps.app.goo.gl/mg4Qbq5CZwxSPThA8" target="_blank" rel="noopener noreferrer">Josefsthal</a>, 83727 Schliersee</li>
+                <li><strong>Anfahrt aus München:</strong>
+                    <ul>
+                        <li>Von München aus über die Autobahn <strong>A8 in Richtung Salzburg</strong> bis zur <strong>Ausfahrt Weyarn.</strong></li>
+                        <li>Von dort weiter über Miesbach und Schliersee in Richtung Bayrischzell bis nach Aurach.</li>
+                        <li><strong>Fahrzeit:</strong> ca. <strong>1 Stunde 10 Minuten</strong> (je nach Verkehr)</li>
+                    </ul>
+
+                    <iframe width="600" height="450" style="Border:0" Loading="lazy"allowfullscreen src="https://www.google.com/maps/embed/v1/directions?origin=hauptbahnhof%20m%C3%BCnchen&destination=Josefsthal%2C%2083727%20Schliersee&key=AIzaSyBtsWx19WgSpwTjQHnLQaoWo3U4pq-SHTo"></iframe>
+
+
+                    <li><strong>Parkmöglichkeiten:</strong>
+                        <ul>
+                            <li>Parkplätze in <a href="https://maps.app.goo.gl/mg4Qbq5CZwxSPThA8" target="_blank" rel="noopener noreferrer">Josefsthal</a></li>
+                        </ul>
+                    </li>
+
+                    <iframe width="600" height="450" style="Border:0" Loading="lazy"allowfullscreen src="https://www.google.com/maps/embed/v1/place?q=Josefstal%20Abzw.%20Aurachstra%C3%9Fe%2C%20Schliersee%2C%2083727%20Schliersee&key=AIzaSyBtsWx19WgSpwTjQHnLQaoWo3U4pq-SHTo"></iframe>
+            </ul>
+        
+            <h3 style="text-align: left; padding-left: 20px;">🚆 Anreise mit öffentlichen Verkehrsmitteln</h3>
+            <ul style="text-align: left; padding-left: 40px;">
+                <li><strong>Von München mit der Bahn:</strong>
+                    <ul>
+                        <li><strong>Bahn:</strong> Mit der <strong>Bayerischen Oberlandbahn (BOB)</strong> von München Hbf nach <strong>Fischhausen-Neuhaus</strong> (ca. <strong>1 Stunde</strong>)</li>
+                        <li><strong>Bus:</strong> Ab Fischhausen-Neuhaus nach <strong>Neuhaus, Abzw. Aurachstr. </strong> (ca. <strong>10 Minuten</strong>). Von dort aus zu Fuß von Josefsthal auf den Jägerkamp</li>
+                        <li>Alternativ kann der Weg ab Fischhausen-Neuhaus bis Josefthal <strong>in ca. 25 min (2km) zu Fuß</strong> zurückgelegt werden.</li>
+                        
+                    </ul>
+            
+            </ul>
+        
+        </section>
+
+<!-- ============================================================
+                         SEKTION: Wanderung auf den Jägerkamp
+============================================================ -->
+<section id="wanderung">
+    <h2>Die Wanderung auf den Jägerkamp</h2>
+    <p style="text-align: justify;">Die Wanderung auf den Jägerkamp ab Josefsthal führt durch abwechslungsreiche Landschaften und bietet beeindruckende Ausblicke.
+        
+    </p>
+    
+    <p style="text-align: justify;"></p>
+
+    <ul style="text-align: left; padding-left: 20px;">
+        <li><strong>Ausgangspunkt:</strong> <a href="https://maps.app.goo.gl/xDX67Lhvd6t5Cuvd9" target="_blank" rel="noopener noreferrer">Talstation</a> der Wallbergbahn (Rottach-Egern, 792 m)</li>
+        <li><strong>Anzahl Höhenmeter:</strong> 750 hm</li>
+        <li><strong>Länge:</strong> 4 km</li>
+        <li><strong>Zeit:</strong> 1,5 h</li>
+
+        <li><strong>Wegbeschreibung:</strong></li>
+    
+        <li><strong>Startpunkt: Josefsthal</strong>
+            <ul>
+                <li>Beginne deine Wanderung am Parkplatz in Josefsthal, einem kleinen Ort südlich des Spitzingsees.</li>
+                <li>Von hier aus folgst du der Beschilderung zu den Josefsthaler Wasserfällen, die nach etwa 1 km erreicht werden.</strong>.</li>
+            </ul>
+        </li>
+        <li><strong>Weiter zum Hachelbach</strong>
+            <ul>
+                <li>Nach den Wasserfällen setzt du deinen Weg fort und erreichst nach etwa 3 km den Hachelbach. Dieser Abschnitt führt durch einen malerischen Waldpfad, der besonders im Frühling und Sommer angenehm zu gehen ist.</strong>.</li>
+            </ul>
+        </li>
+        <li><strong>Aufstieg zur Jägerbauernalm</strong>
+            <ul>
+                <li>Ab dem Hachelbach beginnt der steilere Aufstieg zur Jägerbauernalm. Der Weg führt durch lichten Bergwald und Wiesen, die im Sommer mit Wildblumen bedeckt sind. </li>
+                <li>Nach insgesamt etwa 4,5 km erreichst du die Jägerbauernalm auf 1.540 m Höhe. Hier kannst du eine kurze Rast einlegen und die Aussicht genießen.</li>
+            </ul>
+
+            <li><strong>Gipfelaufstieg zum Jägerkamp</strong>
+                <ul>
+                    <li>Von der Jägerbauernalm aus führt der Weg in nordöstlicher Richtung über den Jägerkamp-Nordgrat zum Gipfel. Dieser Abschnitt ist etwas anspruchsvoller und erfordert Trittsicherheit. </li>
+                    <li>Nach etwa 30 Minuten erreichst du den Gipfel des Jägerkamps auf 1.746 m Höhe. Vom Gipfel aus hast du einen beeindruckenden Rundumblick, der bei klarer Sicht bis zum Wendelstein reicht.n.</li>
+                </ul>
+
+        </li>
+    </ul>
+
+<!-- ============================================================
+                         SEKTION: Startplatz 1 für das Paragliding
+============================================================ -->
+
+<section id="startplatz">
+    <h2>Startplatz</h2>
+
+    <p style="text-align: justify;">Der Paragliding-Startplatz am Jägerkamp befindet sich etwa 150 Höhenmeter unterhalb des Gipfels, nördlich der Jägerbauernalm. </p>
+    <p style="text-align: justify;"></p>
+    
+    <h4 style="text-align: left; padding-left: 20px; font-size: 1.2em;">Startplatz:</h4>
+    <ul style="text-align: left; padding-left: 20px;">
+        <li><strong>Windausrichtung:</strong> W-SW </li>
+        <li><strong>Schwierigkeit:</strong> leicht</li>
+        <li><strong>Höhe:</strong> 1490 Meter</li>
+        <li><strong>Höhenmeter:</strong> 750 Meter</li>
+        <li><strong>Koordinaten:</strong> <a href="https://maps.app.goo.gl/GjT77dMCUf6VRKJDA" target="_blank" rel="noopener noreferrer">Startplatz</a></li>
+        <li><strong>Einkehrmöglichkeit:</strong> <a href="https://maps.app.goo.gl/jpxzyhCAUxS3JAu59" target="_blank" rel="noopener noreferrer">Jägerbauernalm</a></li>
+        <li><strong>Lage:</strong> Der Startplatz liegt im Almgelände, daher ist besondere Rücksicht auf weidende Tiere zu nehmen. Beim Aufstieg sollte das Gatter zum Weidegelände stets gut verschlossen werden. </li>
+        <li><strong>Startgebühr:</strong> Für die Nutzung des Startplatzes wird eine Tagesgebühr von 5 Euro erhoben. Die Zahlung erfolgt bequem per PayPal über einen QR-Code, der am Start- und Landeplatz sowie auf der Jägerbauernalm zu finden ist.</li>
+        <li><strong>Besonderheiten:</strong>Lawinensprengseilbahn: In der Nähe des Startplatzes befindet sich eine 1,7 km lange, nicht markierte Lawinensprengseilbahn, die bis zu 35 m über dem Boden gespannt ist und aus der Luft schwer zu erkennen sein kann. Es wird dringend empfohlen, sich vor dem Start über deren Verlauf zu informieren und ausreichend Sicherheitsabstand einzuhalten.</li>
+    </ul>
+    </body>
+    </html>
+    
+    <section id="blogbeitrag-jägerkamp">
+        <img src="images/Jägerkamp/jägerkamp1.jpg" alt="Jägerkamp" 
+             style="width: 80%; max-width: 1000px; display: block; margin: 0 auto 20px; border-radius: 8px; box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.15);">
+    </section>
+
+<!-- ============================================================
+                SEKTION: Landeplatz für das Paragliding
+============================================================ -->
+<section id="landeplatz">
+    <h2>Landeplatz</h2>
+    <p style="text-align: justify;">Der Landeplatz am Jägerkamp ist eine große, ebene Wiese auf etwa 800 m Höhe, die als Landeplatz dient.</p>
+
+    <h4 style="text-align: left; padding-left: 20px; font-size: 1.2em;">Landeplatz</h4>
+    <ul style="text-align: left; padding-left: 20px;">
+        <li><strong>Schwierigkeit:</strong> leicht</li>
+        <li><strong>Höhe:</strong> 740 m </li>
+        <li><strong>Koordinaten:</strong> <a href="https://maps.app.goo.gl/mttLAkhsabxLjwYN8" target="_blank" rel="noopener noreferrer">Landeplatz Wallberg</a></li>
+    </ul>
+
+<!-- ============================================================
+                         SEKTION: Fluggebiet
+============================================================ -->
+<section id="fluggebiet">
+    <h2>Fluggebiet</h2>
+    <p style="text-align: justify;"> Der Jägerkamp bietet Paraglidern und Hängegleitern ein abwechslungsreiches Flugerlebnis in den bayerischen Alpen. Als reiner Hike&Fly Berg ist er nicht so stark frequentiert wie beispielsweise der Wallberg.</p>
+
+   
+
+    <h3 style="text-align: left; padding-left: 20px;"> Flugrichtungen</h3>
+    <p style="text-align: justify; padding-left: 20px;">
+        <ul style="text-align: left; padding-left: 20px;">
+            <li><strong>Osten:</strong> Flüge in östlicher Richtung führen über die Bodenschneid und die Brecherspitze ins Inntal und weiter nach Kössen. Diese Route bietet abwechslungsreiche Landschaften und thermisch aktive Gebirgskämme. </li>
+            <li><strong>Süden:</strong> Flüge nach Süden ermöglichen einen Überflug über den Achensee ins Zillertal und weiter in den Pinzgau. Diese Strecke erfordert jedoch eine hohe Basis und Erfahrung im Überfliegen von Waldgebieten.</li>
+            <li><strong>Westen:</strong> Flüge in westlicher Richtung führen über das Isartal ins Karwendel oder entlang der Voralpen. Diese Route bietet beeindruckende Ausblicke und thermisch aktive Bereiche. </li>
+        
+        </ul>
+    </p>    
+    
+    </section>
+    
+
+    <!-- Bilder mittig zentrieren -->
+    <div style="display: flex; justify-content: center; gap: 20px; text-align: center;">
+        <img src="images/Jägerkamp/jägerkamp1.jpg" alt="Flugbild 1" class="gallery-img" style="max-width: 60%; height: auto;">
+        <img src="images/Jägerkamp/jägerkamp2.jpg" alt="Flugbild 2" class="gallery-img" style="max-width: 60%; height: auto;">
+        
+    </div>
+
+</section>
+
+
+    </main>
+
+    <!-- ============================================================
+                         FOOTER: Urheberrecht und Fußzeile
+    ============================================================ -->
+    <footer>
+        <p>&copy; 2025 Reiselust vergeht nicht - Alle Rechte vorbehalten</p>
+    </footer>
+
+</body>
+</html>

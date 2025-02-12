@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reiselust vergeht nicht</title>
+
+    <!-- Google Fonts: Dancing Script für verschnörkelten Titel -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+
+    <!-- Verlinkung zum externen Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            fetch("nav.html")
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById("nav-placeholder").innerHTML = html;
+                })
+                .catch(error => console.error("Fehler beim Laden der Navigation:", error));
+        });
+    </script>
+</head>
+<body>
+
+    <!-- ============================================================
+                         HEADER: Logo und Navigation
+    ============================================================ -->
+    <header>
+        <div class="logo">
+            <h1>Reiselust vergeht nicht</h1> <!-- Titel mit verschnörkelter Schrift -->
+        </div>
+        
+        <div id="nav-placeholder"></div> <!-- Hier wird die Navigation eingefügt -->
+    </header>
+
+
+
+    <!-- ============================================================
+                         ÜBER UNS-BEREICH: Informationen über uns
+    ============================================================ -->
+    <section id="ueber-uns">
+        <h2>Über uns</h2>
+        <p>Wir sind eine Gruppe leidenschaftlicher Paraglider und Bergsteiger, die die Welt bereisen, neue Abenteuer erleben und ihre Erfahrungen teilen. Unsere Mission ist es, das Gefühl der Freiheit in der Luft zu erleben und mit anderen zu teilen. Auf unserem Blog findest du spannende Reiseberichte, nützliche Tipps und viele Eindrücke von unseren Abenteuern. Wir glauben daran, dass das Leben ein Abenteuer ist, das nur darauf wartet, entdeckt zu werden!</p>
+    </section>
+
+    <!-- ============================================================
+                         FOOTER: Urheberrecht und Fußzeile
+    ============================================================ -->
+    <footer>
+        <p>&copy; 2024 Reiselust vergeht nicht - Alle Rechte vorbehalten</p>
+    </footer>
+
+</body>
+</html>

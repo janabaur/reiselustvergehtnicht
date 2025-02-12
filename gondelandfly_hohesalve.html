@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reiselust vergeht nicht</title>
+
+    <style>
+        /* Spezifischer Stil für den Absatz "Parkmöglichkeit" */
+        p.parkmoeglichkeit {
+            margin-bottom: 20px; /* Abstand nach unten in Pixeln */
+        }
+    </style>
+
+    <!-- Google Fonts: Dancing Script für verschnörkelten Titel -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+
+    <!-- Verlinkung zum externen Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            fetch("nav.html")
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById("nav-placeholder").innerHTML = html;
+                })
+                .catch(error => console.error("Fehler beim Laden der Navigation:", error));
+        });
+    </script>
+</head>
+<body>
+
+    <!-- ============================================================
+                         HEADER: Logo und Navigation
+    ============================================================ -->
+    <header>
+        <div class="logo">
+            <h1>Reiselust vergeht nicht</h1> <!-- Titel mit verschnörkelter Schrift -->
+        </div>
+        
+        <div id="nav-placeholder"></div> <!-- Hier wird die Navigation eingefügt -->
+    </header>
+
+    <!-- ============================================================
+                         HERO-BEREICH: Gondel&Fly Abenteuer
+    ============================================================ -->
+    <section class="hero">
+        <h2>Gondel & Fly - Hohe Salve</h2>
+        <p>Erlebe das ultimative Paragliding-Erlebnis mit Gondelaufstieg
+
+        </p>
+    </section>
+
+    <main>
+
+            <!-- ============================================================
+                         INHALTSVERZEICHNIS
+    ============================================================ -->
+
+
+        <nav id="table-of-contents">
+            <h3>Inhaltsverzeichnis</h3>
+            <ul id="toc-list"></ul>
+        </nav>
+
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const tocList = document.getElementById("toc-list");
+                const headings = document.querySelectorAll("main h2");
+        
+                headings.forEach((heading) => {
+                    const id = heading.id || heading.textContent.trim().toLowerCase().replace(/\s+/g, "-");
+                    heading.id = id;  // Falls die Überschrift keine ID hat, wird eine generiert.
+        
+                    const listItem = document.createElement("li");
+                    const link = document.createElement("a");
+                    link.href = `#${id}`;
+                    link.textContent = heading.textContent;
+                    link.addEventListener("click", function (e) {
+                        e.preventDefault();
+                        document.getElementById(id).scrollIntoView({ behavior: "smooth", block: "start" });
+                    });
+        
+                    listItem.appendChild(link);
+                    tocList.appendChild(listItem);
+                });
+            });
+        </script>
+    
+        <!-- ============================================================
+                         SEKTION: Bild vor Blogbeitragsbeginn
+        ============================================================ -->
+
+        <section id="blogbeitrag-hohesalve">
+            <img src="images/Hohe Salve/hohesalve1.jpg" alt="hohesalve" 
+                 style="width: 90%; max-width: 800px; display: block; margin: 0 auto 20px; border-radius: 8px; box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.15);">
+
+       
+        <!-- ============================================================
+                         SEKTION: Anfahrt zur Hohen Salve
+        ============================================================ -->
+        <section id="anfahrt">
+            <h2>Anfahrt zur Hohen Salve</h2>
+    
+            <ul style="text-align: left; padding-left: 20px;">
+                <p> Die Hohe Salve ist sowohl von Söll als auch von Hopfgarten im Brixental aus gut erreichbar. Beide Orte verfügen über Talstationen der Bergbahn, die direkt zum Gipfel führen. Parkmöglichkeiten sind an den Talstationen vorhanden.</p>
+                <li><strong> 🚗 Mit dem Auto:</strong> 
+                    <p>Aus <strong> Deutschland</strong>:  Fahre auf der A8 Richtung Salzburg bis zum Inntaldreieck. Wechsle dort auf die A93 Richtung Innsbruck/Kufstein. Nach etwa 25 km erreichst du die österreichische Grenze, wo die A93 zur A12 wird. Verlasse die A12 an der Ausfahrt Wörgl Ost und folge der Beschilderung ins Brixental nach Hopfgarten. </p>
+                    <p> <a href="https://maps.app.goo.gl/3nRqdGLQWt6HMmJ66" target="_blank" rel="noopener noreferrer">Hier</a> findest du die Route.</p>
+                    
+                    <iframe width="600" height="450" style="Border:0" Loading="lazy"allowfullscreen src="https://www.google.com/maps/embed/v1/directions?origin=place_id:ChIJaRn_vvl1nkcR4AYcs0cDybY&destination=Salvenbahn%2C%20Meierhofgasse%2C%20Hopfgarten-Markt%2C%20%C3%96sterreich&key=AIzaSyBtsWx19WgSpwTjQHnLQaoWo3U4pq-SHTo"></iframe>
+
+                    <p>Aus <strong> Österreich</strong>:  Nimm die A12 Richtung Kufstein und verlasse die Autobahn an der Ausfahrt Wörgl West. Folge der B170 ins Brixental bis nach Hopfgarten. </p>
+                    <p class="parkmoeglichkeit">
+                        <strong>Parkmöglichkeit:</strong> An den Talstationen der Bergbahnen in <a href="https://maps.app.goo.gl/Ne2iSXmKZQwsJsSN8" target="_blank" rel="noopener noreferrer">Söll</a> und <a href="https://maps.app.goo.gl/hTg5VoA2hGrxvFJR9" target="_blank" rel="noopener noreferrer">Hopfgarten</a> stehen ausreichend Parkplätze zur Verfügung. In Hopfgarten gibt es ein Parkhaus direkt an der Talstation mit 600 Stellplätzen, in dem Gäste, die die Liftanlagen nutzen, ihr Auto kostenlos von 8:00 bis 18:00 Uhr parken können.
+                    </p>
+
+                <li><strong> 🚆 Mit der Bahn:</strong>: 
+                    <p>Der Bahnhof Hopfgarten Berglift liegt nur etwa 2 Gehminuten von der Talstation der Gondelbahn entfernt. Die Station ist lediglich 9 Bahnkilometer vom Verkehrsknotenpunkt Wörgl entfernt, was eine einfache Anbindung ermöglicht.</p>   
+                    <p><strong> Mobilität</strong>: Mit der Kitzbüheler Alpen Gästekarte kannst du den Nahverkehr innerhalb der Region kostenlos nutzen. Dies umfasst alle Nahverkehrszüge zwischen Wörgl und Hochfilzen (ausgenommen IC, EC und RailJet). So kannst du dein Auto stehen lassen und bequem die öffentlichen Verkehrsmittel nutzen.</p>
+
+                    <iframe width="600" height="450" style="Border:0" Loading="lazy"allowfullscreen src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJe1MNtSQ1dkcRYmqmPW7LpV8&key=AIzaSyBtsWx19WgSpwTjQHnLQaoWo3U4pq-SHTo"></iframe>   
+           
+                </ul>
+        </section>
+
+<!-- ============================================================
+                         SEKTION: Startplatz 1 für das Paragliding
+============================================================ -->
+
+<section id="startplatz">
+    <h2>Startplätze</h2>
+    <p style="text-align: justify;">Die Hohe Salve bietet für Gleitschirmflieger mehrere Startplätze in unmittelbarer Nähe des Gipfels. Der grasbewachsene Kegel des Berges ermöglicht Starts in verschiedene Himmelsrichtungen, abhängig von den aktuellen Windbedingungen.</p>
+
+    
+    <h4 style="text-align: left; padding-left: 20px; font-size: 1.2em;">Startplatz 1: Gipfel Süd</h4>
+    <ul style="text-align: left; padding-left: 20px;">
+        <li><strong>Windausrichtung:</strong> S-SO</li>
+        <li><strong>Schwierigkeit:</strong> leicht</li>
+        <li><strong>Höhe:</strong> 1815 Meter</li>
+        <li><strong>Höhenmeter:</strong>  1212 Meter</li>
+        <li><strong>Koordinaten:</strong> <a href="https://maps.app.goo.gl/w8WxHeghrynKc4Yk7" rel="noopener noreferrer">Startplatz</a></li>
+        <li><strong>Einkehrmöglichkeit:</strong> <a href="https://maps.app.goo.gl/8sMS1N8AKk9HXZ869" target="_blank" rel="noopener noreferrer">Gipfelalm Hohe Salve</a></li>
+        <li><strong>Webcam:</strong> <a href="https://www.hohe.salve.at/de/live-webcam.html" target="_blank" rel="noopener noreferrer">hier</a></li>
+        <li><strong>Lage:</strong>  Der Startplatz ist erreichbar über die Bergbahnen von Söll oder Hopfgarten und einen kurzen Fußweg vom Gipfel aus. Der Startplatz befindet sich mit Blick vom Berg ins Tal auf der linken Seite der Gondel und ist Richtung Hopfgarten hin ausgerichtet, weshalb sich ein Flug zum dortigen Landeplatz anbietet. Alternativ kann man auch einmal um den Berg fliegen und den Landeplatz in Söll ansteuern, hier muss man jedoch darauf achten, dass die Gleitleistung ausreicht.</li>
+        <li><strong>Besonderheiten:</strong> Der sanft abfallende Grashang bietet ideale Bedingungen für einen sicheren Start.</li>
+    </ul>
+
+    
+    <section id="blogbeitrag-hohesalve">
+        <img src="images/Hohe Salve/hohesalve2.jpg" alt="HoheSalve" 
+             style="width: 80%; max-width: 600px; display: block; margin: 0 auto 15px; border-radius: 8px; box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.15);">
+    
+        <img src="images/Hohe Salve/hohesalve4.jpg" alt="HoheSalve" 
+             style="width: 80%; max-width: 600px; display: block; margin: 0 auto 15px; border-radius: 8px; box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.15);">
+    
+        <img src="images/Hohe Salve/hohesalve3.jpg" alt="HoheSalve" 
+             style="width: 80%; max-width: 600px; display: block; margin: 0 auto 15px; border-radius: 8px; box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.15);">
+    </section>
+
+
+<!-- ============================================================
+                         SEKTION: Startplatz 2 für das Paragliding
+============================================================ -->
+
+    <h4 style="text-align: left; padding-left: 20px; font-size: 1.2em;">Startplatz 2: Südwest</h4>
+    <ul style="text-align: left; padding-left: 20px;">
+        <li><strong>Windausrichtung:</strong> S-SW</li>
+        <li><strong>Schwierigkeit:</strong> leicht</li>
+        <li><strong>Höhe:</strong> 1815 Meter</li>
+        <li><strong>Höhenmeter:</strong> 1212 Meter</li>
+        <li><strong>Koordinaten:</strong> <a href="" target="_blank" rel="noopener noreferrer">Startplatz</a></li>
+        <li><strong>Lage:</strong> Hier gilt dasselbe wie für den Startplatz 1, außer dass sich der Startplatz rechts der Gondel befindet. Vorsicht im Winter, hier ist ein Start auf der Skipiste nicht gestattet, sondern nur am linken Rand.</li>
+
+        <img src="images/Hohe Salve/hohesalve5.png" alt="HoheSalve" 
+        style="width: 80%; max-width: 600px; display: block; margin: 0 auto 15px; border-radius: 8px; box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.15);">
+
+
+    </ul>
+
+
+                         <!-- ============================================================
+                         SEKTION: Startplatz 3 für das Paragliding
+============================================================ -->
+
+<h4 style="text-align: left; padding-left: 20px; font-size: 1.2em;">Startplatz 3: Söll</h4>
+<ul style="text-align: left; padding-left: 20px;">
+    <li><strong>Windausrichtung:</strong> N-NW</li>
+    <li><strong>Schwierigkeit:</strong> leicht</li>
+    <li><strong>Höhe:</strong> 1815 Meter</li>
+    <li><strong>Höhenmeter:</strong> 1118 Meter</li>
+    <li><strong>Koordinaten:</strong> <a href="https://maps.app.goo.gl/feGtNmGhrbtAwKaH9" target="_blank" rel="noopener noreferrer">Startplatz</a></li>
+    <li><strong>Lage:</strong> Unmittelbar im Westen der Söller Gondelbahn. Ideales Startgelände. Im Winter nur eingeschränkt benutzbar da Pistenbetrieb </li>
+    
+</ul>
+
+
+
+<!-- ============================================================
+                SEKTION: Landeplatz 1 Hopfgarten für das Paragliding
+============================================================ -->
+
+<section id="landeplatz">
+    <h2>Landeplatz Hopfgarten</h2>
+    <p style="text-align: justify;">Die Landeplätze befinden sich nahe der Talstation und sind auch für weniger erfahrene Piloten geeignet. Es wird immer eine Linkslandevolte geflogen. </p>
+
+    <h4 style="text-align: left; padding-left: 20px; font-size: 1.2em;">Landeplatz</h4>
+    <ul style="text-align: left; padding-left: 20px;">
+        <li><strong>Schwierigkeit:</strong> leicht</li>
+        <li><strong>Höhe:</strong> 602 Meter</li>
+        <li><strong>Koordinaten:</strong> <a href="https://maps.app.goo.gl/KTP3ejnNxhMif2C58" target="_blank" rel="noopener noreferrer">Landeplatz Hopfgarten</a></li>
+        <li><strong>Lage: Der Landeplatz für Gleitschirmflieger in Hopfgarten befindet sich unterhalb der Bundesstraße B170, ca. 5 Gehminuten von der Talstation der Gondel. Er ist etwas schmaler, aber dafür lang angelegt. Beim Anflug auf den Landeplatz müssen die Eisenbahnlinie, die Schnellstraße und der Fluss überquert werden. Es ist daher wichtig, ausreichend Höhe für den Endanflug einzuplanen.</strong>        
+    </ul>
+
+    <img src="images/Hohe Salve/hohesalve6.jpg" alt="HoheSalve" 
+    style="width: 80%; max-width: 600px; display: block; margin: 0 auto 15px; border-radius: 8px; box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.15);">
+
+    <img src="images/Hohe Salve/hohesalve7.jpg" alt="HoheSalve" 
+    style="width: 80%; max-width: 600px; display: block; margin: 0 auto 15px; border-radius: 8px; box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.15);">
+
+    <img src="images/Hohe Salve/hohesalve9.jpg" alt="HoheSalve" 
+    style="width: 80%; max-width: 600px; display: block; margin: 0 auto 15px; border-radius: 8px; box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.15);">
+
+    <img src="images/Hohe Salve/hohesalve10.jpg" alt="HoheSalve" 
+    style="width: 80%; max-width: 600px; display: block; margin: 0 auto 15px; border-radius: 8px; box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.15);">
+
+    <img src="images/Hohe Salve/hohesalve11.jpg" alt="HoheSalve" 
+    style="width: 80%; max-width: 600px; display: block; margin: 0 auto 15px; border-radius: 8px; box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.15);">
+
+    <img src="images/Hohe Salve/hohesalve12.jpg" alt="HoheSalve" 
+    style="width: 80%; max-width: 600px; display: block; margin: 0 auto 15px; border-radius: 8px; box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.15);">
+
+    <!-- ============================================================
+                SEKTION: Landeplatz für das Paragliding
+============================================================ -->
+
+<section id="landeplatz">
+    <h2>Landeplatz Söll</h2>
+
+    <h4 style="text-align: left; padding-left: 20px; font-size: 1.2em;">Landeplatz</h4>
+    <ul style="text-align: left; padding-left: 20px;">
+        <li><strong>Schwierigkeit:</strong> leicht</li>
+        <li><strong>Höhe:</strong> 697 Meter</li>
+        <li><strong>Koordinaten:</strong> <a href="https://maps.app.goo.gl/r18v4UDJPagDnS2NA" target="_blank" rel="noopener noreferrer">Landeplatz Söll</a></li>
+        <li><strong>Lage:</strong>Der offizielle Landeplatz für Gleitschirmflieger in Söll befindet sich etwa 500 Meter von der Talstation der Bergbahn entfernt, ungefähr 80 Meter westlich des untersten Parkplatzes. Er ist durch eine gut sichtbare Windfahne gekennzeichnet.   </li>
+    </ul>
+
+    <!-- ============================================================
+                         SEKTION: Gondel
+============================================================ -->
+
+    <section id="gondel">
+        <h2>Gondel</h2>
+    
+        <h4 style="text-align: left; padding-left: 20px; font-size: 1.2em;">Zugang von Hopfgarten</h4>
+        <ul style="text-align: left; padding-left: 20px;">
+            <li><strong>Salvenbahn I:</strong> Diese erste Sektion führt von der Talstation in Hopfgarten zur Mittelstation.</li>
+            <li><strong><a href="https://maps.app.goo.gl/s48FSkDCjAdSkW2GA" target="_blank" rel="noopener noreferrer">Salvenbahn II</a>:</strong> Von der Mittelstation geht es weiter bis zum Gipfel der Hohen Salve.</li>
+        </ul>
+        <p style="text-align: left; padding-left: 20px;">Insgesamt legst du dabei rund 1.200 Höhenmeter in nur etwa 20 Minuten zurück.</p>
+    
+        <h4 style="text-align: left; padding-left: 20px; font-size: 1.2em;">Zugang von Söll</h4>
+        <ul style="text-align: left; padding-left: 20px;">
+            <li><strong>Hexenwasser Gondelbahn:</strong> Diese moderne 10er-Gondelbahn bringt dich zunächst bis auf 1.160 Meter zur Station Hochsöll. Während der Fahrt erzählt jede Kabine eine andere Geschichte, was die Auffahrt zu einem besonderen Erlebnis macht.</li>
+            <li><strong><a href="https://maps.app.goo.gl/EC9Z179QPqngvru86" target="_blank" rel="noopener noreferrer">Hohe Salven Bahn</a>:</strong> Von Hochsöll aus gelangst du mit dieser Bahn weiter bis zum Gipfel der Hohen Salve.</li>
+        </ul>
+    
+        <h4 style="text-align: left; padding-left: 20px; font-size: 1.2em;">Preise</h4>
+        <ul style="text-align: left; padding-left: 20px;">
+            <li><strong>Einzelticket:</strong> 23€</li>
+            <li><strong>Tageskarte:</strong> 51,5€</li>
+        </ul>
+    
+        <p style="text-align: left; padding-left: 20px;">Infos unter: <a href="https://www.hohe.salve.at/de/paragleiten-hohe-salve.html" target="_blank" rel="noopener noreferrer">hohesalve.at</a></p>
+    </section>
+
+<!-- ============================================================
+                         SEKTION: Fluggebiet
+============================================================ -->
+
+
+<section id="fluggebiet">
+    <h2>Fluggebiet</h2>
+    <p style="text-align: justify;"> Die Hohe Salve, mit einer Höhe von 1.829 Metern, ist ein markanter Berg in den Kitzbüheler Alpen und gilt als einer der schönsten Aussichtsberge Tirols. Der Gipfel bietet ein 360-Grad-Panorama, das bei klarer Sicht bis zu 70 Dreitausender umfasst, darunter der Wilde Kaiser im Norden und die vergletscherten Gipfel der Hohen Tauern im Süden.
+    </p>
+    <p style="text-align: justify;"><strong> Gelände und Umgebung:</strong> 
+    </p>
+    <p style="text-align: justify;"> Die Hohe Salve zeichnet sich durch ihre grasbewachsenen Hänge und alpinen Wiesen aus, die sanft abfallen und ideale Startbedingungen für Gleitschirmflieger bieten. Die umliegende Landschaft ist geprägt von traditionellen Almen, dichten Wäldern und malerischen Dörfern wie Hopfgarten und Söll, die sich harmonisch in die alpine Kulisse einfügen. Zudem gibt es zahlreiche Wanderwege, die zu Erkundungen einladen.
+    </p>
+    <p style="text-align: justify;"><strong> Streckenoptionen:</strong> 
+    </p>
+    <p style="text-align: justify;">Die Hohe Salve bietet vielfältige Möglichkeiten für Streckenflüge:
+
+        <ul style="text-align: left; padding-left: 20px;">
+        <li> <p style="text-align: justify;"><strong>Thermikflüge </strong>: Ab dem späten Vormittag entwickeln sich oft thermische Aufwinde, insbesondere rechts des Weststartplatzes. Diese Thermik kann genutzt werden, um Höhe zu gewinnen und längere Flüge zu unternehmen.</li> 
+        
+        <li> <p style="text-align: justify;"> <strong>Streckenflüge Richtung Pinzgau</strong>: Bei guten thermischen Bedingungen sind Flüge in Richtung Pinzgau möglich. Diese Route führt über beeindruckende alpine Landschaften und erfordert eine sorgfältige Flugplanung sowie Erfahrung im Streckenfliegen. </p></li>
+        
+        <li> <p style="text-align: justify;"> <strong>Soaring entlang der Westkante</strong>: Bei dynamischem Westwind bietet die Kante links und rechts des Weststartplatzes hervorragende Bedingungen zum Soaren. Piloten können hier die Hangaufwinde nutzen, um längere Zeit in der Luft zu bleiben und die Aussicht zu genießen. </p></li>
+    </p>
+    
+    <section id="blogbeitrag-hohesalve">
+        <img src="images/Hohe Salve/hohesalve13.jpg" alt="Brauneck" 
+             style="width: 80%; max-width: 600px; display: block; margin: 0 auto 15px; border-radius: 8px; box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.15);">
+
+             <section id="blogbeitrag-hohesalve">
+                <img src="images/Hohe Salve/hohesalve14.jpg" alt="Brauneck" 
+                     style="width: 80%; max-width: 600px; display: block; margin: 0 auto 15px; border-radius: 8px; box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.15);">
+                     
+            <section id="blogbeitrag-hohesalve">
+            <img src="images/Hohe Salve/hohesalve15.jpg" alt="Brauneck" 
+                style="width: 80%; max-width: 600px; display: block; margin: 0 auto 15px; border-radius: 8px; box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.15);">
+             
+                <section id="blogbeitrag-hohesalve">
+                <img src="images/Hohe Salve/hohesalve16.jpg" alt="Brauneck" 
+                 style="width: 80%; max-width: 600px; display: block; margin: 0 auto 15px; border-radius: 8px; box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.15);">
+                     
+                <section id="blogbeitrag-hohesalve">
+                <img src="images/Hohe Salve/hohesalve18.jpg" alt="Brauneck" 
+                    style="width: 80%; max-width: 600px; display: block; margin: 0 auto 15px; border-radius: 8px; box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.15);">
+                          
+        <section id="blogbeitrag-hohesalve">
+            <img src="images/Hohe Salve/hohesalve19.jpg" alt="Brauneck" 
+                 style="width: 80%; max-width: 600px; display: block; margin: 0 auto 15px; border-radius: 8px; box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.15);">
+               
+             <section id="blogbeitrag-hohesalve">
+                <img src="images/Hohe Salve/hohesalve21.jpg" alt="Brauneck" 
+                     style="width: 80%; max-width: 600px; display: block; margin: 0 auto 15px; border-radius: 8px; box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.15);">
+                                                          
+</body>
+</html>
+
+<!-- ============================================================
+                         SEKTION: Fazit
+============================================================ -->
+<section id="fazit">
+    <h2 style="text-align: center;">Fazit zur Hohen Salve</h2>
+
+<p style="text-align: justify;"> Mit einer der höchsten Flugmöglichkeiten in Tirol bietet die Hohe Salve atemberaubende Ausblicke auf das Kitzbüheler Alpenpanorama und das Brixental. Die einfachen Zugänge sowohl von Hopfgarten als auch von Söll ermöglichen es Paraglidern, in den Genuss dieser spektakulären Aussicht zu kommen – und das auf komfortable Weise. Egal, ob du ein erfahrener Pilot oder ein neugieriger Anfänger bist, die Vielfalt der Flugrouten und die zuverlässigen Bedingungen machen die Hohe Salve zu einem idealen Ziel.
+ </p>       
+
+</section>
+    </main>
+
+    <!-- ============================================================
+                         FOOTER: Urheberrecht und Fußzeile
+    ============================================================ -->
+    <footer>
+        <p>&copy; 2025 Reiselust vergeht nicht - Alle Rechte vorbehalten</p>
+    </footer>
+
+</body>
+</html>

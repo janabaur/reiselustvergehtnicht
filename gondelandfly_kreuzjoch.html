@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reiselust vergeht nicht</title>
+
+    <!-- Google Fonts: Dancing Script für verschnörkelten Titel -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+
+    <!-- Verlinkung zum externen Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            fetch("nav.html")
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById("nav-placeholder").innerHTML = html;
+                })
+                .catch(error => console.error("Fehler beim Laden der Navigation:", error));
+        });
+    </script>
+</head>
+<body>
+
+    <!-- ============================================================
+                         HEADER: Logo und Navigation
+    ============================================================ -->
+    <header>
+        <div class="logo">
+            <h1>Reiselust vergeht nicht</h1> <!-- Titel mit verschnörkelter Schrift -->
+        </div>
+        
+        <div id="nav-placeholder"></div> <!-- Hier wird die Navigation eingefügt -->
+    </header>
+
+    <!-- ============================================================
+                         HERO-BEREICH: Gondel&Fly Abenteuer
+    ============================================================ -->
+    <section class="hero">
+        <h2>Gondel & Fly - Grubigstein</h2>
+        <p>Erlebe das ultimative Paragliding-Erlebnis mit Gondelaufstieg
+
+        </p>
+    </section>
+
+    <main>
+
+            <!-- ============================================================
+                         INHALTSVERZEICHNIS
+    ============================================================ -->
+
+
+        <nav id="table-of-contents">
+            <h3>Inhaltsverzeichnis</h3>
+            <ul id="toc-list"></ul>
+        </nav>
+
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const tocList = document.getElementById("toc-list");
+                const headings = document.querySelectorAll("main h2");
+        
+                headings.forEach((heading) => {
+                    const id = heading.id || heading.textContent.trim().toLowerCase().replace(/\s+/g, "-");
+                    heading.id = id;  // Falls die Überschrift keine ID hat, wird eine generiert.
+        
+                    const listItem = document.createElement("li");
+                    const link = document.createElement("a");
+                    link.href = `#${id}`;
+                    link.textContent = heading.textContent;
+                    link.addEventListener("click", function (e) {
+                        e.preventDefault();
+                        document.getElementById(id).scrollIntoView({ behavior: "smooth", block: "start" });
+                    });
+        
+                    listItem.appendChild(link);
+                    tocList.appendChild(listItem);
+                });
+            });
+        </script>
+    
+        <!-- ============================================================
+                         SEKTION: Bild vor Blogbeitragsbeginn
+        ============================================================ -->
+
+        <section id="blogbeitrag-grubigstein">
+            <img src="images/Grubigstein/grubigstein8.jpg" alt="Bischling" 
+                 style="width: 90%; max-width: 800px; display: block; margin: 0 auto 20px; border-radius: 8px; box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.15);">
+
+        <!-- ============================================================
+                         SEKTION: Anfahrt zum Grubigstein
+        ============================================================ -->
+        <section id="anfahrt">
+            <h2>Anfahrt zum Grubigstein</h2>
+    
+            <ul style="text-align: left; padding-left: 20px;">
+                <li><strong> 🚗 Mit dem Auto:</strong> 
+                    <p>Aus <strong> Deutschland</strong>: Von München (115 km) über die A95 Richtung Garmisch-Partenkirchen. Ab Garmisch-Partenkirchen folgst du der B23 und anschließend der B187 nach Lermoos. Fahrtzeit 1h 30 min - 2hy 30 min</li></p>
+                <p>Aus <strong>Österreich</strong>: Über Innsbruck auf der A12 bis zur Ausfahrt Imst und weiter über den Fernpass.
+                <li><strong>Parkmöglichkeit:</strong>An der lstation der Grubigsteinbahn gibt es ausreichend Parkplätze für Tagesbesucher. Parken ist meist kostenlos oder gegen eine geringe Gebühr möglich.
+                
+                <li><strong> 🚆 Mit der Bahn:</strong>  Lermoos hat einen eigenen Bahnhof und ist gut mit dem Zug erreichbar:
+                
+                <p> Aus <strong> Deutschland</strong> Mit der Regionalbahn über München – Garmisch-Partenkirchen – Reutte nach Lermoos.</p>
+                <p> Aus <strong> Österreich</strong>: Ab Innsbruck gibt es direkte Verbindungen mit der Regionalbahn (ca. 1,5 Stunden Fahrtzeit).</p>
+
+                <li><strong>Zur Grubigsteingondel:</strong>  Vom Bahnhof Lermoos ist die Talstation der Grubigsteinbahn nur ca. 1 km entfernt. Diesen Weg kannst du zu Fuß (15 Minuten) oder mit einem Taxi zurücklegen.</li>
+                 
+                
+            </ul>
+        </section>
+
+<!-- ============================================================
+                         SEKTION: Startplatz 1 für das Paragliding
+============================================================ -->
+
+<section id="startplatz">
+    <h2>Startplätze</h2>
+    <p style="text-align: justify;">Es gibt gut präparierte Startplätze, die sich an der Bergstation der Grubigsteinbahn befinden. Die Hauptstartplätze sind nach Süden, Osten und Westen ausgerichtet, was flexibles Fliegen bei verschiedenen Windrichtungen ermöglicht.
+
+        <p>Seitens der Bergbahnen Langes wird eine gesamtheitliche Übersicht über alle Startplätze zur Verfügung gestellt, welche <a href="https://www.bergbahnen-langes.at/media/paragleiten.jpg" target="_blank" rel="noopener noreferrer">hier</a> zu finden ist.</p>
+    
+    <h4 style="text-align: left; padding-left: 20px; font-size: 1.2em;">Startplatz 1: Ost</h4>
+    <ul style="text-align: left; padding-left: 20px;">
+        <li><strong>Windausrichtung:</strong> O</li>
+        <li><strong>Schwierigkeit:</strong> leicht</li>
+        <li><strong>Höhe:</strong> 2050 Meter</li>
+        <li><strong>Höhenmeter:</strong> 1000 Meter</li>
+        <li><strong>Koordinaten:</strong> <a href="https://maps.app.goo.gl/fbJWT72hAVUVTGtB6" target="_blank" rel="noopener noreferrer">Startplatz</a></li>
+        <li><strong>Einkehrmöglichkeit:</strong> <a href="https://maps.app.goo.gl/RbFQQg2xyvCxj8XT7" target="_blank" rel="noopener noreferrer">Grubighütte</a> an der Bergstation</li>
+        <li><strong>Lage:</strong> Von der Bergstation der Grubigsteinbahn kommend nach links vorbei an der Grubighütte sind es nur wenige Minuten zu Fuß zum Ost-und Südstartplatz.</li>
+        <li><strong>Gelände:</strong> Der Startplatz ist eine breite, sanft abfallende Wiese. Er ist ideal für einen sicheren Start und bietet ausreichend Platz, auch für mehrere Piloten gleichzeitig. Das offene Gelände ist besonders einladend für Anfänger, die hier problemlos ihre Schirme aufziehen und starten können.</li>
+    </ul>
+
+                     <!-- ============================================================
+                         SEKTION: Startplatz 2 für das Paragliding
+============================================================ -->
+
+    <h4 style="text-align: left; padding-left: 20px; font-size: 1.2em;">Startplatz 2: Süd</h4>
+    <ul style="text-align: left; padding-left: 20px;">
+        <li><strong>Windausrichtung:</strong> S</li>
+        <li><strong>Schwierigkeit:</strong> mittel</li>
+        <li><strong>Höhe:</strong> 2050 Meter</li>
+        <li><strong>Höhenmeter:</strong> 1000 Meter</li>
+        <li><strong>Koordinaten:</strong> <a href="https://maps.app.goo.gl/73mw3RbraQoPssF47" target="_blank" rel="noopener noreferrer">Startplatz</a></li>
+        <li><strong>Windstation:</strong> <a href="https://holfuy.com/de/data/348" target="_blank" rel="noopener noreferrer">hier</a></li>
+        <li><strong>Lage:</strong> Von der Bergstation der Grubigsteinbahn kommend nach links vorbei an der Grubighütte sind es nur wenige Minuten zu Fuß zum Ost-und Südstartplatz.</li>
+        <li><strong>Gelände:</strong> Latschenhang mit Auslegelücken kombiniert mit einem kurzen Anlaufweg. Bei ausreichendem Südwind ist der Start unkompliziert, wobei ein Rückwärtsstart empfohlen wird.</li>
+    </ul>
+
+
+<!-- ============================================================
+                         SEKTION: Startplatz 3 für das Paragliding
+============================================================ -->
+
+    <h4 style="text-align: left; padding-left: 20px; font-size: 1.2em;">Startplatz 3: West</h4>
+    <ul style="text-align: left; padding-left: 20px;">
+        <li><strong>Windausrichtung:</strong> West</li>
+        <li><strong>Schwierigkeit:</strong> mittel-schwierig</li>
+        <li><strong>Höhe:</strong> 2050 Meter</li>
+        <li><strong>Höhenmeter:</strong> 1000 Meter</li>
+        <li><strong>Koordinaten:</strong> <a href="https://maps.app.goo.gl/z9e3Rqpp942ZCZ6E7" target="_blank" rel="noopener noreferrer">Startplatz</a></li>
+        <li><strong>Windstation:</strong> <a href="https://holfuy.com/de/data/347" target="_blank" rel="noopener noreferrer">hier</a></li>
+        <li><strong>Lage:</strong> Direkt in der Nähe der Bergstation der Grubigsteinbahn, nach dem Ausstieg nach rechts</li>
+        <li><strong>Gelände:</strong> Direkt in der Nähe der Bergstation der Grubigsteinbahn, nach dem Ausstieg nach rechts</li>
+
+    </ul>
+
+<!-- ============================================================
+                         SEKTION: WEITERE Startplätze
+============================================================ -->
+
+<h4 style="text-align: left; padding-left: 20px; font-size: 1.2em;">Weitere Startplätze: Wolfratshauser Hütte</h4>
+<ul style="text-align: left; padding-left: 20px;">
+    <li><strong>Windausrichtung:</strong> Nordost - Ost</li>
+    <li><strong>Schwierigkeit:</strong> leicht</li>
+    <li><strong>Höhe:</strong> 1750 Meter</li>
+    <li><strong>Höhenmeter:</strong> 745 Meter</li>
+    <li><strong>Koordinaten:</strong> <a href="https://maps.app.goo.gl/pJpCe5Hyh9jj1vnD8" target="_blank" rel="noopener noreferrer">Startplatz</a></li>
+    <li><strong>Lage:</strong> Guter, sehr windgeschützter Startplatz, wenn auf den höher gelegenen Startplätzen zu viel Wind ist.</li>
+ 
+</ul>
+
+
+
+<!-- ============================================================
+                SEKTION: Landeplatz für das Paragliding
+============================================================ -->
+<section id="landeplatz">
+    <h2>Landeplatz</h2>
+    <p style="text-align: justify;">Der offizielle Landeplatz liegt am Ortsrand von Lermoos in der Nähe der Talstation. Er ist eine große, ebene Wiese mit genügend Platz für eine sichere Landung. </p>
+
+    <h4 style="text-align: left; padding-left: 20px; font-size: 1.2em;">Landeplatz</h4>
+    <ul style="text-align: left; padding-left: 20px;">
+        <li><strong>Schwierigkeit:</strong> leicht</li>
+        <li><strong>Koordinaten:</strong> <a href="https://maps.app.goo.gl/xAEEu85MKEgrHE4QA" target="_blank" rel="noopener noreferrer">Landeplatz Blomberg</a></li>
+        <li><strong>Landegebühr:</strong> keine</li>
+        <li><strong>Windstation:</strong> <a href="https://holfuy.com/de/data/368" target="_blank" rel="noopener noreferrer">hier</a></li>
+        <li><strong>Einkehrmöglichkeit:</strong> <a href="https://maps.app.goo.gl/hrKxgjxKoLoDFu8m8" target="_blank" rel="noopener noreferrer">Barbarahof Werfenweng</a></li>
+        <li><strong>Besonderheiten:</strong> ⚠️ Wichtig: Am Nachmittag kann es durch Talwinde anspruchsvoll werden – rechtzeitig an den Landeanflug denken!</li>
+        <li><strong>Lage:</strong> Der Hauptlandeplatz befindet sich in Lermoos und ist sehr großzügig angelegt. Er liegt in der Nähe der Talstation der Grubigsteinbahn und ist gut sichtbar. Es gibt auch Hinweistafeln und Windsäcke, die die Landung erleichtern.</li>
+    </ul>
+
+    <section id="blogbeitrag-grubigstein">
+        <img src="images/Grubigstein/grubigstein2.png" alt="Grubigstein" 
+             style="width: 80%; max-width: 600px; display: block; margin: 0 auto 15px; border-radius: 8px; box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.15);">
+    
+        <img src="images/Grubigstein/grubigstein3.png" alt="Grubigstein" 
+             style="width: 80%; max-width: 600px; display: block; margin: 0 auto 15px; border-radius: 8px; box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.15);">
+    
+        <img src="images/Grubigstein/grubigstein4.png" alt="Grubigstein" 
+             style="width: 80%; max-width: 600px; display: block; margin: 0 auto 15px; border-radius: 8px; box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.15);">
+    </section>
+<!-- ============================================================
+                         SEKTION: Fluggebiet
+============================================================ -->
+<section id="fluggebiet">
+    <h2>Fluggebiet</h2>
+    <p style="text-align: justify;">Das Fluggebiet rund um den Grubigstein ist für seine fantastischen Thermikbedingungen bekannt. Mit etwas Glück kannst du auf über 3.000 m aufdrehen und das Panorama der Zugspitze genießen.
+    </p>
+    <p style="text-align: justify;">Der Grubigstein in Lermoos, Tirol, ist ein beliebter Spot für Paraglider und Drachenflieger. Er liegt in der Zugspitzregion und bietet eine spektakuläre Kulisse mit Blick auf die umliegenden Alpen und die beeindruckende Zugspitze.
+
+        Der Grubigstein bietet einen beachtlichen Höhenunterschied von rund 1.300 Metern zwischen dem Startplatz und dem Landeplatz im Tal. Das sorgt für ausgedehnte Flugzeiten und aufregende Thermik.
+        
+        Dank der südseitigen Lage und der sonnigen Bergflanken sind die Thermikbedingungen ideal. Vor allem im Frühling und Sommer entwickeln sich hier oft starke Aufwinde.
+        
+        Der Panoramablick auf die Zugspitze, das Ehrwalder Becken und die Lechtaler Alpen macht den Flug zu einem unvergesslichen Erlebnis.
+    </p>
+    
+    <section id="blogbeitrag-grubigstein">
+        <img src="images/Grubigstein/grubigstein1.png" alt="Grubigstein" 
+             style="width: 80%; max-width: 600px; display: block; margin: 0 auto 15px; border-radius: 8px; box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.15);">
+        
+             <section id="blogbeitrag-grubigstein">
+                <img src="images/Grubigstein/grubigstein 6.jpg" alt="Grubigstein" 
+                 style="width: 80%; max-width: 600px; display: block; margin: 0 auto 15px; border-radius: 8px; box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.15);">
+
+                 <section id="blogbeitrag-grubigstein">
+                    <img src="images/Grubigstein/grubigstein8.jpg" alt="Grubigstein" 
+                     style="width: 90%; max-width: 800px; display: block; margin: 0 auto 20px; border-radius: 8px; box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.15);">
+                    
+     <section id="blogbeitrag-grubigstein">
+        <img src="images/Grubigstein/grubigstein10.jpg" alt="Grubigstein" 
+         style="width: 90%; max-width: 800px; display: block; margin: 0 auto 20px; border-radius: 8px; box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.15);">
+              
+                 <section id="blogbeitrag-grubigstein">
+                            <img src="images/Grubigstein/grubigstein11.jpg" alt="Grubigstein" 
+                             style="width: 90%; max-width: 800px; display: block; margin: 0 auto 20px; border-radius: 8px; box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.15);">
+              
+               <section id="blogbeitrag-grubigstein">
+                                <img src="images/Grubigstein/grubigstein12.jpg" alt="Grubigstein" 
+                                 style="width: 90%; max-width: 800px; display: block; margin: 0 auto 20px; border-radius: 8px; box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.15);">
+              
+                                 <section id="blogbeitrag-grubigstein">
+                                    <img src="images/Grubigstein/grubigstein13.jpg" alt="Grubigstein" 
+                                     style="width: 90%; max-width: 800px; display: block; margin: 0 auto 20px; border-radius: 8px; box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.15);">
+              
+    
+                    <section id="blogbeitrag-grubigstein">
+                            <img src="images/Grubigstein/grubigstein14.jpg" alt="Grubigstein" 
+                         style="width: 90%; max-width: 800px; display: block; margin: 0 auto 20px; border-radius: 8px; box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.15);">
+                      
+</body>
+</html>
+
+
+</section>
+
+
+<!-- ============================================================
+                         SEKTION: Gondel
+============================================================ -->
+<section id="gondel">
+    <h2>Gondel</h2>
+    <p style="text-align: justify;"> Die Grubigsteinbahn bringt dich bequem zur Bergstation. Wichtig für Gleitschirmpiloten. Es wird ein Ticket angeboten, welches speziell auf u.a. Gleitschirmflieger und andere "Extremsportarten" ausgerichtet ist: das X-trem Ticket</p>
+    
+    
+    <ul style="text-align: left; padding-left: 20px;">
+        <li><strong>Gondel:</strong> <a href="https://www.bergbahnen-langes.at/" target="_blank" rel="noopener noreferrer">Bergbahnen Langes</a></li>
+    
+
+    </ul>
+</section>
+
+<!-- ============================================================
+                         SEKTION: Hike & Fly
+============================================================ -->
+
+<section id="gondel">
+    <h2>Hike & Fly</h2>
+    <p style="text-align: justify;">Für sportliche Piloten gibt es eine lohnende Hike&Fly-Route: Start in Lermoos (Talstation) → Über die Mittelstation → Gipfelkreuz auf 2.233 m, Dauer: Ca. 3 Stunden Aufstieg,  Höhenunterschied: Ca. 1.200 m </p>
+    <p style="text-align: justify;">Der Aufstieg ist anspruchsvoll, aber die Belohnung ist ein einsamer, unvergesslicher Flug mit gigantischer Aussicht.</p>
+ 
+<!-- ============================================================
+                         SEKTION: Fazit
+============================================================ -->
+<section id="Fazit">
+    <h2>Fazit</h2>
+    <p style="text-align: justify;">Der Grubigstein ist ein Top-Spot für Paraglider! Egal ob mit der Gondel oder zu Fuß, hier erwartet dich ein einzigartiges Flugerlebnis mit beeindruckendem Alpenpanorama. Thermik, Startplatz und Infrastruktur sind perfekt für Einsteiger & Profis geeignet.
+
+        Hast du schon am Grubigstein geflogen? Teile deine Erfahrungen in den Kommentaren! 🚀😊</p>
+
+    </main>
+
+    <!-- ============================================================
+                         FOOTER: Urheberrecht und Fußzeile
+    ============================================================ -->
+    <footer>
+        <p>&copy; 2025 Reiselust vergeht nicht - Alle Rechte vorbehalten</p>
+    </footer>
+
+</body>
+</html>

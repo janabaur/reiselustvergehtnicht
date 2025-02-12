@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reiselust vergeht nicht</title>
+
+    <!-- Google Fonts: Dancing Script für verschnörkelten Titel -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+
+    <!-- Verlinkung zum externen Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            fetch("nav.html")
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById("nav-placeholder").innerHTML = html;
+                })
+                .catch(error => console.error("Fehler beim Laden der Navigation:", error));
+        });
+    </script>
+</head>
+<body>
+
+    <!-- ============================================================
+                         HEADER: Logo und Navigation
+    ============================================================ -->
+    <header>
+        <div class="logo">
+            <h1>Reiselust vergeht nicht</h1> <!-- Titel mit verschnörkelter Schrift -->
+        </div>
+        
+        <div id="nav-placeholder"></div> <!-- Hier wird die Navigation eingefügt -->
+    </header>
+
+    <!-- ============================================================
+                         HERO-BEREICH: Hike&Fly Abenteuer
+    ============================================================ -->
+    <section class="hero">
+        <h2>Zwölferkopf – Unser Hike&Fly Abenteuer</h2>
+        <p>Erlebe die unvergessliche Wanderung und den Paragliding-Flug auf den Jägerkamp!</p>
+    </section>
+
+    <main>
+
+            <!-- ============================================================
+                         INHALTSVERZEICHNIS
+    ============================================================ -->
+
+
+        <nav id="table-of-contents">
+            <h3>Inhaltsverzeichnis</h3>
+            <ul id="toc-list"></ul>
+        </nav>
+
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const tocList = document.getElementById("toc-list");
+                const headings = document.querySelectorAll("main h2");
+        
+                headings.forEach((heading) => {
+                    const id = heading.id || heading.textContent.trim().toLowerCase().replace(/\s+/g, "-");
+                    heading.id = id;  // Falls die Überschrift keine ID hat, wird eine generiert.
+        
+                    const listItem = document.createElement("li");
+                    const link = document.createElement("a");
+                    link.href = `#${id}`;
+                    link.textContent = heading.textContent;
+                    link.addEventListener("click", function (e) {
+                        e.preventDefault();
+                        document.getElementById(id).scrollIntoView({ behavior: "smooth", block: "start" });
+                    });
+        
+                    listItem.appendChild(link);
+                    tocList.appendChild(listItem);
+                });
+            });
+        </script>
+    
+        <!-- ============================================================
+                         SEKTION: Bild vor Blogbeitragsbeginn
+        ============================================================ -->
+
+    <p>Der Zwölferkopf in der Achensee-Region bei Pertisau ist ein beliebter Startpunkt für Paraglider und bietet ein atemberaubendes Panorama über den Achensee, eingebettet zwischen Karwendel- und Rofangebirge.  </p>
+       
+        <!-- ============================================================
+                         SEKTION: Anfahrt zum Zwölferkopf
+        ============================================================ -->
+        <section id="anfahrt">
+            <h2 style="text-align: center;">Anfahrt zum Zwölferkopf</h2>
+        
+            <h3 style="text-align: left; padding-left: 20px;">🚗 Anreise mit dem Auto</h3>
+            <ul style="text-align: left; padding-left: 40px;">
+                <li><strong>Adresse für das Navi:</strong> 📍 <a href="https://maps.app.goo.gl/B9TYks3tfEVduSGZ8" target="_blank" rel="noopener noreferrer">Karwendel Bergbahn</a>, 6213, Pertisau</li>
+                
+                <li><strong>Anfahrt aus München:</strong>
+                    <ul>
+                        <li>Von <strong>München</strong> aus über die Autobahn <strong>A8 in Richtung Salzburg</strong> und anschließend über die <strong>Inntalautobahn A93</strong>.</li>
+                        <li>Bei der Ausfahrt <strong>Achensee/Zillertal</strong> verlässt man die Autobahn und folgt der <strong>B181</strong> bis nach Pertisau.</li>
+                        <li><strong>Fahrzeit:</strong> ca. <strong>1 Stunde 45 Minuten</strong> (je nach Verkehr)</li>
+                    </ul>
+                </li>
+                
+                <li><strong>Anfahrt aus Innsbruck:</strong>
+                    <ul>
+                        <li>Von <strong>Innsbruck</strong> aus führt die Strecke über die <strong>A12 (Inntalautobahn)</strong> bis zur Ausfahrt <strong>Wiesing/Achensee</strong>.</li>
+                        <li>Danach geht es weiter auf der <strong>B181</strong> in Richtung Achensee bis nach Pertisau.</li>
+                        <li><strong>Fahrzeit:</strong> ca. <strong>1 Stunde 10 Minuten</strong> (je nach Verkehr)</li>
+                    </ul>
+                </li>
+            </ul>
+      
+        
+                    <iframe width="600" height="450" style="Border:0" Loading="lazy"allowfullscreen src="https://www.google.com/maps/embed/v1/directions?origin=m%C3%BCnchen%20hauptbahnhof&destination=karwendel%20bergbahn%20pertisau&key=AIzaSyBtsWx19WgSpwTjQHnLQaoWo3U4pq-SHTo"></iframe>
+        
+        <h3 style="text-align: left; padding-left: 20px;">Parkmöglichkeiten:</h3>
+            <ul style="text-align: left; padding-left: 40px;">
+            <li>Parkplätze an der <a href="https://maps.app.goo.gl/aBnhDze7hcGSZg8w9" target="_blank" rel="noopener noreferrer">Talstation</a> (Adresse: Naturparkstr. 31, 6213 Pertisau)</li>
+            </ul>
+            </li>
+
+                    <iframe width="600" height="450" style="Border:0" Loading="lazy"allowfullscreen src="https://www.google.com/maps/embed/v1/place?q=karwendel%20bergbahn%20pertisau&key=AIzaSyBtsWx19WgSpwTjQHnLQaoWo3U4pq-SHTo"></iframe>
+            </ul>
+        
+            <h3 style="text-align: left; padding-left: 20px;">🚆 Anreise mit öffentlichen Verkehrsmitteln</h3>
+            <ul style="text-align: left; padding-left: 40px;">
+                <li><strong>Von München mit der Bahn:</strong>
+                    <ul>
+                        <li><strong>Bahn:</strong> Bis zum Bahnhof <strong>Jenbach</strong> (direkte Verbindungen von München und Innsbruck).</li>
+                        <li><strong>Bus:</strong> Vom Bahnhof Jenbach mit der <strong>Regiobus-Linie 8332</strong> nach Pertisau.</li>
+                    
+                        
+                    </ul>
+            
+            </ul>
+        
+        </section>
+
+<!-- ============================================================
+                         SEKTION: Wanderung auf den Zwölferkopf
+============================================================ -->
+<section id="wanderung">
+    <h2>Die Wanderung auf den Zwölferkopf</h2>
+    <p style="text-align: justify;">Der Zwölferkopf erhebt sich auf eine Höhe von 1.491 Metern und liegt in der Nähe von Pertisau am Achensee.
+    </p>
+    
+    <p style="text-align: justify;"></p>
+
+    <ul style="text-align: left; padding-left: 20px;">
+        <li><strong>Ausgangspunkt:</strong> <a href="https://maps.app.goo.gl/k2dtWBRjLxBZH53SA" target="_blank" rel="noopener noreferrer">Talstation</a> der Karwendel-Bergbahn</li>
+        <li><strong>Anzahl Höhenmeter:</strong> ca. 530 hm</li>
+        <li><strong>Länge:</strong> 5 km</li>
+        <li><strong>Zeit:</strong> 1,5 h</li>
+
+        <li><strong>Wegbeschreibung:</strong></li>
+    
+        <li><strong>Startpunkt: Talstation der Karwendel-Bergbahn (961 m)</strong>
+            <ul>
+                <li>Vom Parkplatz führt der Weg zunächst leicht ansteigend auf einem breiten Schotterweg in Richtung Bärenbadalm.</li>
+            </ul>
+        </li>
+        <li><strong>1️⃣: Aufstieg zur Bärenbadalm (1.457 m) – ca. 1h</strong>
+            <ul>
+                <li>Der Weg beginnt mit einer sanften Steigung und führt durch einen dichten Fichten- und Lärchenwald. Nach etwa <strong>30–40 Minuten</strong> erreicht man eine Weggabelung. Hier hält man sich rechts, um zur <strong>Bärenbadalm</strong> aufzusteigen.</li>
+                <li>Die letzten <strong>30 Minuten</strong> vor der Alm werden etwas steiler, aber der gut ausgebaute Forstweg macht den Aufstieg angenehm.</li>
+                <li>An der <strong>Bärenbadalm</strong> angekommen, bietet sich eine erste Rastmöglichkeit mit Blick auf den Achensee. Die Alm ist bewirtschaftet und bietet regionale Tiroler Spezialitäten wie Kaiserschmarrn und Brettljause.</li>
+            </ul>
+        </li>
+        <li><strong>2️⃣: Aufstieg zur Bergstation Zwölferkopf (1.491 m) – ca. 30 min</strong>
+            <ul>
+                <li>Nach der Bärenbadalm geht es weiter auf einem schmaleren Steig durch die Almwiesen. </li>
+                <li>Der Weg wird nun etwas steiler, aber der atemberaubende Blick auf den Achensee macht die Anstrengung lohnenswert.</li>
+                <li>Nach insgesamt ca. 1,5 Stunden Gehzeit erreicht man die Bergstation der Karwendel-Bergbahn und somit das Gipfelplateau des Zwölferkopfs.
+                </li>
+            </ul>
+
+            <li><strong>3️⃣: Gipfelpanorama & Rundweg (optional – ca. 45 min)</strong>
+                <ul>
+                    <li>Wer noch Energie hat, kann den Panoramarundweg Zwölferkopf gehen. Dieser bietet einen 360°-Rundumblick auf den Achensee, das Rofangebirge und das Karwendel. </li>
+                    <li>Der Rundweg führt über sanfte Almwiesen und ist leicht begehbar.</li>
+                </ul>
+        <li>Die Wegbeschreibung findet sich auch auf <a href="https://www.komoot.com/tour/2052103983" target="_blank" rel="noopener noreferrer">komoot</a>.</li>
+        </li>
+    </ul>
+
+    <section id="blogbeitrag-zwölferkopf">
+        <img src="images/Zwölferkopf/zwölferkopf1.jpg" alt="Jägerkamp" 
+             style="width: 80%; max-width: 1000px; display: block; margin: 0 auto 20px; border-radius: 8px; box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.15);">
+    </section>
+
+    <section id="blogbeitrag-zwölferkopf">
+        <img src="images/Zwölferkopf/zwölferkopf2.jpg" alt="Jägerkamp" 
+             style="width: 80%; max-width: 1000px; display: block; margin: 0 auto 20px; border-radius: 8px; box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.15);">
+    </section>
+
+    <section id="blogbeitrag-zwölferkopf">
+        <img src="images/Zwölferkopf/zwölferkopf3.jpg" alt="Jägerkamp" 
+             style="width: 80%; max-width: 1000px; display: block; margin: 0 auto 20px; border-radius: 8px; box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.15);">
+    </section>
+
+<!-- ============================================================
+                         SEKTION: Startplatz 1 für das Paragliding
+============================================================ -->
+
+<section id="startplatz">
+    <h2>Startplatz</h2>
+
+    <p style="text-align: justify;">Der Startplatz befindet sich direkt bei der Bergstation der Karwendel-Bergbahn auf 1.491 m Höhe. </p>
+    <p style="text-align: justify;"></p>
+    
+    <h4 style="text-align: left; padding-left: 20px; font-size: 1.2em;">Startplatz:</h4>
+    <ul style="text-align: left; padding-left: 20px;">
+        <li><strong>Windausrichtung:</strong> N </li>
+        <li><strong>Schwierigkeit:</strong> leicht</li>
+        <li><strong>Höhe:</strong> 1466 Meter</li>
+        <li><strong>Höhenmeter:</strong> 521 Meter</li>
+        <li><strong>Koordinaten:</strong> <a href="https://maps.app.goo.gl/hgeC8Ls7NFFo8rb69" target="_blank" rel="noopener noreferrer">Startplatz</a></li>
+        <li><strong>Einkehrmöglichkeit:</strong> <a href="https://maps.app.goo.gl/nE4kVDkR81iwRBRH7" target="_blank" rel="noopener noreferrer">Alpengasthaus Karwendel</a></li>
+        <li><strong>Lage:</strong>Der Nordstartplatz befindet sich auf der östlichen Seite der Bergstation. </li>
+        
+    </ul>
+    </body>
+    </html>
+    
+    <section id="blogbeitrag-zwölferkopf">
+        <img src="images/Zwölferkopf/zwölferkopf4.jpg" alt="Jägerkamp" 
+             style="width: 80%; max-width: 1000px; display: block; margin: 0 auto 20px; border-radius: 8px; box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.15);">
+    </section>
+
+    <section id="blogbeitrag-zwölferkopf">
+        <img src="images/Zwölferkopf/zwölferkopf5.jpg" alt="Jägerkamp" 
+             style="width: 80%; max-width: 1000px; display: block; margin: 0 auto 20px; border-radius: 8px; box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.15);">
+    </section>
+
+
+
+    
+<!-- ============================================================
+                         SEKTION: Startplatz 2 für das Paragliding
+============================================================ -->
+
+<section id="startplatz">
+    <h2>Startplatz</h2>
+
+    <p style="text-align: justify;"></p>
+    <p style="text-align: justify;"></p>
+    
+    <h4 style="text-align: left; padding-left: 20px; font-size: 1.2em;">Startplatz:</h4>
+    <ul style="text-align: left; padding-left: 20px;">
+        <li><strong>Windausrichtung:</strong> W </li>
+        <li><strong>Schwierigkeit:</strong> leicht</li>
+        <li><strong>Höhe:</strong> 1466 Meter</li>
+        <li><strong>Höhenmeter:</strong> 521 Meter</li>
+        <li><strong>Koordinaten:</strong> <a href="https://maps.app.goo.gl/jySBQF5dLZCsmAdi8" target="_blank" rel="noopener noreferrer">Startplatz</a></li>
+        <li><strong>Einkehrmöglichkeit:</strong> <a href="https://maps.app.goo.gl/nE4kVDkR81iwRBRH7" target="_blank" rel="noopener noreferrer">Alpengasthaus Karwendel</a></li>
+        <li><strong>Lage:</strong> Der Weststartplatz befindet sich auf der Skipiste in westliche Richtung, neben dem Alpengasthaus Karwendel. </li>
+        
+    </ul>
+
+    
+    </section>
+
+<!-- ============================================================
+                SEKTION: Landeplatz für das Paragliding
+============================================================ -->
+<section id="landeplatz">
+    <h2>Landeplatz</h2>
+    <p style="text-align: justify;"></p>
+
+    <h4 style="text-align: left; padding-left: 20px; font-size: 1.2em;">Landeplatz 1: Wiesenhof</h4>
+    <ul style="text-align: left; padding-left: 20px;">
+        <li><strong>Schwierigkeit:</strong> leicht</li>
+        <li><strong>Höhe:</strong> 945 m </li>
+        <li><strong>Koordinaten:</strong> <a href="https://maps.app.goo.gl/tbdD8GUwqLrA49Bv5" target="_blank" rel="noopener noreferrer">Landeplatz Wallberg</a></li>
+    </ul>
+</section>
+
+
+    <!-- ============================================================
+                SEKTION: Landeplatz für das Paragliding
+============================================================ -->
+
+    <h4 style="text-align: left; padding-left: 20px; font-size: 1.2em;">Landeplatz 2: Bergland</h4>
+    <ul style="text-align: left; padding-left: 20px;">
+        <li><strong>Schwierigkeit:</strong> leicht</li>
+        <li><strong>Höhe:</strong> 945 m </li>
+        <li><strong>Koordinaten:</strong> <a href="https://maps.app.goo.gl/fbokgEsQSQbvQpci6" target="_blank" rel="noopener noreferrer">Landeplatz Wallberg</a></li>
+        li><strong>Lage:</strong> Der Landeplatz eignet sich insbesondere für Ostwind. Beide Landeplätze befinden sich nur wenige Gehminuten von der Talstation. </li>
+    </ul>
+
+<!-- ============================================================
+                         SEKTION: Fluggebiet
+============================================================ -->
+<section id="fluggebiet">
+    <h2>Fluggebiet</h2>
+    <p style="text-align: justify;"> Das Fliegen am Zwölferkopf bietet einen perfekten Blick auf den türkisblauen Achensee, das Karwendelgebirge im Westen und das Rofangebirge im Osten.</p>
+
+    <section id="streckenflug">
+        <p style="text-align: left;">Der Zwölferkopf bietet spannende XC-Möglichkeiten mit beeindruckendem Panorama über den Achensee.</p>
+        <ul style="text-align: left; padding-left: 20px;">
+        <li>1️⃣<strong> Achensee-Rundflug (ca. 15–20 km)</strong></li>
+        <ul>
+            <li><strong>Route:</strong> Zwölferkopf → Seeufer entlang → zurück nach Pertisau</li>
+            <li><strong>Beschreibung:</strong> Perfekt für Einsteiger, da man jederzeit Richtung Landeplatz orientiert ist.</li>
+            <li><strong>Herausforderung:</strong> Talwinde aus dem Süden am Nachmittag beachten.</li>
+        </ul>
+    
+        <li>2️⃣<strong>Achensee – Rofan – Zillertal (30–50 km)</li></strong>
+        <ul>
+            <li><strong>Route:</strong> Zwölferkopf → Rofan-Gebirge → Zillertal → Rückflug möglich</li>
+            <li><strong>Beschreibung:</strong> Flug über den Gschöllkopf (2038 m) im Rofan, dann ins Zillertal.</li>
+            <li><strong>Herausforderung:</strong> Gute Thermik nutzen, um über den Talwind zu kommen.</li>
+        </ul>
+    
+        <li>3️⃣<strong>Karwendel-Querung nach Mittenwald/Garmisch (50–70 km)</strong></li>
+        <ul>
+            <li><strong>Route:</strong> Zwölferkopf → Falzthurntal → Karwendel-Hauptkamm → Mittenwald/Garmisch</li>
+            <li><strong>Beschreibung:</strong> Anspruchsvoll, da eine hohe Basis für die Querung nötig ist.</li>
+            <li><strong>Herausforderung:</strong> Große Absinkzonen im Karwendel, wenige Außenlandemöglichkeiten.</li>
+        </ul>
+    
+        <li>4️⃣<strong>Alpenhauptkamm – Große XC-Flüge (100+ km)</strong></li>
+        <ul>
+            <li><strong>Route:</strong> Zwölferkopf → Karwendel → Zugspitze → Fernpass → Tannheimer Tal</li>
+            <li><strong>Beschreibung:</strong> Für ambitionierte XC-Piloten mit optimalen Thermikbedingungen.</li>
+            <li><strong>Herausforderung:</strong> Perfekte Thermik und Wetterplanung erforderlich.</li>
+        </ul>
+    
+    </section>
+
+    <section id="blogbeitrag-zwölferkopf">
+        <img src="images/Zwölferkopf/zwölferkopf6.jpg" alt="Jägerkamp" 
+             style="width: 80%; max-width: 1000px; display: block; margin: 0 auto 20px; border-radius: 8px; box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.15);">
+    </section>
+
+    <section id="blogbeitrag-zwölferkopf">
+        <img src="images/Zwölferkopf/zwölferkopf7.jpg" alt="Jägerkamp" 
+             style="width: 80%; max-width: 1000px; display: block; margin: 0 auto 20px; border-radius: 8px; box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.15);">
+    </section>
+
+
+
+<!-- ============================================================
+                         SEKTION: Gondel
+============================================================ -->
+<section id="gondel">
+    <h2>Gondel</h2>
+    <p style="text-align: justify;"></p>
+
+<h3 style="text-align: left; padding-left: 20px;">🚠 Mit der Karwendel-Bergbahn zur Bergstation (1.620 m):</h3>
+
+<ul style="text-align: left; padding-left: 40px;">
+    <li><strong>Fahrzeit:</strong> ca. <strong>10-15 Minuten</strong></li>
+    <li><strong>Betriebszeiten:</strong> Je nach Saison (meist <strong>9:00–16:30 Uhr</strong>)</li>
+    <li><strong>Preise:</strong> 
+        <ul>
+            <li>Einzelticket: 16,5€</li>
+        </ul>
+    </li>
+    <li><strong>Infos unter:</strong> <a href="https://karwendel-bergbahn.axess.shop/de/Products/Tickets/" target="_blank" rel="noopener noreferrer">hier</a></li>
+    
+</ul>
+
+</section>
+
+
+    <!-- ============================================================
+                         FOOTER: Urheberrecht und Fußzeile
+    ============================================================ -->
+    <footer>
+        <p>&copy; 2025 Reiselust vergeht nicht - Alle Rechte vorbehalten</p>
+    </footer>
+
+</body>
+</html>

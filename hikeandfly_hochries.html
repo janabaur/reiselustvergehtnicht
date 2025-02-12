@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reiselust vergeht nicht</title>
+
+    <!-- Google Fonts: Dancing Script für verschnörkelten Titel -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+
+    <!-- Verlinkung zum externen Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            fetch("nav.html")
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById("nav-placeholder").innerHTML = html;
+                })
+                .catch(error => console.error("Fehler beim Laden der Navigation:", error));
+        });
+    </script>
+</head>
+<body>
+
+    <!-- ============================================================
+                         HEADER: Logo und Navigation
+    ============================================================ -->
+    <header>
+        <div class="logo">
+            <h1>Reiselust vergeht nicht</h1> <!-- Titel mit verschnörkelter Schrift -->
+        </div>
+        
+        <div id="nav-placeholder"></div> <!-- Hier wird die Navigation eingefügt -->
+    </header>
+
+    <!-- ============================================================
+                         HERO-BEREICH: Hike&Fly Abenteuer
+    ============================================================ -->
+    <section class="hero">
+        <h2>Hochries – Unser Hike&Fly Abenteuer</h2>
+        <p>Erlebe die unvergessliche Wanderung und den Paragliding-Flug auf der Hochries!</p>
+    </section>
+
+    <main>
+
+            <!-- ============================================================
+                         INHALTSVERZEICHNIS
+    ============================================================ -->
+
+
+        <nav id="table-of-contents">
+            <h3>Inhaltsverzeichnis</h3>
+            <ul id="toc-list"></ul>
+        </nav>
+
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const tocList = document.getElementById("toc-list");
+                const headings = document.querySelectorAll("main h2");
+        
+                headings.forEach((heading) => {
+                    const id = heading.id || heading.textContent.trim().toLowerCase().replace(/\s+/g, "-");
+                    heading.id = id;  // Falls die Überschrift keine ID hat, wird eine generiert.
+        
+                    const listItem = document.createElement("li");
+                    const link = document.createElement("a");
+                    link.href = `#${id}`;
+                    link.textContent = heading.textContent;
+                    link.addEventListener("click", function (e) {
+                        e.preventDefault();
+                        document.getElementById(id).scrollIntoView({ behavior: "smooth", block: "start" });
+                    });
+        
+                    listItem.appendChild(link);
+                    tocList.appendChild(listItem);
+                });
+            });
+        </script>
+    
+        <!-- ============================================================
+                         SEKTION: Bild vor Blogbeitragsbeginn
+        ============================================================ -->
+
+        <section id="blogbeitrag-hochries">
+            <img src="images/Hochries/hochries4.jpg" alt="Hochries" 
+                 style="width: 90%; max-width: 800px; display: block; margin: 0 auto 20px; border-radius: 8px; box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.15);">
+
+        <!-- ============================================================
+                         SEKTION: Anfahrt auf die Hochries
+        ============================================================ -->
+        <section id="anfahrt">
+            <h2>Anfahrt zur Hochries</h2>
+            <p>Die Anfahrt zur Hochries ist einfach, und du kannst sie bequem mit dem Auto oder öffentlichen Verkehrsmitteln erreichen. Hier findest du eine detaillierte Wegbeschreibung:</p>
+            <ul style="text-align: left; padding-left: 20px;">
+                <li><strong> Per Auto:</strong> Von München: 80km, 1h Fahrzeit</li>
+                <li><strong>Parkmöglichkeit: </strong><a href="https://maps.app.goo.gl/vAC7eNRGdwPSwA4D9" target="_blank" rel="noopener noreferrer">Parkplatz Spatenau</a></li>
+            </ul>
+        </section>
+
+        <!-- ============================================================
+                         SEKTION: Wanderung auf die Hochries
+        ============================================================ -->
+        <section id="wanderung">
+            <h2>Die Wanderung auf die Hochries</h2>
+            <p style="text-align: justify;">Die Wanderung auf die Hochries ist ein tolles Abenteuer, das sowohl für Anfänger als auch für erfahrene Wanderer geeignet ist. Der Weg führt durch wunderschöne Wälder und bietet unterwegs immer wieder spektakuläre Ausblicke. Hier einige Tipps zur Wanderung:</p>
+            
+            <p style="text-align: justify;">Die Wanderung dauert etwa 2-3 Stunden und ist nicht zu anspruchsvoll, aber du solltest gutes Schuhwerk tragen. Die Wegmarkierungen sind gut sichtbar, aber achte darauf, den richtigen Weg nach oben zu finden, da es auch viele alternative Pfade gibt. Auf dem Gipfel wirst du mit einer grandiosen Aussicht auf das Umland und den Chiemsee belohnt.</p>
+            
+            <ul style="text-align: left; padding-left: 20px;">
+                <li><strong>Ausgangspunkt:</strong> stellt der Wanderparkplatz Spatenau dar.</li>
+                <li><strong>Anzahl Höhenmeter:</strong> 800hm</li>
+                <li><strong>Wegbeschreibung:</strong> siehe <a href="https://www.bergtour-online.de/bergtouren/bergwanderungen/leicht/hochries/" target="_blank" rel="noopener noreferrer">hier</a></li>
+            </ul>
+        </section>
+        
+
+        <!-- ============================================================
+                         SEKTION: Startplatz für das Paragliding
+        ============================================================ -->
+        <section id="startplatz">
+            <h2>Startplatz</h2>
+            <p style="text-align: justify;">Der Startplatz auf der Hochries ist ideal für Paragliding. Er befindet sich direkt am Gipfel, wo du mit deinem Paraglider in die Lüfte aufsteigen kannst. Einige wichtige Informationen zum Startplatz:</p>
+            
+            <h4 style="text-align: left; padding-left: 20px; font-size: 1.2em;">Startplatz 1</h4>
+            <ul style="text-align: left; padding-left: 20px;">
+                <li><strong>Windausrichtung:</strong> W/NW</li>
+                <li><strong>Schwierigkeit:</strong> leicht</li>
+                <li><strong>Koordinaten:</strong> <a href="https://maps.app.goo.gl/U6CvYqPkJh8z8YnEA" target="_blank" rel="noopener noreferrer">Startplatz</a></li>
+                <li><strong>Einkehrmöglichkeit:</strong> <a href="https://www.hochrieshuette.de/" target="_blank" rel="noopener noreferrer">Hochrieshütte</a> am Gipfel</li>
+                <li><strong>Wetterstation:</strong> <a href="https://www.foto-webcam.eu/webcam/hochries/wetter/" target="_blank" rel="noopener noreferrer">hier</a></li>
+                <li><strong>Beschreibung:</strong> Platz für 2-3 GS, mit Matten ausgelegt.</li>
+                <li><strong>Besonderheiten:</strong> Das Talwindsystem des Inntals prägt das Fluggebiet. Am Vormittag strömt der Wind aus südlicher Richtung durch das Tal. Ab etwa Mittag bis in den frühen Nachmittag dreht der Wind am Startplatz auf Nord bis Nordwest.</li>
+            </ul>
+            <img src="images/Hochries/hochries2.png" alt="Hochries Bild 2" class="gallery-img" style="display: block; margin-left: auto; margin-right: auto;">
+        </section>
+        
+
+        <h4 style="text-align: left; padding-left: 20px; font-size: 1.2em;">Startplatz 2</h4>
+        <ul style="text-align: left; padding-left: 20px;">
+            <li><strong>Windausrichtung:</strong> N</li>
+            <li><strong>Schwierigkeit:</strong> mittel</li>
+            <li><strong>Koordinaten:</strong> <a href="https://maps.app.goo.gl/BDrYJDL6ZD3xb8PL6" target="_blank" rel="noopener noreferrer">Startplatz</a></li>
+            <li><strong>Beschreibung:</strong> Kurz vor der Drachenrampe mit dem Windsack führt ein steiler Pfad etwa 20 Meter hinunter zum nördlichen Startplatz.</li>
+            <li><strong>Besonderheiten:</strong> Der Startplatz fällt relativ steil ab. Obwohl er als "Oststartplatz" bezeichnet wird, da er östlich der Bergstation der Hochriesbahn liegt, ist er tatsächlich nach Nord/Nordwest ausgerichtet. Bei schwachem Ostwind kann ein Start unter Umständen noch funktionieren, allerdings ist die Hochries bei Ostwindlagen generell kein geeignetes Fluggebiet. Nach dem Start empfiehlt es sich oft, nach links die Seilbahn zu überqueren und in Richtung des Weststartplatzes zu fliegen, da dort thermisch in der Regel die besten Bedingungen herrschen.</li>
+            </section>
+
+            <img src="images/Hochries/hochries3.png" alt="Hochries Bild 3" class="gallery-img">
+
+        <!-- ============================================================
+                         SEKTION: Landeplatz für das Paragliding
+        ============================================================ -->
+        <section id="landeplatz">
+            <h2>Landeplatz</h2>
+            <p style="text-align: justify;">Der Landeplatz auf der Hochries ist ideal für Paragliding-Flieger, die nach ihrem Flug sicher landen möchten. Einige wichtige Informationen zum Landeplatz:</p>
+        
+            <h4 style="text-align: left; padding-left: 20px; font-size: 1.2em;">Landeplatz</h4>
+            <ul style="text-align: left; padding-left: 20px;">
+                <li><strong>Schwierigkeit:</strong> leicht</li>
+                <li><strong>Koordinaten:</strong> <a href="https://maps.app.goo.gl/Fd8qGt5DytS8xLxN7" target="_blank" rel="noopener noreferrer">Landeplatz Hochries</a></li>
+                <li><strong>Landegebühr:</strong> 3€, an der Kasse der Bahn zu entrichten</li>
+                <li><strong>Besonderheiten:</strong> Am Landeplatz weht der Wind typischerweise aus Nordost.</li>
+            </ul>
+        </section>
+
+        <img src="images/Hochries/hochries8.jpg" alt="Hochries Bild 1" class="gallery-img" style="width: 90%; max-width: 800px; display: block; margin: 0 auto 20px; border-radius: 8px; box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.15);">
+        <img src="images/Hochries/hochries5.jpg" alt="Hochries Bild 1" class="gallery-img" style="width: 90%; max-width: 800px; display: block; margin: 0 auto 20px; border-radius: 8px; box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.15);">
+        <img src="images/Hochries/hochries1.jpg" alt="Hochries Bild 1" class="gallery-img"style="width: 90%; max-width: 800px; display: block; margin: 0 auto 20px; border-radius: 8px; box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.15);">
+        <img src="images/Hochries/hochries6.jpg" alt="Hochries Bild 1" class="gallery-img"style="width: 90%; max-width: 800px; display: block; margin: 0 auto 20px; border-radius: 8px; box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.15);">
+        <img src="images/Hochries/hochries7.jpg" alt="Hochries Bild 1" class="gallery-img"style="width: 90%; max-width: 800px; display: block; margin: 0 auto 20px; border-radius: 8px; box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.15);">
+
+
+<!-- ============================================================
+                         SEKTION: Fluggebiet
+============================================================ -->
+<section id="fluggebiet">
+    <h2>Fluggebiet</h2>
+    <p style="text-align: justify;">Das Fluggebiet auf der Hochries bietet zwar keine extrem langen Strecken, eignet sich jedoch gut für entspannte Flüge, besonders für Langschläfer.</p>
+    <p style="text-align: justify;">Aufgrund seiner Nordwestausrichtung gibt das Gebiet nicht die größten Strecken her, doch es bietet dennoch eine Reihe von Möglichkeiten.</p>
+    <p style="text-align: justify;">Eine beliebte Strecke führt Richtung Kössen, und bei guten Bedingungen kann man diese sogar weiter in Richtung Pinzgau ausdehnen.</p>
+    <p style="text-align: justify;">Eine weitere sehr gefragte Route ist die sogenannte „Chiemseerunde“, bei der man einmal um den Chiemsee herum fliegt.</p>
+    <p style="text-align: justify;">Darüber hinaus ist das Fluggebiet hervorragend geeignet für Soaring entlang der Ridge, besonders am Nachmittag, wenn thermische Aufwinde für spannende Flüge sorgen.</p>
+
+    <!-- Bilder mittig zentrieren -->
+    <div style="text-align: center;">
+        <img src="images/Hochries/hochries4.jpg" alt="Flugbild 1" class="gallery-img" style="max-width: 100%; height: auto;">
+        <img src="images/Hochries/hochries9.jpg" alt="Flugbild 2" class="gallery-img" style="max-width: 100%; height: auto;">
+        <img src="images/Hochries/hochries10.jpg" alt="Flugbild 3" class="gallery-img" style="max-width: 100%; height: auto;">
+        <img src="images/Hochries/hochries11.jpg" alt="Flugbild 4" class="gallery-img" style="max-width: 100%; height: auto;">
+        <img src="images/Hochries/hochries12.jpg" alt="Flugbild 4" class="gallery-img" style="max-width: 100%; height: auto;">
+    </div>
+
+</section>
+
+<!-- ============================================================
+                         SEKTION: Gondel
+============================================================ -->
+<section id="gondel">
+    <h2>Gondel</h2>
+    <p style="text-align: justify;">Die Gondel, die dich zur Hochries bringt, ist die Hochriesbahn. Sie ermöglicht eine komfortable Auffahrt bis zum Gipfel, ideal für diejenigen, die nicht wandern möchten oder einfach nur die Aussicht genießen wollen.</p>
+    <p style="text-align: justify;">Die Preise sind leider etwas hoch. Hier sind die aktuellen Preise (Stand 09.01.2025):</p>
+    
+    <ul style="text-align: left; padding-left: 20px;">
+        <li><strong>Gondel:</strong> <a href="https://www.hochriesbahn.de/startseite" target="_blank" rel="noopener noreferrer">Hochriesbahn</a></li>
+        <li><strong>1er Bergfahrt:</strong> 20€</li>
+        <li><strong>5er Bergfahrt:</strong> 88€</li>
+        <li><strong>10er Bergfahrt:</strong> 152€</li>
+    </ul>
+</section>
+
+
+
+    </main>
+
+    <!-- ============================================================
+                         FOOTER: Urheberrecht und Fußzeile
+    ============================================================ -->
+    <footer>
+        <p>&copy; 2025 Reiselust vergeht nicht - Alle Rechte vorbehalten</p>
+    </footer>
+
+</body>
+</html>
