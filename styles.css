@@ -1,0 +1,219 @@
+/* Gesamtes Layout */
+body {
+    font-family: Arial, sans-serif;  /* Standard-Schriftart */
+    background-color: #f8f8f8;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header */
+header {
+    background-color: #fff;
+    padding: 20px;
+    border-bottom: 2px solid #ccc;
+}
+
+header .logo h1 {
+    font-family: 'Dancing Script', cursive; /* Verschnörkelte Schrift für den Titel */
+    font-size: 3em;
+    color: #333;
+    text-align: center;
+    margin: 0;
+}
+
+/* Navigation */
+nav {
+    background-color: #e4d8b7; /* Helles Braun-Beige */
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #333; /* Dunkle Schriftfarbe für gute Lesbarkeit */
+    text-decoration: none;
+    padding: 10px 20px;
+    display: block;
+}
+
+nav ul li a:hover {
+    background-color: #c5a98b; /* Dunklerer Braun-Ton beim Hover */
+}
+
+
+/* Bild auf der Startseite */
+
+.hero-image {
+    width: 100%;
+    max-width: 800px; /* Begrenzung der Breite */
+    height: auto;
+    display: block;
+    margin: 20px auto; /* Zentrieren */
+    border-radius: 10px; /* Abgerundete Ecken (optional) */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Schatteneffekt */
+}
+
+/* Dropdown */
+nav .dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+nav .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #e4d8b7; /* Helles Braun-Beige */
+    min-width: 160px;
+    z-index: 1;
+}
+
+nav .dropdown:hover .dropdown-content {
+    display: block;
+}
+
+nav .dropdown-content a {
+    color: #333;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+nav .dropdown-content a:hover {
+    background-color: #c5a98b; /* Dunklerer Braun-Ton beim Hover */
+}
+
+
+/* Inhaltsverzeichnis */
+
+#table-of-contents {
+    position: fixed;
+    top: 80px;
+    left: 20px;
+    background: white;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 250px;
+}
+
+#table-of-contents h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+#toc-list {
+    list-style: none;
+    padding: 0;
+}
+
+#toc-list li {
+    margin-bottom: 8px;
+}
+
+#toc-list a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+}
+
+#toc-list a:hover {
+    text-decoration: underline;
+}
+
+
+
+/* Main Content */
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 80%; /* Optional: Begrenzung der Breite für bessere Lesbarkeit */
+    margin: 0 auto; /* Zentriert den Inhalt horizontal */
+}
+
+main section {
+    max-width: 800px; /* Verhindert zu breite Absätze */
+    margin-bottom: 20px; /* Abstand zwischen den Abschnitten */
+        line-height: 1.8; /* Erhöht den Zeilenabstand */
+
+}
+
+
+
+/* Container für die Kacheln auf den Unterseiten "Hike and Fly" usw. */
+.kachel-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Kachel-Stil */
+.kachel {
+    width: 250px;
+    text-align: center;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    background-color: #f4f4f4;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Stil für Bilder in den Kacheln */
+.kachel-bild {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+
+/* Stil für den Text unter den Bildern */
+.kachel p {
+    font-weight: bold;
+    font-size: 1rem;
+    margin-top: 10px;
+}
+
+.hero {
+    text-align: center;
+    padding: 40px 0;
+    background-color: #f1f1f1;
+}
+
+.hero h2 {
+    font-size: 2.5em;
+    color: #333;
+}
+
+
+/* Stil für die Galerie-Bilder */
+.gallery-img {
+    width: 100%;
+    max-width: 600px;
+    margin: 10px 0;
+    display: block;
+    border-radius: 8px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
